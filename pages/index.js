@@ -299,7 +299,7 @@ export default function Home() {
               {language.links.map((link) => (
                 <div
                   key={link}
-                  className="bg-slate-900 text-white py-6 md:w-[200px] w-[100px] text-center rounded-full border-solid border-2 border-neutral-100"
+                  className=" text-white py-6 md:w-[200px] w-[100px] text-center rounded-full border-solid border-2 border-neutral-300"
                 >
                   <h3 className="text-base font-medium">{link.type}</h3>
                 </div>
