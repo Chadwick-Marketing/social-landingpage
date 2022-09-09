@@ -244,7 +244,7 @@ export default function Home() {
           </span>
           <div className="md:w-9/12 pb-10 flex items-center flex-col">
             <p
-              className={`md:pt-10 xl:w-9/12 w-11/12  pt-3 font-inter md:text-[17.5px] text-[17px] font-medium lh-3 leading-9 break-words`}
+              className={`md:pt-10 xl:w-9/12 w-9/12  pt-3 font-inter md:text-[17.5px] text-[17px] font-medium lh-3 leading-9 break-words`}
             >
               {language.heroDescription}
             </p>
