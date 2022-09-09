@@ -1,5 +1,5 @@
 export default {
-  heroOne: 'Shorten your links',
+  heroOne: 'Shorten your links!',
   availability: 'Available for WordPress',
   heroTitle: 'Your new bio \n link, done right.',
   heroTitleMobile: 'The bio link \n for your website',
