@@ -154,34 +154,6 @@ export default function Home() {
     );
   };
 
-  const animateLinks = () => {
-    let linkAnimation = new gsap.timeline({ repeat: -1 });
-
-    linkAnimation.fromTo(
-      '.links-wrap .links',
-      {
-        x: document.querySelector('.links').getBoundingClientRect().width * -2,
-      },
-      {
-        duration: 45,
-        x: document.querySelector('.links').getBoundingClientRect().width * 2,
-        ease: 'none',
-      }
-    );
-
-    linkAnimation.fromTo(
-      '.links-wrap .links-secondary',
-      {
-        x: document.querySelector('.links').getBoundingClientRect().width * -2,
-      },
-      {
-        duration: 60,
-        x: document.querySelector('.links').getBoundingClientRect().width * 2,
-        ease: 'none',
-      }
-    );
-  };
-
   const handleCheckout = () => {
     let handler = FS.Checkout.configure({
       plugin_id: '10045',
@@ -203,7 +175,15 @@ export default function Home() {
   useEffect(() => {
     playPauseVideo();
 
-    animateLinks();
+    window.addEventListener('scroll', () => {
+      document.querySelector('.links-2').style.transform = `translateX(${
+        window.scrollY * 0.25
+      }px)`;
+
+      document.querySelector(
+        '.links-wrap .links'
+      ).style.transform = `translateX(${window.scrollY * -0.35}px)`;
+    });
 
     jsonp('https://checkout.freemius.com/geo.json', null, (err, data) =>
       !err
@@ -299,7 +279,7 @@ export default function Home() {
             </div>
           </div>
           <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
-            <div className="links flex md:gap-10 gap-5">
+            <div className="links-2 flex md:gap-10 gap-5">
               {language.links.map((link) => (
                 <div
                   key={link}
