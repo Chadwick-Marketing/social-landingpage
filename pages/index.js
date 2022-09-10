@@ -216,7 +216,7 @@ export default function Home() {
           </div>
           <h1
             className="lg:text-[4.5rem]
-            xl:w-7/12 md:w-8/12 text-slate-900 w-full md:text-6xl whitespace-pre-line text-4xl md:block hidden font-bold font-serif"
+            xl:w-7/12 md:w-8/12 text-slate-900 w-full md:text-6xl whitespace-pre-line text-4xl  font-bold font-serif"
           >
             Your new bio <br /> link,
             <div className="relative text-[#4353FF] ml-2 inline w-fit">
@@ -231,9 +231,6 @@ export default function Home() {
               done right.
             </div>
           </h1>
-          <span className="text-4xl  md:hidden block font-medium font-serif">
-            {language.heroTitleMobile}
-          </span>
           <div className="md:w-9/12 pb-10 flex items-center flex-col">
             <p
               className={`md:pt-10 xl:w-9/12 w-9/12  pt-3 font-inter md:text-[17.5px] text-[17px] font-medium lh-3 leading-9 break-words`}
@@ -273,7 +270,9 @@ export default function Home() {
                   key={link}
                   className="text-slate-900 bg-white py-5 md:w-[250px] w-[100px] text-center rounded-full border-solid border border-gray-200"
                 >
-                  <h3 className="text-xl font-serif font-bold">{link.type}</h3>
+                  <h3 className="text-base font-serif font-bold">
+                    {link.type}
+                  </h3>
                 </div>
               ))}
             </div>
@@ -283,9 +282,11 @@ export default function Home() {
               {language.links.map((link) => (
                 <div
                   key={link}
-                  className="text-slate-900 bg-white py-5 md:w-[250px] w-[100px] text-center rounded-full border-solid border border-gray-200"
+                  className="text-slate-900 transition-transform bg-white py-5 md:w-[200px] w-[100px] text-center rounded-full border-solid border border-gray-200"
                 >
-                  <h3 className="text-xl font-serif font-bold">{link.type}</h3>
+                  <h3 className="text-base font-serif font-bold">
+                    {link.type}
+                  </h3>
                 </div>
               ))}
             </div>
@@ -457,7 +458,7 @@ export default function Home() {
           id="pricing"
           className="max-w-screen-xl relative rounded-3xl  mb-[100px] flex text-center items-center flex-col m-auto gap-[30px] px-10"
         >
-          <h2 className="md:w-8/12 md:text-4xl text-4xl md:block font-medium font-serif">
+          <h2 className="md:w-8/12 md:text-4xl text-4xl md:block font-bold font-serif">
             {language.pricing.headline}
           </h2>
           <p className="md:w-6/12 font-inter md:text-[18px] text-[17px] font-medium lh-3 leading-9 break-words">
