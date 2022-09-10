@@ -168,6 +168,18 @@ export default function Home() {
         ease: 'none',
       }
     );
+
+    linkAnimation.fromTo(
+      '.links-wrap .links-secondary',
+      {
+        x: document.querySelector('.links').getBoundingClientRect().width * -2,
+      },
+      {
+        duration: 60,
+        x: document.querySelector('.links').getBoundingClientRect().width * 2,
+        ease: 'none',
+      }
+    );
   };
 
   const handleCheckout = () => {
@@ -251,7 +263,7 @@ export default function Home() {
             <div className="flex justify-center mt-5 gap-3 items-center">
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
-                  <span className="font-medium">{language.heroCta[1]}</span>{' '}
+                  <span className="font-medium">{language.heroCta[1]}</span>
                   {language.heroCta[2]}
                 </a>
               </Link>
@@ -266,26 +278,6 @@ export default function Home() {
             </div>
           </div>
           <img className="md:w-10/12 w-12/12 mt-10" src={language.heroImage} />
-          <div className="w-12/12 m-auto pt-12 md:flex hidden justify-between">
-            <div className="flex items-center font-medium">
-              <ShieldCheckIcon
-                className="w-10 h-10 mr-5 fill-tech/20"
-                aria-hidden="true"
-              />
-              {language.linkInBio.gdpr}
-            </div>
-            <div className="flex mx-10 items-center font-medium">
-              <ColorSwatchIcon className="w-10 h-10 mr-5" aria-hidden="true" />
-              {language.security.decentral.headline}
-            </div>
-            <div className="flex items-center font-medium">
-              <SearchCircleIcon
-                className="w-10 h-10 mr-5 fill-tech/20"
-                aria-hidden="true"
-              />
-              {language.linkInBio.tools}
-            </div>
-          </div>
         </section>
         <section className="max-w-screen-xl w-full relative mt-[100px] overflow-hidden flex  text-center items-center flex-col m-auto md:gap-[20px] md:px-10 px-8">
           <h2 className="lg:w-6/12 md:w-10/12 md:text-5xl text-3xl md:block font-bold text-slate-900 whitespace-pre-line font-serif">
@@ -299,16 +291,52 @@ export default function Home() {
               {language.links.map((link) => (
                 <div
                   key={link}
-                  className="text-slate-900 py-3 md:w-[200px] w-[100px] text-center rounded-full border-solid border border-gray-200"
+                  className="text-slate-900 bg-white py-5 md:w-[250px] w-[100px] text-center rounded-full border-solid border border-gray-200"
                 >
-                  <h3 className="text-base font-medium">{link.type}</h3>
+                  <h3 className="text-xl font-serif font-bold">{link.type}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
+            <div className="links flex md:gap-10 gap-5">
+              {language.links.map((link) => (
+                <div
+                  key={link}
+                  className="text-slate-900 bg-white py-5 md:w-[250px] w-[100px] text-center rounded-full border-solid border border-gray-200"
+                >
+                  <h3 className="text-xl font-serif font-bold">{link.type}</h3>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
-        <section id="branding"></section>
+        <section className="max-w-screen-xl bg-white md:mx-10 p-12 border-2 border-neutral-100 rounded-4xl relative mt-[150px] mb-[100px] md:flex items-center flex-row m-auto gap-[100px]">
+          <div className="md:w-6/12 rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
+            <video
+              className="video rounded-3xl"
+              loop
+              playsInline
+              muted
+              src={language.branding.video}
+            ></video>
+          </div>
+          <div className="md:w-6/12">
+            <h2 className="xl:text-5xl text-slate-900 lg:leading-none text-4xl md:block font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
+              {language.branding.title}
+            </h2>
+            <div className="grid grid-cols-3"></div>
+            <p className="pt-10 pb-10 md:w-10/12 font-inter md:text-[18px] text-[17px] font-medium lh-3 leading-9 break-words">
+              {language.branding.content}
+            </p>
+            <Link href="#pricing">
+              <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
+                <span className="font-normal">{language.heroCta[1]}</span>{' '}
+                {language.heroCta[2]}
+              </a>
+            </Link>
+          </div>
+        </section>
 
         <section
           id="secondary-features"
@@ -317,7 +345,7 @@ export default function Home() {
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-2xl sm:text-center">
-              <h2 className="text-3xl font-medium tracking-tight text-gray-900">
+              <h2 className="text-3xl font-bold font-serif tracking-tight text-gray-900">
                 Now is the time to build your portfolio.
               </h2>
               <p className="mt-2 text-lg text-gray-600">
@@ -439,115 +467,6 @@ export default function Home() {
                 <p className="mt-2 text-gray-700">
                   Get insider tips on big stock moves and act on them within
                   seconds.
-                </p>
-              </li>
-              <li className="rounded-2xl border border-gray-200 p-8">
-                <svg
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  aria-hidden="true"
-                  className="h-8 w-8"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
-                    fill="#737373"
-                  />
-                  <circle cx={11} cy={14} r={2} fill="#171717" />
-                  <circle cx={11} cy={20} r={2} fill="#171717" />
-                  <circle cx={11} cy={26} r={2} fill="#171717" />
-                  <path
-                    d="M16 14h6M16 20h6M16 26h6"
-                    stroke="#737373"
-                    strokeWidth={2}
-                    strokeLinecap="square"
-                  />
-                  <circle
-                    cx={16}
-                    cy={16}
-                    r={16}
-                    fill="#A3A3A3"
-                    fillOpacity="0.2"
-                  />
-                </svg>
-                <h3 className="mt-6 font-semibold text-gray-900">
-                  Profit from your network
-                </h3>
-                <p className="mt-2 text-gray-700">
-                  Invite new insiders to get tips faster and beat even other
-                  Pocket users.
-                </p>
-              </li>
-              <li className="rounded-2xl border border-gray-200 p-8">
-                <svg viewBox="0 0 32 32" aria-hidden="true" className="h-8 w-8">
-                  <circle
-                    cx={16}
-                    cy={16}
-                    r={16}
-                    fill="#A3A3A3"
-                    fillOpacity="0.2"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M5 4a4 4 0 014-4h14a4 4 0 014 4v10h-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 002 2h5v2H9a4 4 0 01-4-4V4z"
-                    fill="#737373"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M18 19.5a3.5 3.5 0 117 0V22a2 2 0 012 2v6a2 2 0 01-2 2h-7a2 2 0 01-2-2v-6a2 2 0 012-2v-2.5zm2 2.5h3v-2.5a1.5 1.5 0 00-3 0V22z"
-                    fill="#171717"
-                  />
-                </svg>
-                <h3 className="mt-6 font-semibold text-gray-900">
-                  Encrypted and anonymized
-                </h3>
-                <p className="mt-2 text-gray-700">
-                  Cutting-edge security technology that even the NSA doesn’t
-                  know about keeps you hidden.
-                </p>
-              </li>
-              <li className="rounded-2xl border border-gray-200 p-8">
-                <svg
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  aria-hidden="true"
-                  className="h-8 w-8"
-                >
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
-                    fill="#737373"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M23 13.838V26a2 2 0 01-2 2H11a2 2 0 01-2-2V15.65l2.57 3.212a1 1 0 001.38.175L15.4 17.2a1 1 0 011.494.353l1.841 3.681c.399.797 1.562.714 1.843-.13L23 13.837z"
-                    fill="#171717"
-                  />
-                  <path
-                    d="M10 12h12"
-                    stroke="#737373"
-                    strokeWidth={2}
-                    strokeLinecap="square"
-                  />
-                  <circle
-                    cx={16}
-                    cy={16}
-                    r={16}
-                    fill="#A3A3A3"
-                    fillOpacity="0.2"
-                  />
-                </svg>
-                <h3 className="mt-6 font-semibold text-gray-900">
-                  Portfolio tracking
-                </h3>
-                <p className="mt-2 text-gray-700">
-                  Watch your investments grow exponentially, leaving other
-                  investors in the dust.
                 </p>
               </li>
             </ul>
