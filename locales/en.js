@@ -436,7 +436,7 @@ export default {
     startTrial: 'Start free trial',
     save20:
       'https://ik.imagekit.io/chadwickmarketing/social/save-20-en_US_pmM7m9bl9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1654277131341',
-    faqTitle: 'FAQ',
+    faqTitle: 'Frequently asked questions',
     headline: 'Get started today',
     subheadline:
       'Choose your plan, go ahead and build your new bio link where it makes the most sense: on your website.',

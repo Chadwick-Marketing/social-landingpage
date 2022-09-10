@@ -857,7 +857,7 @@ export default function Home() {
           </div>
         </section>
         <section className="max-w-screen-xl w-full relative mt-[25px] md:flex text-center items-center flex-col m-auto gap-[50px] px-10">
-          <h2 className="md:w-8/12  text-4xl md:mb-0 mb-10 md:block font-semibold font-serif">
+          <h2 className="md:w-8/12  text-4xl md:mb-0 mb-10 md:block font-bold font-serif">
             {language.pricing.faqTitle}
           </h2>
           <div className="md:w-8/12 w-full">
@@ -869,7 +869,7 @@ export default function Home() {
                       <Disclosure.Button
                         className={`pt-10 flex border-b-0 ${
                           !open && 'mb-10 rounded-3xl border-b-2'
-                        } border-2 border-neutral-100  bg-white justify-between w-full rounded-t-3xl text-xl px-10 pb-10 font-serif font-medium text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75`}
+                        } border-2 border-neutral-100  bg-white justify-between w-full rounded-t-3xl text-xl px-10 pb-10 font-serif font-bold text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75`}
                       >
                         <span>{question.question}</span>
                         <ChevronUpIcon
