@@ -121,15 +121,14 @@ export default {
   threeSites: '3 sites',
   tenSites: '10 sites',
   links: [
-    { type: 'Blog' },
+    { type: 'Blog 📋' },
     { type: 'Podcasts' },
     { type: 'Products' },
     { type: 'Videos' },
-    { type: 'Job postings' },
+    { type: 'Job postings 💼' },
     { type: 'Projects' },
     { type: 'Events' },
     { type: 'Contests' },
-    { type: 'Social-Media' },
   ],
   heroImage:
     'https://ik.imagekit.io/chadwickmarketing/social/Frame_7__1__xB7NlYK8Q.png?ik-sdk-version=javascript-1.4.3&updatedAt=1662743432482',
