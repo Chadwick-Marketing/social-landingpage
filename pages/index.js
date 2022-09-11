@@ -277,7 +277,7 @@ export default function Home() {
           </div>
           <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
             <div className="links-2 flex md:gap-10 gap-5">
-              {language.links.map((link) => (
+              {language.links2.map((link) => (
                 <div
                   key={link}
                   className="text-slate-900 transition-transform bg-white py-5 md:w-[200px] w-[100px] text-center rounded-full border-solid border border-gray-200"
@@ -532,7 +532,7 @@ export default function Home() {
 
         <section
           id="pricing"
-          className="border-t border-gray-200 relative w-full bg-gray-100 mb-[100px] flex text-center items-center flex-col m-auto gap-[30px] px-10"
+          className="border-t border-gray-200 relative w-full bg-gray-100 mb-[100px] py-10 flex text-center items-center flex-col m-auto gap-[30px] px-10"
         >
           <h2 className="md:w-8/12 md:text-4xl text-4xl md:block font-bold font-serif">
             {language.pricing.headline}
@@ -574,7 +574,7 @@ export default function Home() {
               src={language.pricing.save20}
             />
           </RadioGroup>
-          <div className="md:w-9/12 bg-white w-full pt-5 border-2 border-neutral-100 md:p-12 p-0 rounded-3xl">
+          <div className="md:w-6/12 bg-white w-full pt-5 border-2 border-neutral-100 md:p-12 p-0 rounded-3xl">
             <div className="flex md:flex-row flex-col items-center md:gap-5">
               <div className="md:w-6/12 w-10/12">
                 <RadioGroup

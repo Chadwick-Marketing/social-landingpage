@@ -129,6 +129,14 @@ export default {
     { type: 'Events 📅' },
     { type: 'Contests 🏆' },
   ],
+  links2: [
+    { type: 'Documents 🔗' },
+    { type: 'Photos 📸' },
+    { type: 'Streams 🔴' },
+    { type: 'Recipes 🍔' },
+    { type: 'Events 📅' },
+    { type: 'Contests 🏆' },
+  ],
   heroImage:
     'https://ik.imagekit.io/chadwickmarketing/social/Frame_7__1__xB7NlYK8Q.png?ik-sdk-version=javascript-1.4.3&updatedAt=1662743432482',
   heroCta: {
