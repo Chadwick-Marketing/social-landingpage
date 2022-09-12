@@ -24,7 +24,7 @@ const Navigation = ({ language }) => {
         headerSticky
           ? `bg-white py-1.5 px-5 shadow-sm max-w-full py-2 rounded-b-2xl`
           : 'md:py-10 md:px-5 lg:px-5 xl:px-0  px-5 py-3'
-      } navigation transition-all max-w-screen-xl m-auto sticky top-0 z-50`}
+      } navigation transition-all max-w-screen-xl m-auto  top-0 z-50`}
     >
       <div className="max-w-screen-xl m-auto items-center flex justify-between">
         <div className="logo ">
