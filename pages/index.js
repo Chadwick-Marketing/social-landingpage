@@ -210,7 +210,7 @@ export default function Home() {
       </Head>
       <Navigation language={language} />
       <main className="flex items-center flex-col">
-        <section className="header relative bg-hero-pattern bg-no-repeat bg-top bg-[length:60%] flex justify-center items-center text-center px-8 flex-col max-w-screen-xl m-auto pt-5">
+        <section className="header relative bg-no-repeat bg-top bg-[length:60%] flex justify-center items-center text-center px-8 flex-col max-w-screen-xl m-auto pt-5">
           <div className="text-black text-sm bg-tech/5 w-fit p-1 px-4 mb-5 rounded-full">
             {language.availability}
           </div>
