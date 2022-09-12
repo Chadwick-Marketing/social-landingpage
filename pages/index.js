@@ -305,7 +305,7 @@ export default function Home() {
             </div>
             <div className="md:w-6/12 py-20">
               <h2 className="lg:leading-none text-5xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
-                Create & design your bio link{' '}
+                Create your bio link{' '}
                 <div className="relative text-[#4353FF] ml-2 inline w-fit">
                   {' '}
                   in minutes.
