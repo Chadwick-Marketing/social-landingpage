@@ -36,14 +36,14 @@ export default {
     yearly: 'Yearly',
   },
   branding: {
-    title: 'Make it your own.',
+    title: 'Create & design your bio link in minutes.',
     video:
       'https://ik.imagekit.io/chadwickmarketing/social/explainer-1-en_US_HX1knAdle.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1654365146545',
     content:
-      'Upload your favorite profile image, customize font styles, add your content and publish your bio link on your website - in less than five minutes.',
+      'Upload your favorite profile image, customize font styles, add your content, and publish your bio link on your website - in less than five minutes.',
   },
   reach: {
-    title: 'Grow your audience',
+    title: 'Grow & engage your audience.',
     video:
       'https://ik.imagekit.io/chadwickmarketing/social/explainer-2-en_US_9geANtDzK.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1655649520932',
     content:
@@ -121,21 +121,21 @@ export default {
   threeSites: '3 sites',
   tenSites: '10 sites',
   links: [
-    { type: 'Blog 📝' },
-    { type: 'Podcasts 🎙️' },
-    { type: 'Products 📦 ' },
-    { type: 'Videos 🎥' },
-    { type: 'Job postings 💼' },
-    { type: 'Events 📅' },
-    { type: 'Contests 🏆' },
+    { type: 'Blog' },
+    { type: 'Podcasts' },
+    { type: 'Products ' },
+    { type: 'Videos' },
+    { type: 'Job postings' },
+    { type: 'Events ' },
+    { type: 'Contests' },
   ],
   links2: [
-    { type: 'Documents 🔗' },
-    { type: 'Photos 📸' },
-    { type: 'Streams 🔴' },
-    { type: 'Recipes 🍔' },
-    { type: 'Events 📅' },
-    { type: 'Contests 🏆' },
+    { type: 'Documents' },
+    { type: 'Photos' },
+    { type: 'Streams' },
+    { type: 'Recipes' },
+    { type: 'Events' },
+    { type: 'Contests' },
   ],
   heroImage:
     'https://ik.imagekit.io/chadwickmarketing/social/Frame_7__1__xB7NlYK8Q.png?ik-sdk-version=javascript-1.4.3&updatedAt=1662743432482',
