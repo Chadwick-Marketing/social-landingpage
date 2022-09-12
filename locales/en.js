@@ -36,7 +36,7 @@ export default {
     yearly: 'Yearly',
   },
   branding: {
-    title: 'Create & design your bio link in minutes.',
+    title: 'Create your bio link in minutes.',
     video:
       'https://ik.imagekit.io/chadwickmarketing/social/explainer-1-en_US_HX1knAdle.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1654365146545',
     content:
