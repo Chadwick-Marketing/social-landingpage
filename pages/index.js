@@ -312,11 +312,11 @@ export default function Home() {
                 </div>
               </h2>
               <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Custom Backgrounds
                 </div>
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold  items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Button & Font Styles
                 </div>{' '}
@@ -439,12 +439,12 @@ export default function Home() {
 
         <section
           id="pricing"
-          className="border-t border-gray-200 relative w-full bg-gray-100 mb-[100px] py-20 flex text-center items-center flex-col m-auto gap-[30px]"
+          className="border-t relative w-full mb-[100px] py-20 flex text-center items-center flex-col m-auto gap-[30px]"
         >
-          <h2 className="text-4xl font-bold font-serif tracking-tight text-slate-800">
+          <h2 className="text-4xl font-bold font-serif tracking-tight text-slate-900">
             {language.pricing.headline}
           </h2>
-          <p className="md:w-5/12 text-lg tracking-tight text-slate-800 font-medium lh-3 leading-9 break-words">
+          <p className="md:w-5/12 text-lg tracking-tight text-white font-medium lh-3 leading-9 break-words">
             {language.pricing.subheadline}
           </p>
           <RadioGroup
@@ -459,7 +459,7 @@ export default function Home() {
                 <span
                   className={`${
                     checked && 'bg-slate-900 text-white'
-                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white flex items-center justify-center rounded-full py-3 px-5 font-medium`}
+                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-s flex items-center justify-center rounded-full py-3 px-5 font-medium`}
                 >
                   {language.price.monthly}
                 </span>
@@ -572,7 +572,10 @@ export default function Home() {
               </div>
               <div className="md:w-6/12 w-10/12 flex gap-4 flex-col md:pl-5">
                 {language.pricing.pro.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-sm gap-2">
+                  <li
+                    key={feature}
+                    className="flex items-center text-sm font-bold gap-2"
+                  >
                     <CheckIcon className="w-6 h-6 mr-3 bg-slate-800 text-white rounded-full p-1" />
                     {feature}
                   </li>

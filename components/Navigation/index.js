@@ -22,7 +22,7 @@ const Navigation = ({ language }) => {
     <nav
       className={`${
         headerSticky
-          ? `bg-white/75 py-1.5 px-5 shadow-sm max-w-full py-2`
+          ? `bg-white/90 py-1.5 px-5 shadow-sm max-w-full py-2`
           : 'md:py-10 md:px-5 lg:px-5 xl:px-0 px-5 py-3'
       } navigation transition-all max-w-screen-xl backdrop-blur-xl m-auto sticky  top-0 z-50`}
     >
