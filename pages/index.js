@@ -444,7 +444,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold font-serif tracking-tight text-slate-900">
             {language.pricing.headline}
           </h2>
-          <p className="md:w-6/12 text-lg tracking-tight text-white font-medium lh-3 leading-9 break-words">
+          <p className="md:w-6/12 text-lg tracking-tight text-slate-900 font-medium lh-3 leading-9 break-words">
             {language.pricing.subheadline}
           </p>
           <RadioGroup
@@ -459,7 +459,7 @@ export default function Home() {
                 <span
                   className={`${
                     checked && 'bg-slate-900 text-white'
-                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-s flex items-center justify-center rounded-full py-3 px-5 font-medium`}
+                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-2 font-medium`}
                 >
                   {language.price.monthly}
                 </span>
@@ -470,7 +470,7 @@ export default function Home() {
                 <span
                   className={`${
                     checked && 'bg-slate-900 text-white'
-                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white flex items-center justify-center rounded-full py-3 px-5 font-medium`}
+                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-2 font-medium`}
                 >
                   {language.price.yearly}
                 </span>
