@@ -438,148 +438,13 @@ export default function Home() {
         </section>
 
         <section
-          id="secondary-features"
-          aria-label="Features for building a portfolio"
-          className="py-20 w-full sm:py-32"
-        >
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl sm:text-center">
-              <h2 className="text-3xl font-bold font-serif tracking-tight text-slate-800">
-                Now is the time to build your portfolio.
-              </h2>
-              <p className="mt-2 text-lg text-gray-600">
-                With typical market returns, you have to start young to secure
-                your future. With Pocket, it’s never too late to build your nest
-                egg.
-              </p>
-            </div>
-            <ul
-              role="list"
-              className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-3"
-            >
-              <li className="rounded-2xl border border-gray-200 p-8">
-                <svg viewBox="0 0 32 32" aria-hidden="true" className="h-8 w-8">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
-                    fill="#737373"
-                  />
-                  <path
-                    d="M12 25l8-8m0 0h-6m6 0v6"
-                    stroke="#171717"
-                    strokeWidth={2}
-                    strokeLinecap="round"
-                  />
-                  <circle
-                    cx={16}
-                    cy={16}
-                    r={16}
-                    fill="#A3A3A3"
-                    fillOpacity="0.2"
-                  />
-                </svg>
-                <h3 className="mt-6 font-semibold text-gray-900">
-                  Invest any amount
-                </h3>
-                <p className="mt-2 text-gray-700">
-                  Whether it’s $1 or $1,000,000, we can put your money to work
-                  for you.
-                </p>
-              </li>
-              <li className="rounded-2xl border border-gray-200 p-8">
-                <svg viewBox="0 0 32 32" aria-hidden="true" className="h-8 w-8">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M9 0a4 4 0 00-4 4v24a4 4 0 004 4h14a4 4 0 004-4V4a4 4 0 00-4-4H9zm0 2a2 2 0 00-2 2v24a2 2 0 002 2h14a2 2 0 002-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9z"
-                    fill="#737373"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M9 13a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H10a1 1 0 01-1-1v-2zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H10a1 1 0 01-1-1v-2zm1 5a1 1 0 00-1 1v2a1 1 0 001 1h12a1 1 0 001-1v-2a1 1 0 00-1-1H10z"
-                    fill="url(#:R1adm:-gradient)"
-                  />
-                  <rect
-                    x={9}
-                    y={6}
-                    width={14}
-                    height={4}
-                    rx={1}
-                    fill="#171717"
-                  />
-                  <circle
-                    cx={16}
-                    cy={16}
-                    r={16}
-                    fill="#A3A3A3"
-                    fillOpacity="0.2"
-                  />
-                  <defs>
-                    <linearGradient
-                      id=":R1adm:-gradient"
-                      x1={16}
-                      y1={12}
-                      x2={16}
-                      y2={28}
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#737373" />
-                      <stop offset={1} stopColor="#737373" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                </svg>
-                <h3 className="mt-6 font-semibold text-gray-900">
-                  Build a balanced portfolio
-                </h3>
-                <p className="mt-2 text-gray-700">
-                  Invest in different industries to find the most opportunities
-                  to win huge.
-                </p>
-              </li>
-              <li className="rounded-2xl border border-gray-200 p-8">
-                <svg viewBox="0 0 32 32" aria-hidden="true" className="h-8 w-8">
-                  <circle
-                    cx={16}
-                    cy={16}
-                    r={16}
-                    fill="#A3A3A3"
-                    fillOpacity="0.2"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M5 4a4 4 0 014-4h14a4 4 0 014 4v10h-2V4a2 2 0 00-2-2h-1.382a1 1 0 00-.894.553l-.448.894a1 1 0 01-.894.553h-6.764a1 1 0 01-.894-.553l-.448-.894A1 1 0 0010.382 2H9a2 2 0 00-2 2v24a2 2 0 002 2h5v2H9a4 4 0 01-4-4V4z"
-                    fill="#737373"
-                  />
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M24 32a8 8 0 100-16 8 8 0 000 16zm1-8.414V19h-2v5.414l4 4L28.414 27 25 23.586z"
-                    fill="#171717"
-                  />
-                </svg>
-                <h3 className="mt-6 font-semibold text-gray-900">
-                  Trade in real-time
-                </h3>
-                <p className="mt-2 text-gray-700">
-                  Get insider tips on big stock moves and act on them within
-                  seconds.
-                </p>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section
           id="pricing"
-          className="border-t border-gray-200 relative w-full bg-gray-100 mb-[100px] py-16 flex text-center items-center flex-col m-auto gap-[30px] px-10"
+          className="border-t border-gray-200 relative w-full bg-gray-100 mb-[100px] py-20 flex text-center items-center flex-col m-auto gap-[30px]"
         >
-          <h2 className="text-3xl font-bold font-serif tracking-tight text-slate-800">
+          <h2 className="text-4xl font-bold font-serif tracking-tight text-slate-800">
             {language.pricing.headline}
           </h2>
-          <p className="md:w-6/12 text-lg tracking-tight text-slate-800 font-medium lh-3 leading-9 break-words">
+          <p className="md:w-5/12 text-lg tracking-tight text-slate-800 font-medium lh-3 leading-9 break-words">
             {language.pricing.subheadline}
           </p>
           <RadioGroup
@@ -616,7 +481,7 @@ export default function Home() {
               src={language.pricing.save20}
             />
           </RadioGroup>
-          <div className="md:w-7/12 bg-white w-full pt-5 border-2 border-neutral-100 md:p-12 p-0 rounded-3xl">
+          <div className="md:w-6/12 bg-white w-full pt-5 border-2 border-neutral-100 md:p-12 p-0 rounded-3xl">
             <div className="flex md:flex-row flex-col items-center md:gap-5">
               <div className="md:w-6/12 w-10/12">
                 <RadioGroup
@@ -705,16 +570,16 @@ export default function Home() {
                   </RadioGroup.Option>
                 </RadioGroup>
               </div>
-              <div className="md:w-6/12 w-10/12 mt-5 md:pl-5">
+              <div className="md:w-6/12 w-10/12 flex gap-4 flex-col md:pl-5">
                 {language.pricing.pro.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-sm">
-                    <CheckIcon className="w-5 h-5" />
+                  <li key={feature} className="flex items-center text-sm gap-2">
+                    <CheckIcon className="w-6 h-6 mr-3 bg-slate-800 text-white rounded-full p-1" />
                     {feature}
                   </li>
                 ))}
               </div>
             </div>
-            <div className="w-12/12 flex mb-5 flex-col items-center">
+            <div className="w-12/12 flex mt-5 flex-col items-center">
               <a
                 onClick={() => handleCheckout()}
                 className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
