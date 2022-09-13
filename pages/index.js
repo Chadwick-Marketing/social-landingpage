@@ -439,12 +439,12 @@ export default function Home() {
 
         <section
           id="pricing"
-          className="border-t relative w-full mb-[100px] py-20 flex text-center items-center flex-col m-auto gap-[30px]"
+          className="border-t max-w-screen-xl px-10 relative w-full mb-[100px] py-20 flex text-center items-center flex-col m-auto gap-[30px]"
         >
           <h2 className="text-4xl font-bold font-serif tracking-tight text-slate-900">
             {language.pricing.headline}
           </h2>
-          <p className="md:w-5/12 text-lg tracking-tight text-white font-medium lh-3 leading-9 break-words">
+          <p className="md:w-6/12 text-lg tracking-tight text-white font-medium lh-3 leading-9 break-words">
             {language.pricing.subheadline}
           </p>
           <RadioGroup
@@ -481,7 +481,7 @@ export default function Home() {
               src={language.pricing.save20}
             />
           </RadioGroup>
-          <div className="md:w-6/12 bg-white w-full pt-5 border-2 border-neutral-100 md:p-12 p-0 rounded-3xl">
+          <div className="md:w-8/12 bg-white w-full pt-5 border-2 border-neutral-100 md:p-12 p-0 rounded-3xl">
             <div className="flex md:flex-row flex-col items-center md:gap-5">
               <div className="md:w-6/12 w-10/12">
                 <RadioGroup
