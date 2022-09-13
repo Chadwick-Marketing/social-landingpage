@@ -439,7 +439,7 @@ export default function Home() {
 
         <section
           id="pricing"
-          className="border-t max-w-screen-xl px-10 relative w-full mb-[100px] py-20 flex text-center items-center flex-col m-auto gap-[30px]"
+          className="max-w-screen-xl px-10 relative w-full mb-[100px] py-20 flex text-center items-center flex-col m-auto gap-[30px]"
         >
           <h2 className="text-4xl font-bold font-serif tracking-tight text-slate-900">
             {language.pricing.headline}
