@@ -447,7 +447,7 @@ export default {
     faqTitle: 'FAQ',
     headline: 'Get started today',
     subheadline:
-      'Choose your plan, go ahead and build your new bio link where it makes the most sense: on your website.',
+      'Join 100+ creators, bloggers and makers and start publishing your content today.',
     switch: {
       monthly: 'Yearly payment',
       yearly: 'One-time payment',

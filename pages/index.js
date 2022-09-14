@@ -322,11 +322,11 @@ export default function Home() {
                 </div>{' '}
                 <div className="flex font-bold items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Button & Font Styles
+                  Thumbnails & Icons
                 </div>{' '}
                 <div className="flex font-bold items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Button & Font Styles
+                  Animations & More2
                 </div>
               </div>
               <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg tracking-tight text-slate-800 font-medium ">
@@ -439,7 +439,7 @@ export default function Home() {
 
         <section
           id="pricing"
-          className="max-w-screen-xl px-10 relative w-full mb-[100px] py-20 flex text-center items-center flex-col m-auto gap-[30px]"
+          className="max-w-screen-xl px-10 relative w-full py-20 flex text-center items-center flex-col m-auto gap-[30px]"
         >
           <h2 className="text-4xl font-bold font-serif tracking-tight text-slate-900">
             {language.pricing.headline}
@@ -594,6 +594,38 @@ export default function Home() {
               <p className="text-sm mt-3 font-medium text-gray-600">
                 {language.trial}
               </p>
+              <div className="mt-8 lg:mt-12 lg:flex lg:items-center lg:justify-center">
+                <div className="flex flex-shrink-0 justify-center -space-x-4 overflow-hidden lg:justify-start">
+                  <img
+                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                    src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fayush.jpeg"
+                    alt="Ayush"
+                  />
+                  <img
+                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                    src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fanthony.png"
+                    alt="Anthony"
+                  />
+                  <img
+                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                    src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fvensy.png"
+                    alt="Vensy"
+                  />
+                  <img
+                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
+                    src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Froberto.png"
+                    alt="Roberto"
+                  />
+                </div>
+                <p className="mt-4 text-center text-lg text-gray-900 lg:mt-0 lg:ml-4">
+                  Join{/* */}{' '}
+                  <span className="font-bold">
+                    170+ creators, bloggers and makers
+                  </span>{' '}
+                  <br />
+                  and start publishing your content today
+                </p>
+              </div>
             </div>
           </div>
           <p
@@ -729,7 +761,7 @@ export default function Home() {
           </Transition>
         </section>
 
-        <section className="max-w-screen-xl w-full relative mt-[25px] md:flex text-center items-center flex-col m-auto gap-[50px] px-10">
+        <section className="max-w-screen-xl w-full relative md:flex text-center items-center flex-col m-auto gap-[50px] px-10">
           <h2 className="md:w-8/12  text-4xl md:mb-0 mb-10 md:block font-bold font-serif">
             {language.pricing.faqTitle}
           </h2>
