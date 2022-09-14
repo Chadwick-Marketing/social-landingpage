@@ -594,39 +594,39 @@ export default function Home() {
               <p className="text-sm mt-3 font-medium text-gray-600">
                 {language.trial}
               </p>
-              <div className="mt-8 lg:mt-12 lg:flex lg:items-center lg:justify-center">
-                <div className="flex flex-shrink-0 justify-center -space-x-4 overflow-hidden lg:justify-start">
-                  <img
-                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                    src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fayush.jpeg"
-                    alt="Ayush"
-                  />
-                  <img
-                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                    src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fanthony.png"
-                    alt="Anthony"
-                  />
-                  <img
-                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                    src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fvensy.png"
-                    alt="Vensy"
-                  />
-                  <img
-                    className="inline-block h-12 w-12 rounded-full ring-2 ring-white"
-                    src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Froberto.png"
-                    alt="Roberto"
-                  />
-                </div>
-                <p className="mt-4 text-center text-lg text-gray-900 lg:mt-0 lg:ml-4">
-                  Join{/* */}{' '}
-                  <span className="font-bold">
-                    170+ creators, bloggers and makers
-                  </span>{' '}
-                  <br />
-                  and start publishing your content today
-                </p>
-              </div>
             </div>
+          </div>
+          <div className="mt-8 lg:flex lg:items-center lg:justify-center">
+            <div className="flex flex-shrink-0 justify-center -space-x-4 overflow-hidden lg:justify-start">
+              <img
+                className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+                src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fayush.jpeg"
+                alt="Ayush"
+              />
+              <img
+                className="inline-block  h-10 w-10 rounded-full ring-2 ring-white"
+                src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fanthony.png"
+                alt="Anthony"
+              />
+              <img
+                className="inline-block  h-10 w-10 rounded-full ring-2 ring-white"
+                src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fvensy.png"
+                alt="Vensy"
+              />
+              <img
+                className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+                src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Froberto.png"
+                alt="Roberto"
+              />
+            </div>
+            <p className="mt-4 text-center text-lg text-gray-900 lg:mt-0 lg:ml-4">
+              Join{/* */}{' '}
+              <span className="font-bold">
+                170+ creators, bloggers and makers
+              </span>{' '}
+              <br />
+              and start publishing your content today
+            </p>
           </div>
           <p
             onClick={openInstallModal}
