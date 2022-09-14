@@ -459,7 +459,7 @@ export default function Home() {
                 <span
                   className={`${
                     checked && 'bg-slate-900 text-white'
-                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-2 font-medium`}
+                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
                 >
                   {language.price.monthly}
                 </span>
@@ -470,7 +470,7 @@ export default function Home() {
                 <span
                   className={`${
                     checked && 'bg-slate-900 text-white'
-                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-2 font-medium`}
+                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
                 >
                   {language.price.yearly}
                 </span>
