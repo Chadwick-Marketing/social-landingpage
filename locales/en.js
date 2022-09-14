@@ -45,14 +45,14 @@ export default {
   reach: {
     title: 'Grow & engage your audience.',
     video:
-      'https://ik.imagekit.io/chadwickmarketing/social/explainer-2-en_US_9geANtDzK.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1655649520932',
+      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker_GevlLmaxj.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1663176077177',
     content:
       "Use Social's automated WordPress integrations to integrate your latest blog, products, or other content. The easiest way to grow your reach.",
   },
   analytics: {
     title: "Know what's happening",
     video:
-      'https://ik.imagekit.io/chadwickmarketing/social/explainer-3-en_US_MA7okSkQI.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1654451163339',
+      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker_GevlLmaxj.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1663176077177',
     content:
       'Track the activity of your bio link over time, analyze clicks, and learn what appeals to your audience. Gradually deliver more content that keeps them engaged.',
   },
@@ -116,7 +116,7 @@ export default {
     description:
       'Build your bio link right on your website. Grow your audience while staying on-brand – without third-party tools.',
   },
-  trial: 'Try 7 days for free, cancel anytime',
+  trial: '7 days free, cancel anytime',
   oneSite: '1 site',
   threeSites: '3 sites',
   tenSites: '10 sites',

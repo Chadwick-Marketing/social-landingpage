@@ -341,7 +341,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-row-reverse max-w-screen-lg  gap-20 py-10 m-auto">
+          <div className="flex flex-row-reverse max-w-screen-lg items-center gap-20 py-10 m-auto">
             <div className="md:w-6/12 rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
               <video
                 className="video rounded-3xl"
@@ -387,7 +387,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex max-w-screen-lg gap-20 m-auto py-20">
+          <div className="flex max-w-screen-lg gap-20 items-center m-auto py-20">
             <div className="md:w-6/12 rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
               <video
                 className="video rounded-3xl"
@@ -441,7 +441,7 @@ export default function Home() {
           id="pricing"
           className="max-w-screen-xl px-10 relative w-full py-20 flex text-center items-center flex-col m-auto gap-[30px]"
         >
-          <h2 className="text-4xl font-bold font-serif tracking-tight text-slate-900">
+          <h2 className="md:text-5xl text-3xl font-bold font-serif tracking-tight text-slate-900">
             {language.pricing.headline}
           </h2>
           <p className="md:w-6/12 text-lg tracking-tight text-slate-900 font-medium lh-3 leading-9 break-words">
@@ -596,7 +596,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="mt-8 lg:flex lg:items-center lg:justify-center">
+          <div className="mt-2 lg:flex lg:items-center lg:justify-center">
             <div className="flex flex-shrink-0 justify-center -space-x-4 overflow-hidden lg:justify-start">
               <img
                 className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
@@ -619,7 +619,7 @@ export default function Home() {
                 alt="Roberto"
               />
             </div>
-            <p className="mt-4 text-center text-lg text-gray-900 lg:mt-0 lg:ml-4">
+            <p className="mt-4 text-center text-base text-gray-900 lg:mt-0 lg:ml-4">
               Join{/* */}{' '}
               <span className="font-bold">
                 170+ creators, bloggers and makers
