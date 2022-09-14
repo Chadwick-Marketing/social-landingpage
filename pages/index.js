@@ -576,7 +576,7 @@ export default function Home() {
                     key={feature}
                     className="flex items-center text-sm font-bold gap-2"
                   >
-                    <CheckIcon className="w-6 h-6 mr-3 bg-slate-800 text-white rounded-full p-1" />
+                    <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                     {feature}
                   </li>
                 ))}
