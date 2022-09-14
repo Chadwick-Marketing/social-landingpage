@@ -239,7 +239,7 @@ export default function Home() {
             </p>
             <div className="flex justify-center mt-5 gap-3 items-center">
               <Link href="#pricing">
-                <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
+                <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
                   <span className="font-medium">{language.heroCta[1]}</span>
                   {language.heroCta[2]}
                 </a>
@@ -334,7 +334,7 @@ export default function Home() {
               </p>
 
               <Link href="#pricing">
-                <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
+                <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
                   <span className="font-normal">{language.heroCta[1]}</span>{' '}
                   {language.heroCta[2]}
                 </a>
@@ -380,7 +380,7 @@ export default function Home() {
                 {language.reach.content}
               </p>
               <Link href="#pricing">
-                <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
+                <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
                   <span className="font-normal">{language.heroCta[1]}</span>{' '}
                   {language.heroCta[2]}
                 </a>
@@ -428,7 +428,7 @@ export default function Home() {
               </p>
 
               <Link href="#pricing">
-                <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
+                <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
                   <span className="font-normal">{language.heroCta[1]}</span>{' '}
                   {language.heroCta[2]}
                 </a>
@@ -458,7 +458,7 @@ export default function Home() {
               {({ checked }) => (
                 <span
                   className={`${
-                    checked && 'bg-slate-900 text-white'
+                    checked && 'bg-tech text-white'
                   } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
                 >
                   {language.price.monthly}
@@ -469,7 +469,7 @@ export default function Home() {
               {({ checked }) => (
                 <span
                   className={`${
-                    checked && 'bg-slate-900 text-white'
+                    checked && 'bg-tech text-white'
                   } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
                 >
                   {language.price.yearly}
@@ -500,7 +500,7 @@ export default function Home() {
                         <div className="shrink-0 flex">
                           <CheckIcon
                             className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && 'text-black bg-slate-900'
+                              checked && 'text-black bg-tech'
                             }`}
                           />
                           {language.oneSite}
@@ -526,7 +526,7 @@ export default function Home() {
                         <div className="shrink-0 flex">
                           <CheckIcon
                             className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && 'text-black bg-slate-900 border-tech'
+                              checked && 'text-black bg-tech border-tech'
                             }`}
                           />
                           {language.threeSites}
@@ -552,7 +552,7 @@ export default function Home() {
                         <div className="shrink-0 flex">
                           <CheckIcon
                             className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && 'text-black bg-slate-900 border-tech'
+                              checked && 'text-black bg-tech border-tech'
                             }`}
                           />
                           {language.tenSites}
@@ -585,7 +585,7 @@ export default function Home() {
             <div className="w-12/12 flex mt-5 flex-col items-center">
               <a
                 onClick={() => handleCheckout()}
-                className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-slate-900 text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
+                className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
               >
                 <span className="font-medium">
                   {language.pricing.startTrial}
@@ -723,7 +723,7 @@ export default function Home() {
                         <div className="mt-4 text-right">
                           <button
                             type="submit"
-                            className="inline-flex justify-center rounded-full border border-transparent bg-slate-900 text-white px-4 py-3 text-sm font-medium  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            className="inline-flex justify-center rounded-full border border-transparent bg-tech text-white px-4 py-3 text-sm font-medium  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                           >
                             {installModal.loading && (
                               <svg
