@@ -38,7 +38,7 @@ export default {
   branding: {
     title: 'Create your bio link in minutes.',
     video:
-      'https://ik.imagekit.io/chadwickmarketing/social/explainer-1-en_US_HX1knAdle.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1654365146545',
+      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker_GevlLmaxj.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1663176077177',
     content:
       'Upload a profile image, customize font styles, add your content, and publish your bio link on your website - in less than five minutes.',
   },

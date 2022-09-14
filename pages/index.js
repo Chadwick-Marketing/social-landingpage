@@ -293,7 +293,7 @@ export default function Home() {
           </div>
         </section>
         <section className="w-full bg-white p-9 md:mx-10  border-2 border-neutral-100 relative mt-[150px]  md:flex items-center flex-col m-auto ">
-          <div className="flex max-w-screen-lg gap-20 m-auto py-10">
+          <div className="flex max-w-screen-lg gap-20 m-auto items-center py-10">
             <div className="md:w-6/12 rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
               <video
                 className="video rounded-3xl"
