@@ -399,10 +399,10 @@ export default function Home() {
             </div>
             <div className="md:w-6/12 py-20">
               <h2 className="lg:leading-none text-5xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
-                Gain
+                Gain meaningful stats,
                 <div className="relative text-[#4353FF] mr-2 inline w-fit">
                   {' '}
-                  meaningful insights.
+                  in realtime.
                 </div>
               </h2>
               <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
