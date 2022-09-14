@@ -11,7 +11,7 @@ export default {
     "Social's bio link is the launchpad to your latest video, article, recipe, or product - to anywhere you are online.",
   heroMobile: 'The ultimate link platform for your website',
   heroDescription:
-    'With Social, you create a place to share your links, sell your products, and grow your audience – without ever leaving your website.',
+    'With Social, you turn your website into a launchpad to your links, posts, products, and more. A place your fans will love.',
   installModal: {
     title: "Please enter your website's URL",
     titleSuccess: "Great! Let's install Social",
