@@ -11,7 +11,7 @@ export default {
     "Social's bio link is the launchpad to your latest video, article, recipe, or product - to anywhere you are online.",
   heroMobile: 'The ultimate link platform for your website',
   heroDescription:
-    'Turn your website into a launchpad for your links, products & more - into a place your fans will love. Meet our bio link builder for WordPress.',
+    'Turn your website into a launchpad for your links, products, and more - into a place your fans will love. Meet our bio link builder for WordPress.',
   installModal: {
     title: "Please enter your website's URL",
     titleSuccess: "Great! Let's install Social",
