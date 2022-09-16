@@ -214,7 +214,7 @@ export default function Home() {
           <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
           <h1
             className="lg:text-5xl
-             md:w-6/12 text-slate-900 w-full text-4xl  font-bold font-serif"
+             xl:w-6/12 lg:w-8/12 w-full text-slate-900 w-full text-4xl  font-bold font-serif"
           >
             The
             <div className="relative text-tech mx-2 inline w-fit">complete</div>
