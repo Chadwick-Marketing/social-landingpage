@@ -222,7 +222,7 @@ export default function Home() {
           </h1>
           <div className="md:w-9/12 pb-10 flex items-center flex-col">
             <p
-              className={`md:pt-5 xl:w-8/12 w-9/12 font-inter text-lg text-slate-800 font-medium leading-9`}
+              className={`md:pt-5 pt-3 xl:w-8/12 w-10/12 font-inter text-lg text-slate-800 font-medium leading-9`}
             >
               {language.heroDescription}
             </p>
@@ -285,8 +285,8 @@ export default function Home() {
           </div>
         </section>
         <section className="w-full bg-white p-9 md:mx-10  border-2 border-neutral-100 relative mt-[150px]  md:flex items-center flex-col m-auto ">
-          <div className="flex max-w-screen-lg gap-20 m-auto items-center py-10">
-            <div className="md:w-6/12 rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
+          <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
+            <div className="md:w-6/12 w-full rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
               <video
                 className="video rounded-3xl"
                 loop
@@ -295,8 +295,8 @@ export default function Home() {
                 src={language.branding.video}
               ></video>
             </div>
-            <div className="md:w-6/12 py-20">
-              <h2 className="lg:leading-none text-5xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
+            <div className="md:w-6/12 w-full py-20">
+              <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
                 Create your bio link{' '}
                 <div className="relative text-[#4353FF] ml-2 inline w-fit">
                   {' '}
@@ -333,8 +333,8 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex flex-row-reverse max-w-screen-lg items-center gap-20 py-10 m-auto">
-            <div className="md:w-6/12 rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
+          <div className="flex md:flex-row-reverse flex-col max-w-screen-lg items-center gap-20 py-10 m-auto">
+            <div className="md:w-6/12 w-full rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
               <video
                 className="video rounded-3xl"
                 loop
@@ -344,7 +344,7 @@ export default function Home() {
               ></video>
             </div>
             <div className="md:w-6/12 py-20 ">
-              <h2 className="lg:leading-none text-5xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
+              <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
                 Share your work in
                 <div className="relative text-[#4353FF] ml-2 inline w-fit">
                   limitless ways.
@@ -379,7 +379,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex max-w-screen-lg gap-20 items-center m-auto py-20">
+          <div className="flex md:flex-row-reverse flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
             <div className="md:w-6/12 rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
               <video
                 className="video rounded-3xl"
@@ -390,7 +390,7 @@ export default function Home() {
               ></video>
             </div>
             <div className="md:w-6/12 py-20">
-              <h2 className="lg:leading-none text-5xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
+              <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
                 Gather meaningful stats,
                 <div className="relative text-[#4353FF] mr-2 inline w-fit">
                   {' '}
