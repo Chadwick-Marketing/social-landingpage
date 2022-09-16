@@ -254,6 +254,7 @@ export default function Home() {
           <p className="md:w-6/12 pb-10 font-inter text-lg text-slate-800 font-medium leading-9 ">
             {language.linkContent}
           </p>
+
           <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
             <div className="links flex md:gap-10 gap-5">
               {language.links.map((link) => (
