@@ -6,12 +6,12 @@ export default {
   heroTwo: 'Share your links',
   heroThree: 'Analyze your links',
   heroFour: 'right on your website',
-  linkTitle: 'Everything you are. \n In one simple place.',
+  linkTitle: 'The sleakest way to share your content.',
   linkContent:
-    "Social's bio link is the launchpad to your latest video, article, recipe, or product - to anywhere you are online.",
+    "Whether it's videos, products, or posts - help your fans find your content by bringing it all together in one place.",
   heroMobile: 'The ultimate link platform for your website',
   heroDescription:
-    'Turn your website into a launchpad for your links, products, and more - into a place your fans will love. Meet our bio link builder for WordPress.',
+    'Turn your site into a launchpad for your links, products and more, with our bio link for WordPress. A place your fans will love.',
   installModal: {
     title: "Please enter your website's URL",
     titleSuccess: "Great! Let's install Social",
@@ -138,7 +138,7 @@ export default {
     { type: 'Contests' },
   ],
   heroImage:
-    'https://ik.imagekit.io/chadwickmarketing/social/Frame_7__1__xB7NlYK8Q.png?ik-sdk-version=javascript-1.4.3&updatedAt=1662743432482',
+    'https://ik.imagekit.io/chadwickmarketing/social/Frame_7__2__JkX-cj4bB.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1663346515276',
   heroCta: {
     1: 'Get started',
     2: "- it's free",

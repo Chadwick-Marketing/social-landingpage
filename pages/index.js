@@ -211,15 +211,13 @@ export default function Home() {
       <Navigation language={language} />
       <main className="flex items-center flex-col">
         <section className="header relative bg-no-repeat bg-top bg-[length:60%] flex justify-center items-center text-center px-8 flex-col max-w-screen-xl m-auto pt-5">
-          <div className="text-black text-sm bg-tech/5 w-fit p-1 px-4 mb-5 rounded-full">
-            {language.availability}
-          </div>
+          <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
           <h1
-            className="lg:text-[4.5rem]
-            xl:w-7/12 md:w-8/12 text-slate-900 w-full md:text-6xl whitespace-pre-line text-4xl  font-bold font-serif"
+            className="lg:text-5xl
+             md:w-7/12 text-slate-900 w-full text-4xl  font-bold font-serif"
           >
-            Your new bio <br /> link,
-            <div className="relative text-[#4353FF] ml-2 inline w-fit">
+            The
+            <div className="relative text-tech mx-2 inline w-fit">
               <svg
                 aria-hidden="true"
                 viewBox="0 0 418 42"
@@ -228,19 +226,22 @@ export default function Home() {
               >
                 <path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path>
               </svg>
-              done right.
+              complete
             </div>
+            bio link solution for WordPress.
           </h1>
           <div className="md:w-9/12 pb-10 flex items-center flex-col">
             <p
-              className={`md:pt-6 xl:w-9/12 w-9/12 font-inter text-lg tracking-tight text-slate-800 font-medium lh-3 leading-9 break-words`}
+              className={`md:pt-6 w-8/12 font-inter text-lg tracking-tight text-slate-800 font-medium lh-3 leading-9 break-words`}
             >
               {language.heroDescription}
             </p>
             <div className="flex justify-center mt-5 gap-3 items-center">
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
-                  <span className="font-medium">{language.heroCta[1]}</span>
+                  <span className="font-medium mr-1">
+                    {language.heroCta[1]}
+                  </span>
                   {language.heroCta[2]}
                 </a>
               </Link>
@@ -254,11 +255,11 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <img className="md:w-10/12 w-12/12 mt-10" src={language.heroImage} />
+          <img className="md:w-9/12 w-12/12 " src={language.heroImage} />
         </section>
         <section className="max-w-screen-xl w-full relative mt-[100px] overflow-hidden flex  text-center items-center flex-col m-auto md:gap-[20px] md:px-10 px-8">
           <h2 className="lg:w-6/12 md:w-10/12 md:text-5xl text-3xl md:block font-bold text-slate-900 whitespace-pre-line font-serif">
-            {language.linkTitle}
+            Everything you are. <br /> In one simple place.
           </h2>
           <p className="md:w-5/12 pb-10 font-inter text-lg tracking-tight text-slate-800 font-medium lh-3 leading-9 ">
             {language.linkContent}
@@ -312,21 +313,21 @@ export default function Home() {
                 </div>
               </h2>
               <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
-                <div className="flex font-semibold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Custom Backgrounds
                 </div>
-                <div className="flex font-semibold  items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Button & Font Styles
                 </div>{' '}
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Thumbnails & Icons
                 </div>{' '}
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Animations & More2
+                  Animations & More
                 </div>
               </div>
               <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg tracking-tight text-slate-800 font-medium ">
