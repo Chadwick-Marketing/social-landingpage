@@ -11,7 +11,7 @@ export default {
     "Whether it's videos, products, or posts - help your fans find your content by bringing it all together in one place.",
   heroMobile: 'The ultimate link platform for your website',
   heroDescription:
-    'Turn your site into a launchpad for your links, products and more, with our bio link for WordPress. A place your fans will love.',
+    'Turn your site into a launchpad for your links, products, and more - with our bio link for WordPress. A place your fans will love.',
   installModal: {
     title: "Please enter your website's URL",
     titleSuccess: "Great! Let's install Social",
@@ -52,7 +52,7 @@ export default {
   analytics: {
     title: "Know what's happening",
     video:
-      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker_GevlLmaxj.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1663176077177',
+      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker_fnFea3Vwu.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1663349171581',
     content:
       'Track the activity of your bio link over time, analyze clicks, and learn what appeals to your audience. Gradually deliver more content that keeps them engaged.',
   },

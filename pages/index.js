@@ -213,8 +213,8 @@ export default function Home() {
         <section className="header relative bg-no-repeat bg-top bg-[length:60%] flex justify-center items-center text-center px-8 flex-col max-w-screen-xl m-auto pt-5">
           <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
           <h1
-            className="lg:text-6xl
-             md:w-8/12 text-slate-900 w-full text-4xl  font-bold font-serif"
+            className="lg:text-5xl
+             md:w-6/12 text-slate-900 w-full text-4xl  font-bold font-serif"
           >
             The
             <div className="relative text-tech mx-2 inline w-fit">
@@ -228,7 +228,7 @@ export default function Home() {
               </svg>
               complete
             </div>
-            bio link solution for WordPress.
+            bio link solution for WordPress
           </h1>
           <div className="md:w-9/12 pb-10 flex items-center flex-col">
             <p
@@ -395,7 +395,7 @@ export default function Home() {
                 loop
                 playsInline
                 muted
-                src={language.branding.video}
+                src={language.analytics.video}
               ></video>
             </div>
             <div className="md:w-6/12 py-20">
