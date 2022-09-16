@@ -222,7 +222,7 @@ export default function Home() {
           </h1>
           <div className="md:w-9/12 pb-10 flex items-center flex-col">
             <p
-              className={`md:pt-5 pt-3 xl:w-8/12 w-10/12 font-inter text-lg text-slate-800 font-medium leading-9`}
+              className={`md:pt-5 pt-3 xl:w-8/12 w-9/12 font-inter text-lg text-slate-800 font-medium leading-9`}
             >
               {language.heroDescription}
             </p>
