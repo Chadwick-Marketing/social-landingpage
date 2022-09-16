@@ -213,8 +213,8 @@ export default function Home() {
         <section className="header relative bg-no-repeat bg-top bg-[length:60%] flex justify-center items-center text-center px-8 flex-col max-w-screen-xl m-auto pt-5">
           <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
           <h1
-            className="lg:text-5xl
-             md:w-7/12 text-slate-900 w-full text-4xl  font-bold font-serif"
+            className="lg:text-6xl
+             md:w-8/12 text-slate-900 w-full text-4xl  font-bold font-serif"
           >
             The
             <div className="relative text-tech mx-2 inline w-fit">
@@ -232,7 +232,7 @@ export default function Home() {
           </h1>
           <div className="md:w-9/12 pb-10 flex items-center flex-col">
             <p
-              className={`md:pt-6 w-8/12 font-inter text-lg tracking-tight text-slate-800 font-medium lh-3 leading-9 break-words`}
+              className={`md:pt-5 xl:w-8/12 w-9/12 font-inter text-lg text-slate-800 font-medium leading-9`}
             >
               {language.heroDescription}
             </p>
@@ -261,7 +261,7 @@ export default function Home() {
           <h2 className="lg:w-6/12 md:w-10/12 md:text-5xl text-3xl md:block font-bold text-slate-900 whitespace-pre-line font-serif">
             Everything you are. <br /> In one simple place.
           </h2>
-          <p className="md:w-5/12 pb-10 font-inter text-lg tracking-tight text-slate-800 font-medium lh-3 leading-9 ">
+          <p className="md:w-6/12 pb-10 font-inter text-lg text-slate-800 font-medium leading-9 ">
             {language.linkContent}
           </p>
           <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
@@ -330,7 +330,7 @@ export default function Home() {
                   Animations & More
                 </div>
               </div>
-              <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg tracking-tight text-slate-800 font-medium ">
+              <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg  text-slate-800 font-medium ">
                 {language.branding.content}
               </p>
 
