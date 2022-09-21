@@ -351,19 +351,19 @@ export default function Home() {
                 </div>
               </h2>
               <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Custom Backgrounds
                 </div>
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Button & Font Styles
                 </div>{' '}
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Button & Font Styles
                 </div>{' '}
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Button & Font Styles
                 </div>
@@ -398,19 +398,19 @@ export default function Home() {
                 </div>
               </h2>
               <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Custom Backgrounds
                 </div>
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Button & Font Styles
                 </div>{' '}
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Button & Font Styles
                 </div>{' '}
-                <div className="flex font-bold items-center">
+                <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Button & Font Styles
                 </div>

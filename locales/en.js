@@ -11,7 +11,7 @@ export default {
     "Whether it's videos, products, or posts - help your fans find your content by bringing it all together in one place.",
   heroMobile: 'The ultimate link platform for your website',
   heroDescription:
-    'Turn your site into a launchpad for your links, products, and more - with our bio link for WordPress. A place your fans will love.',
+    'Turn your site into a launchpad for your links, products, and more. Meet our bio link for WordPress - a place your fans will love.',
   installModal: {
     title: "Please enter your website's URL",
     titleSuccess: "Great! Let's install Social",
