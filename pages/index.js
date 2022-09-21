@@ -222,7 +222,7 @@ export default function Home() {
           </h1>
           <div className="md:w-9/12 pb-10 flex items-center flex-col">
             <p
-              className={`md:pt-5 pt-3 xl:w-8/12 w-9/12 font-inter text-lg text-slate-800 font-medium leading-9`}
+              className={`md:pt-5 pt-3 xl:w-8/12 w-8/12 font-inter text-lg text-slate-800 font-medium leading-9`}
             >
               {language.heroDescription}
             </p>
@@ -251,10 +251,9 @@ export default function Home() {
           <h2 className="lg:w-6/12 md:w-10/12 md:text-5xl text-3xl md:block font-bold text-slate-900 whitespace-pre-line font-serif">
             Everything you are. <br /> In one simple place.
           </h2>
-          <p className="md:w-6/12 pb-10 font-inter text-lg text-slate-800 font-medium leading-9 ">
+          <p className="md:w-6/12 pb-10 font-inter text-lg text-slate-800 font-medium leading-9">
             {language.linkContent}
           </p>
-
           <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
             <div className="links flex md:gap-10 gap-5">
               {language.links.map((link) => (
