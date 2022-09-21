@@ -379,7 +379,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex md:flex-row-reverse flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
+          <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
             <div className="md:w-6/12 rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
               <video
                 className="video rounded-3xl"
