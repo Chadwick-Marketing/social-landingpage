@@ -156,9 +156,9 @@ export default function Home() {
 
   const handleCheckout = () => {
     let handler = FS.Checkout.configure({
-      plugin_id: '10045',
-      plan_id: '16915',
-      public_key: 'pk_7bbfec18fb763a123256e1b643320',
+      plugin_id: '10702',
+      plan_id: '18404',
+      public_key: 'pk_b8bb9e62381f312b76f0633cd602a',
       image:
         'https://ik.imagekit.io/chadwickmarketing/social/icon_128_uEfTliaqvG.png',
       currency: 'auto',
@@ -214,15 +214,15 @@ export default function Home() {
           <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
           <h1
             className="lg:text-5xl
-             xl:w-6/12 md:w-7/12 w-full text-slate-900 w-full text-4xl  font-bold font-serif"
+             xl:w-7/12 md:w-7/12 w-full text-slate-900 w-full text-4xl  font-bold font-serif"
           >
             The
             <div className="relative text-tech mx-2 inline w-fit">complete</div>
             bio link solution for WordPress
           </h1>
-          <div className="md:w-9/12 pb-10 flex items-center flex-col">
+          <div className="md:w-11/12 pb-10 flex items-center flex-col">
             <p
-              className={`md:pt-5 pt-3 xl:w-8/12 w-8/12 font-inter text-lg text-slate-800 font-medium leading-9`}
+              className={`md:pt-5 pt-3 xl:w-7/12 md:w-9/12 w-12/12 font-inter text-lg text-slate-800 font-medium leading-9`}
             >
               {language.heroDescription}
             </p>
@@ -245,7 +245,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <img className="md:w-9/12 w-12/12 " src={language.heroImage} />
+          <img className="md:w-10/12 w-12/12 " src={language.heroImage} />
         </section>
         <section className="max-w-screen-xl w-full relative mt-[100px] overflow-hidden flex  text-center items-center flex-col m-auto md:gap-[20px] md:px-10 px-8">
           <h2 className="lg:w-6/12 md:w-10/12 md:text-5xl text-3xl md:block font-bold text-slate-900 whitespace-pre-line font-serif">
@@ -415,7 +415,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg tracking-tight text-slate-800 font-medium ">
-                {language.branding.content}
+                {language.analytics.content}
               </p>
 
               <Link href="#pricing">
@@ -491,7 +491,7 @@ export default function Home() {
                         <div className="shrink-0 flex">
                           <CheckIcon
                             className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && 'text-black bg-tech'
+                              checked && 'text-white bg-tech'
                             }`}
                           />
                           {language.oneSite}
@@ -517,7 +517,7 @@ export default function Home() {
                         <div className="shrink-0 flex">
                           <CheckIcon
                             className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && 'text-black bg-tech border-tech'
+                              checked && 'text-white bg-tech border-tech'
                             }`}
                           />
                           {language.threeSites}
@@ -543,7 +543,7 @@ export default function Home() {
                         <div className="shrink-0 flex">
                           <CheckIcon
                             className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && 'text-black bg-tech border-tech'
+                              checked && 'text-white bg-tech border-tech'
                             }`}
                           />
                           {language.tenSites}
@@ -613,10 +613,10 @@ export default function Home() {
             <p className="mt-4 text-center text-base text-gray-900 lg:mt-0 lg:ml-4">
               Join{/* */}{' '}
               <span className="font-bold">
-                170+ creators, bloggers and makers
+                100's of creators, bloggers and makers
               </span>{' '}
               <br />
-              and start publishing your content today
+              and start building your bio link today
             </p>
           </div>
           <p

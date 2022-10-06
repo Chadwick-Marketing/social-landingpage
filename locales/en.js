@@ -138,7 +138,7 @@ export default {
     { type: 'Contests' },
   ],
   heroImage:
-    'https://ik.imagekit.io/chadwickmarketing/social/Frame_7__2__JkX-cj4bB.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1663346515276',
+    'https://ik.imagekit.io/chadwickmarketing/social/Frame_7__2__JkX-cj4bB_D1_4_vP3p.png?ik-sdk-version=javascript-1.4.3&updatedAt=1665055593214',
   heroCta: {
     1: 'Get started',
     2: "- it's free",
