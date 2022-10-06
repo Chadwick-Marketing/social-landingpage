@@ -390,7 +390,7 @@ export default function Home() {
             </div>
             <div className="md:w-6/12 py-20">
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
-                Gather meaningful stats,
+                Get meaningful stats,
                 <div className="relative text-[#4353FF] mr-2 inline w-fit">
                   {' '}
                   in realtime.
