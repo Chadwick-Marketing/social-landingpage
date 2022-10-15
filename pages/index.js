@@ -269,7 +269,7 @@ export default function Home() {
             </div>
           </div>
           <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
-            <div className="links-2 flex md:gap-10 gap-5">
+            <div className="links-2 flex md:mt-0 mt-5 md:gap-10 gap-5">
               {language.links2.map((link) => (
                 <div
                   key={link}
@@ -342,7 +342,7 @@ export default function Home() {
                 src={language.reach.video}
               ></video>
             </div>
-            <div className="md:w-6/12 py-20 ">
+            <div className="md:w-6/12 md:py-20 ">
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
                 Share your work in
                 <div className="relative text-[#4353FF] ml-2 inline w-fit">
@@ -388,7 +388,7 @@ export default function Home() {
                 src={language.analytics.video}
               ></video>
             </div>
-            <div className="md:w-6/12 py-20">
+            <div className="md:w-6/12 md:py-20">
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
                 Get meaningful stats,
                 <div className="relative text-[#4353FF] mr-2 inline w-fit">
@@ -407,7 +407,7 @@ export default function Home() {
                 </div>{' '}
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Device, Geo & Browser Stats
+                  Beautiful Visualizations
                 </div>{' '}
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
@@ -430,7 +430,7 @@ export default function Home() {
 
         <section
           id="pricing"
-          className="max-w-screen-xl px-10 relative w-full py-20 flex text-center items-center flex-col m-auto gap-[30px]"
+          className="max-w-screen-xl md:px-10 px-5 relative w-full py-20 flex text-center items-center flex-col m-auto gap-[30px]"
         >
           <h2 className="md:text-5xl text-3xl font-bold font-serif tracking-tight text-slate-900">
             {language.pricing.headline}
@@ -745,7 +745,7 @@ export default function Home() {
           </Transition>
         </section>
 
-        <section className="max-w-screen-xl w-full relative md:flex text-center items-center flex-col m-auto gap-[50px] px-10">
+        <section className="max-w-screen-xl w-full relative md:flex text-center items-center flex-col m-auto gap-[50px] md:px-10 px-5">
           <h2 className="md:w-8/12  text-4xl md:mb-0 mb-10 md:block font-bold font-serif">
             {language.pricing.faqTitle}
           </h2>
