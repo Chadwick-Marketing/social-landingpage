@@ -214,7 +214,7 @@ export default function Home() {
           <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
           <h1
             className="lg:text-5xl
-             xl:w-7/12 md:w-7/12 w-full text-slate-900 w-full text-4xl  font-bold font-serif"
+             xl:w-7/12 md:w-8/12 w-full text-slate-900 w-full text-4xl  font-bold font-serif"
           >
             The
             <div className="relative text-tech mx-2 inline w-fit">complete</div>
@@ -222,7 +222,7 @@ export default function Home() {
           </h1>
           <div className="md:w-11/12 pb-10 flex items-center flex-col">
             <p
-              className={`md:pt-5 pt-3 xl:w-7/12 md:w-9/12 w-12/12 font-inter text-lg text-slate-800 font-medium leading-9`}
+              className={`md:pt-5 pt-3 xl:w-7/12 md:w-7/12 w-12/12 font-inter text-lg text-slate-800 font-medium leading-9`}
             >
               {language.heroDescription}
             </p>
@@ -259,7 +259,7 @@ export default function Home() {
               {language.links.map((link) => (
                 <div
                   key={link}
-                  className="text-slate-900 bg-white py-3 md:w-[200px] w-[100px] text-center rounded-full border-solid border border-gray-200"
+                  className="text-slate-900 bg-white py-3 md:w-[200px] w-[150px] text-center rounded-full border-solid border border-gray-200"
                 >
                   <h3 className="text-base font-serif font-bold">
                     {link.type}
@@ -590,24 +590,17 @@ export default function Home() {
           <div className="mt-2 lg:flex lg:items-center lg:justify-center">
             <div className="flex flex-shrink-0 justify-center -space-x-4 overflow-hidden lg:justify-start">
               <img
-                className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-                src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fayush.jpeg"
-                alt="Ayush"
-              />
-              <img
                 className="inline-block  h-10 w-10 rounded-full ring-2 ring-white"
-                src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fanthony.png"
-                alt="Anthony"
-              />
-              <img
-                className="inline-block  h-10 w-10 rounded-full ring-2 ring-white"
-                src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Fvensy.png"
-                alt="Vensy"
+                src="https://ik.imagekit.io/chadwickmarketing/social/9686740C-DCCF-42F6-983B-30683F791760_kbEjc_BVD.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654532793838"
               />
               <img
                 className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-                src="https://cdn.feather.blog?src=https%3A%2F%2Ffeather.so%2Fimages%2Froberto.png"
-                alt="Roberto"
+                src="https://ik.imagekit.io/chadwickmarketing/social/60EAD10D-A767-4C4D-BED0-7F25DF2850F7_pOZChPL7F.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654544909975"
+              />
+
+              <img
+                className="inline-block  h-10 w-10 rounded-full ring-2 ring-white"
+                src="https://ik.imagekit.io/chadwickmarketing/social/FEA14AC0-E0E8-4218-8E84-4F459823DC07_kMgoD5m_0.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654532791049"
               />
             </div>
             <p className="mt-4 text-center text-base text-gray-900 lg:mt-0 lg:ml-4">

@@ -52,7 +52,7 @@ export default {
   analytics: {
     title: "Know what's happening",
     video:
-      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker_fnFea3Vwu.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1663349171581',
+      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker__2__rXVA6rn2E.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1665761541101',
     content:
       'Track the activity of your bio link over time, analyze clicks, and learn what appeals to your audience. Gradually deliver more content that keeps them engaged.',
   },
@@ -62,11 +62,11 @@ export default {
       '@type': ['SoftwareApplication', 'Product'],
       applicationCategory: 'Plugin',
       operatingSystem: 'WordPress',
-      name: 'Link in Bio Builder \u2013 Social',
-      url: 'https://social.de.com/',
+      name: 'Link in Bio Creator \u2013 Social',
+      url: 'https://socialwp.io/',
       description:
-        'Build link in bio pages directly on your site. Customizable, GDPR-compliant and SEO-friendly.',
-      softwareVersion: '1.0.9',
+        'Build link in bio pages directly on your site. Customizable, accessible and SEO-friendly.',
+      softwareVersion: '1.1.0',
       fileFormat: 'application/zip',
       downloadUrl:
         'https://downloads.wordpress.org/plugin/social-lite.1.0.9.zip',
@@ -82,7 +82,7 @@ export default {
       interactionStatistic: {
         '@type': 'InteractionCounter',
         interactionType: 'http://schema.org/DownloadAction',
-        userInteractionCount: 1073,
+        userInteractionCount: 2019,
       },
       image: [
         'https://ik.imagekit.io/chadwickmarketing/social/icon_128_uEfTliaqvG.png?ik-sdk-version=javascript-1.4.3&updatedAt=1627638775783',
@@ -112,9 +112,9 @@ export default {
     },
   ],
   home: {
-    title: 'Social: Link in Bio Builder | WordPress Plugin',
+    title: 'Social: Link in Bio Creator | WordPress Plugin',
     description:
-      'Build your bio link right on your website. Grow your audience while staying on-brand – without third-party tools.',
+      'Build your bio link right on your website. Grow your audience while staying on-brand – without third-party tools.',
   },
   trial: '7 days free, cancel anytime',
   oneSite: '1 site',
@@ -499,7 +499,7 @@ export default {
       {
         question: 'What is a link in bio?',
         answer:
-          'On platforms like Instagram and others, you are only allowed to provide one link in your profile. But if you want to share multiple links with your fans, for example your latest blog post or a specific product of yours, a link-in bio page helps you do that. The link-in-bio page lists all your links. You can add them to your profile and avoid the problem of only being able to link to one link. ',
+          'On platforms like Instagram and others, you are only allowed to provide one link in your profile. But if you want to share multiple links with your fans, for example your latest blog post or a specific product of yours, a link in bio page helps you do that. The link in bio page lists all your links. You can add it to your profile and avoid the problem of only being able to link to one link. ',
       },
       {
         question: 'Why should I build my link in bio with Social?',
@@ -509,7 +509,7 @@ export default {
       {
         question: 'Can I customize the look of my link in bio?',
         answer:
-          'Of course. The free version of Social offers you a variety of pre-created themes that you can use to customize your link-in-bio page. If you upgrade to Social Pro, you can create your own themes and customize backgrounds, fonts, link styles, and more.',
+          'Of course. The free version of Social offers you a variety of pre-created themes that you can use to customize your link in bio page. If you upgrade to Social Pro, you can create your own themes and customize backgrounds, fonts, link styles, and more.',
       },
       {
         question: 'What platforms is Social available for?',
