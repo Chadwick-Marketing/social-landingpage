@@ -343,7 +343,7 @@ export default function Home() {
               ></video>
             </div>
             <div className="md:w-6/12 md:py-20 ">
-              <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-10 md:pt-0 whitespace-pre-line font-serif">
+              <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold whitespace-pre-line font-serif">
                 Share your work in
                 <div className="relative text-[#4353FF] ml-2 inline w-fit">
                   limitless ways.
@@ -358,14 +358,6 @@ export default function Home() {
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Blog & Video Embeds
                 </div>{' '}
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Social Feed Integrations
-                </div>{' '}
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Content Scheduling
-                </div>
               </div>
               <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg tracking-tight text-slate-800 font-medium ">
                 {language.reach.content}
@@ -473,7 +465,7 @@ export default function Home() {
             />
           </RadioGroup>
           <div className="md:w-8/12 bg-white w-full pt-5 border-2 border-neutral-100 md:p-12 p-0 rounded-3xl">
-            <div className="flex md:flex-row flex-col items-center md:gap-5">
+            <div className="flex md:flex-row flex-col items-center gap-5">
               <div className="md:w-6/12 w-10/12">
                 <RadioGroup
                   value={license.amount}
@@ -573,7 +565,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="w-12/12 flex mt-5 flex-col items-center">
+            <div className="w-12/12 flex mt-5 mb-0 md:mb-0 flex-col items-center">
               <a
                 onClick={() => handleCheckout()}
                 className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
