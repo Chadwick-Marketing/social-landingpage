@@ -352,19 +352,19 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Custom Backgrounds
+                  Different Link Types
                 </div>
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Button & Font Styles
+                  Blog & Video Embeds
                 </div>{' '}
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Button & Font Styles
+                  Social Feed Integrations
                 </div>{' '}
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Button & Font Styles
+                  Content Scheduling
                 </div>
               </div>
               <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg tracking-tight text-slate-800 font-medium ">
@@ -399,19 +399,19 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Custom Backgrounds
+                  Lifetime Analytics
                 </div>
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Button & Font Styles
+                  Individual Link Analytics
                 </div>{' '}
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Button & Font Styles
+                  Device, Geo & Browser Stats
                 </div>{' '}
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Button & Font Styles
+                  Custom Date Ranges
                 </div>
               </div>
               <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg tracking-tight text-slate-800 font-medium ">

@@ -38,14 +38,14 @@ export default {
   branding: {
     title: 'Create your bio link in minutes.',
     video:
-      'https://ik.imagekit.io/chadwickmarketing/social/Social-Explainer-Branding_hqgrzQDsa.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1663177978386',
+      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker_63lhStTeCf.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1665830587542',
     content:
       'Upload a profile image, customize font styles, add your content, and publish your bio link on your website - in less than five minutes.',
   },
   reach: {
     title: 'Grow & engage your audience.',
     video:
-      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker_GevlLmaxj.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1663176077177',
+      'https://ik.imagekit.io/chadwickmarketing/social/ezgif.com-gif-maker__2__DazlhlhbM.mp4?ik-sdk-version=javascript-1.4.3&updatedAt=1665834598608',
     content:
       "Use Social's automated WordPress integrations to integrate your latest blog, products, or other content. The easiest way to grow your reach.",
   },
