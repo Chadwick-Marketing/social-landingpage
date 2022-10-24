@@ -282,7 +282,6 @@ export default function Home() {
 
               <div className="fixed inset-0 overflow-y-auto">
                 <div className="flex min-h-full items-center justify-center p-4 text-center">
-               
                   <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -292,15 +291,16 @@ export default function Home() {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className=" transform transition-all">
-                    <div onClick={() => closeVideoModal()} className="cursor-pointer flex items-center justify-center w-10 h-10 bg-white ml-auto rounded-full mb-[0.5em] mt-[-2em] p-2 mr-[-2em]">
-                  <XIcon className="w-5 h-5" />
-                  </div>
-                  <div className="overflow-hidden rounded-2xl shadow-xl">
-                  <iframe className="rounded-2xl" width="560" height="315" src={`https://www.youtube-nocookie.com/embed/${videoModal.video}?controls=0`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                  </div>
-                    </Dialog.Panel>
+                  <Dialog.Panel className="transform transition-all w-full max-w-4xl">
+                      <div className="w-full max-w-4xl inline-block relative m-auto">
+                        <div className="overflow-hidden rounded-2xl shadow-xl h-0 w-full" style={{ paddingTop: "56.25%" }}>
+                          <iframe className="rounded-2xl absolute left-0 top-0 w-full h-full block" src={`https://www.youtube-nocookie.com/embed/${videoModal.video}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+                        </div>
+                      </div>
+                      <div onClick={() => closeVideoModal()} className="cursor-pointer flex items-center justify-center w-10 h-10 bg-white m-auto rounded-full mb-2 p-2">
+                        <XIcon className="w-5 h-5" />
+                      </div>
+                  </Dialog.Panel>
                   </Transition.Child>
                 </div>
               </div>
