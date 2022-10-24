@@ -46,7 +46,26 @@ export default function Home() {
     downloadLink: null,
   });
 
+  const [videoModal, setVideoModal] = useState({
+    open: false,
+    video: null,
+  });
+
   const [testimonial, setTestimonial] = useState(0);
+
+  const openVideoModal = (video) => {
+    setVideoModal({
+      open: true,
+      video: video,
+    });
+  };
+
+  const closeVideoModal = () => {
+    setVideoModal({
+      open: false,
+      video: null,
+    });
+  };
 
   const openInstallModal = () => {
     setInstallModal((previous) => ({ ...previous, open: true }));
@@ -235,14 +254,58 @@ export default function Home() {
                   {language.heroCta[2]}
                 </a>
               </Link>
-              <Link href="#">
                 <a
                   className="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300"
-                  onClick={() => (window.scrollTop = window.scrollTop + 50)}
+                  onClick={() => openVideoModal('snjPbqfqTyQ')}
                 >
-                  <span>Learn more</span>
+                  <svg aria-hidden="true" class="h-3 w-3 mr-2 flex-none fill-blue-600 group-active:fill-current"><path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z"></path></svg>
+                  <span>Watch video</span>
                 </a>
-              </Link>
+              <Transition appear show={videoModal.open} as={Fragment}>
+            <Dialog
+              as="div"
+              className="relative z-50"
+              onClose={closeVideoModal}
+            >
+              
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <div className="fixed inset-0 bg-black bg-opacity-25" />
+              </Transition.Child>
+
+              <div className="fixed inset-0 overflow-y-auto">
+                <div className="flex min-h-full items-center justify-center p-4 text-center">
+               
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    <Dialog.Panel className=" transform transition-all">
+                    <div onClick={() => closeVideoModal()} className="cursor-pointer flex items-center justify-center w-10 h-10 bg-white ml-auto rounded-full mb-[0.5em] mt-[-2em] p-3 mr-[-2em]">
+                  <XIcon />
+                  </div>
+                  <div className="overflow-hidden rounded-2xl shadow-xl">
+                  <iframe width="560" height="315" src={`https://www.youtube-nocookie.com/embed/${videoModal.video}?controls=0`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                  </div>
+                    </Dialog.Panel>
+                  </Transition.Child>
+                </div>
+              </div>
+            </Dialog>
+          </Transition>
             </div>
           </div>
           <img className="md:w-10/12 w-12/12 " src={language.heroImage} />
