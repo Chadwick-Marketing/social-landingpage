@@ -293,11 +293,11 @@ export default function Home() {
                     leaveTo="opacity-0 scale-95"
                   >
                     <Dialog.Panel className=" transform transition-all">
-                    <div onClick={() => closeVideoModal()} className="cursor-pointer flex items-center justify-center w-10 h-10 bg-white ml-auto rounded-full mb-[0.5em] mt-[-2em] p-3 mr-[-2em]">
-                  <XIcon />
+                    <div onClick={() => closeVideoModal()} className="cursor-pointer flex items-center justify-center w-10 h-10 bg-white ml-auto rounded-full mb-[0.5em] mt-[-2em] p-2 mr-[-2em]">
+                  <XIcon className="w-5 h-5" />
                   </div>
                   <div className="overflow-hidden rounded-2xl shadow-xl">
-                  <iframe width="560" height="315" src={`https://www.youtube-nocookie.com/embed/${videoModal.video}?controls=0`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe className="rounded-2xl" width="560" height="315" src={`https://www.youtube-nocookie.com/embed/${videoModal.video}?controls=0`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                   </div>
                     </Dialog.Panel>
