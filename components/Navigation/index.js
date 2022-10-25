@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Transition } from '@headlessui/react';
+import Countdown from 'react-countdown';
 
-const Navigation = ({ language }) => {
+const Navigation = ({ language, pricingInView }) => {
   const [headerSticky, setHeaderSticky] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', isSticky);
     return () => {
       window.removeEventListener('scroll', isSticky);
-    };
+    };s
   });
 
   const isSticky = (e) => {
@@ -18,15 +20,24 @@ const Navigation = ({ language }) => {
     setHeaderSticky(scrollTop >= 50);
   };
 
+  const countdownRenderer = ({ hours, minutes, seconds }) => {
+      return (<div className="flex gap-2 text-slate-800">
+        <span className='border border-grey-300 p-1  bg-white/20 rounded-lg text-xs text-center'>{hours}h</span>
+         <span className='border border-grey-300 p-1  bg-white/20 rounded-lg text-xs text-center'>{minutes}min</span>
+          <span className='border border-grey-300 p-1  bg-white/20 rounded-lg text-xs text-center'>{seconds}s</span>
+          </div>
+        );
+  };
+
   return (
     <nav
-      className={`${
+      className={`navigation sticky m-auto top-0 z-50`}
+    >
+      <div className={`${
         headerSticky
           ? `bg-white/90 py-1.5 px-5 shadow-sm max-w-full py-2`
-          : 'md:py-10 md:px-5 lg:px-5 xl:px-0 px-5 py-3'
-      } navigation transition-all max-w-screen-xl backdrop-blur-xl m-auto sticky  top-0 z-50`}
-    >
-      <div className="max-w-screen-xl m-auto items-center flex justify-between">
+          : 'md:py-10 md:px-5 lg:px-5 xl:px-0 px-5 py-3 max-w-screen-xl '
+      } backdrop-blur-xl  m-auto items-center flex justify-between transition-all `}>
         <div className="logo ">
           <Link href="/" passHref>
             <Image
@@ -52,7 +63,24 @@ const Navigation = ({ language }) => {
           </Link>
         </div>
       </div>
+      <Transition
+     show={pricingInView}
+     appear={true}
+     enter="transition ease-out duration-100"
+       enterFrom="transform opacity-0 scale-95"
+       enterTo="transform opacity-100 scale-100"
+       leave="transition ease-in duration-75"
+       leaveFrom="transform opacity-100 scale-100"
+       leaveTo="transform opacity-0 scale-95"
+   >
+     <div className="flex justify-center gap-2 items-center bg-gradient-to-r text-white py-1 from-[#e1eaff] to-[#fbf0f4] ">
+       <p className='text-xs text-slate-800 '>Launch sale: <strong>Up to 20% off</strong> on all plans. Time left:</p>
+       <Countdown date="2022-12-31" zeroPadTime={2}  renderer={countdownRenderer} />
+       
+     </div>
+   </Transition>
     </nav>
+    
   );
 };
 

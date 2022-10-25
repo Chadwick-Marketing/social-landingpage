@@ -1,19 +1,18 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
-import { useEffect, useState, Fragment } from 'react';
+import { useEffect, useState, Fragment, useRef } from 'react';
 import { Disclosure, RadioGroup, Transition, Dialog } from '@headlessui/react';
 import Link from 'next/link';
 import {
-  ShieldCheckIcon,
-  ServerIcon,
-  SearchCircleIcon,
   ChevronUpIcon,
   CheckIcon,
   ExclamationCircleIcon,
   XIcon,
+  CursorClickIcon,
   ColorSwatchIcon,
+  CodeIcon,
+  SearchIcon,
 } from '@heroicons/react/outline';
 
 import { jsonLdScriptProps } from 'react-schemaorg';
@@ -23,11 +22,12 @@ import en from '../locales/en';
 import jsonp from 'jsonp';
 
 export default function Home() {
-  const router = useRouter();
-
-  const { locale } = router;
 
   const language = en;
+
+  const linkWrapRefs = [useRef(null), useRef(null)];
+
+  const pricingRef = useRef(null);
 
   const [license, setLicense] = useState({
     amount: '1',
@@ -51,7 +51,7 @@ export default function Home() {
     video: null,
   });
 
-  const [testimonial, setTestimonial] = useState(0);
+  const [pricingInView, setPricingInView] = useState(false);
 
   const openVideoModal = (video) => {
     setVideoModal({
@@ -125,53 +125,6 @@ export default function Home() {
       });
   };
 
-  const playPauseVideo = () => {
-    let videos = document.querySelectorAll('video');
-
-    videos.forEach((video) => {
-      video.muted = true;
-
-      video.parentElement.insertAdjacentHTML(
-        'beforeend',
-        '<div class="play-pause absolute bottom-5 flex items-center justify-center h-8 w-8 left-5 cursor-pointer rounded-full font-bold bg-white">| |</div>'
-      );
-
-      let playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.then((_) => {
-          let observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.intersectionRatio !== 1 && !video.paused) {
-                  video.pause();
-                } else if (video.paused) {
-                  video.play();
-                }
-              });
-            },
-            { threshold: 0.1 }
-          );
-          observer.observe(video);
-        });
-      }
-    });
-
-    document.querySelectorAll('.play-pause').forEach((button) =>
-      button.addEventListener('click', (button) => {
-        let video = button.currentTarget.previousSibling;
-
-        if (!video.paused) {
-          video.pause();
-
-          button.currentTarget.textContent = '▶';
-        } else if (video.paused) {
-          video.play();
-
-          button.currentTarget.textContent = '| |';
-        }
-      })
-    );
-  };
 
   const handleCheckout = () => {
     let handler = FS.Checkout.configure({
@@ -192,17 +145,22 @@ export default function Home() {
   };
 
   useEffect(() => {
-    playPauseVideo();
 
-    window.addEventListener('scroll', () => {
-      document.querySelector('.links-2').style.transform = `translateX(${
-        window.scrollY * 0.25
-      }px)`;
+    const scrollListener = window.addEventListener('scroll', () => {
 
-      document.querySelector(
-        '.links-wrap .links'
-      ).style.transform = `translateX(${window.scrollY * -0.35}px)`;
+      linkWrapRefs[1].current.style.transform = `translateX(${window.scrollY * 0.25}px)`;
+
+      linkWrapRefs[0].current.style.transform = `translateX(${window.scrollY * -0.35}px)`;
+
     });
+
+    new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setPricingInView(entry.isIntersecting);
+        });
+      }
+    ).observe(pricingRef.current);
 
     jsonp('https://checkout.freemius.com/geo.json', null, (err, data) =>
       !err
@@ -212,6 +170,8 @@ export default function Home() {
           }))
         : console.error(err)
     );
+
+
   }, []);
 
   return (
@@ -227,7 +187,7 @@ export default function Home() {
         <link rel="alternate" hrefLang="x-default" href="https://socialwp.io" />
         <script {...jsonLdScriptProps(language.schema)} />
       </Head>
-      <Navigation language={language} />
+      <Navigation language={language} pricingInView={pricingInView}  />
       <main className="flex items-center flex-col">
         <section className="header relative bg-no-repeat bg-top bg-[length:60%] flex justify-center items-center text-center px-8 flex-col max-w-screen-xl m-auto pt-5">
           <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
@@ -255,7 +215,7 @@ export default function Home() {
                 </a>
               </Link>
                 <a
-                  className="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300"
+                  className="group cursor-pointer inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300"
                   onClick={() => openVideoModal('snjPbqfqTyQ')}
                 >
                   <svg aria-hidden="true" class="h-3 w-3 mr-2 flex-none fill-blue-600 group-active:fill-current"><path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z"></path></svg>
@@ -318,7 +278,7 @@ export default function Home() {
             {language.linkContent}
           </p>
           <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
-            <div className="links flex md:gap-10 gap-5">
+            <div ref={linkWrapRefs[0]} className="links flex md:gap-10 gap-5">
               {language.links.map((link) => (
                 <div
                   key={link}
@@ -332,7 +292,7 @@ export default function Home() {
             </div>
           </div>
           <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
-            <div className="links-2 flex md:mt-0 mt-5 md:gap-10 gap-5">
+            <div ref={linkWrapRefs[1]} className="links-2 flex md:mt-0 mt-5 md:gap-10 gap-5">
               {language.links2.map((link) => (
                 <div
                   key={link}
@@ -348,44 +308,37 @@ export default function Home() {
         </section>
         <section className="w-full bg-white p-9 md:mx-10  border-2 border-neutral-100 relative mt-[150px]  md:flex items-center flex-col m-auto ">
           <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
-            <div className="md:w-6/12 w-full rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
-              <video
-                className="video rounded-3xl"
-                loop
-                playsInline
-                muted
-                src={language.branding.video}
-              ></video>
+            <div className="md:w-6/12 w-full overflow-hidden relative ">
+             <img src="https://ik.imagekit.io/chadwickmarketing/social/social-design.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666691036620"/>
             </div>
             <div className="md:w-6/12 w-full py-20">
+            <h6 className="font-bold text-tech my-3 ">Easy setup</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold whitespace-pre-line font-serif">
-                Create your bio link{' '}
-                <div className="relative text-[#4353FF] ml-1 inline w-fit">
-                  {' '}
-                  in minutes.
-                </div>
+                Create your bio link in minutes
               </h2>
-              <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Custom Backgrounds
-                </div>
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Button & Font Styles
-                </div>{' '}
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Thumbnails & Icons
-                </div>{' '}
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Animations & More
-                </div>
-              </div>
-              <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg  text-slate-800 font-medium ">
+              <p className="pt-5 pb-10 font-inter text-lg text-slate-800 font-medium ">
                 {language.branding.content}
               </p>
+              <div className="grid grid-cols-2 gap-y-5 mb-8">
+                <div className="flex font-semibold font-serif items-center">
+                  <ColorSwatchIcon className="w-7 h-7 mr-3 bg-tech text-white rounded-full p-1" />
+                  Pre-made Designs
+                </div>
+                <div className="flex font-semibold font-serif items-center">
+                  <CursorClickIcon className="w-7 h-7 mr-3 bg-tech text-white rounded-full p-1" />
+                  Drag-and-Drop Builder
+                </div>
+                <div className="flex font-semibold font-serif items-center">
+                  <CodeIcon className="w-7 h-7 mr-3 bg-tech text-white rounded-full p-1" />
+                  No Coding Required
+                </div>
+                <div className="flex font-semibold font-serif items-center">
+                  <SearchIcon className="w-7 h-7 mr-3 bg-tech text-white rounded-full p-1" />
+                  SEO-Optimized
+                </div>
+               
+              </div>
+             
 
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
@@ -396,23 +349,19 @@ export default function Home() {
             </div>
           </div>
           <div className="flex md:flex-row-reverse flex-col max-w-screen-lg items-center gap-20 py-10 m-auto">
-            <div className="md:w-6/12 w-full rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
-              <video
-                className="video rounded-3xl"
-                loop
-                playsInline
-                muted
-                src={language.reach.video}
-              ></video>
+          <div className="md:w-6/12 w-full overflow-hidden relative ">
+             <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_30-2_JuqXuNgEs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710570153"/>
             </div>
             <div className="md:w-6/12 md:py-20 ">
+            <h6 className="font-bold text-tech my-3 ">Content sharing</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold whitespace-pre-line font-serif">
-                Share your work in
-                <div className="relative text-[#4353FF] ml-2 inline w-fit">
-                  limitless ways.
-                </div>
+                Share your work and drive sales
               </h2>
-              <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
+            
+              <p className="pt-5 pb-10 font-inter text-lg tracking-tight text-slate-800 font-medium ">
+                {language.reach.content}
+              </p>
+              <div className="grid grid-cols-2 gap-y-5 mb-8">
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Different Link Types
@@ -430,9 +379,6 @@ export default function Home() {
                   Content Scheduling
                 </div>
               </div>
-              <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg tracking-tight text-slate-800 font-medium ">
-                {language.reach.content}
-              </p>
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
                   <span className="font-normal">{language.heroCta[1]}</span>{' '}
@@ -442,24 +388,18 @@ export default function Home() {
             </div>
           </div>
           <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
-            <div className="md:w-6/12 rounded-3xl border-solid border-2 border-neutral-100 overflow-hidden relative ">
-              <video
-                className="video rounded-3xl"
-                loop
-                playsInline
-                muted
-                src={language.analytics.video}
-              ></video>
+          <div className="md:w-6/12 w-full overflow-hidden relative ">
+             <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_28-4_1v3Wa6Sw_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710052620"/>
             </div>
             <div className="md:w-6/12 md:py-20">
+            <h6 className="font-bold text-tech my-3 ">Advanced analytics</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-20 md:pt-0 whitespace-pre-line font-serif">
-                Get meaningful stats,
-                <div className="relative text-[#4353FF] mr-2 inline w-fit">
-                  {' '}
-                  in realtime.
-                </div>
+                Get meaningful stats, in realtime
               </h2>
-              <div className="grid grid-cols-2 gap-y-5 mt-10 mb-8">
+              <p className="pt-5 pb-10 font-inter text-lg tracking-tight text-slate-800 font-medium ">
+                {language.analytics.content}
+              </p>
+              <div className="grid grid-cols-2 gap-y-5 mb-8">
                 <div className="flex font-semibold font-serif items-center">
                   <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
                   Custom Date Ranges
@@ -477,9 +417,7 @@ export default function Home() {
                   Devices, Locations & More
                 </div>
               </div>
-              <p className="pt-5 pb-10 md:w-10/12 font-inter text-lg tracking-tight text-slate-800 font-medium ">
-                {language.analytics.content}
-              </p>
+            
 
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
@@ -492,6 +430,7 @@ export default function Home() {
         </section>
 
         <section
+          ref={pricingRef}
           id="pricing"
           className="max-w-screen-xl md:px-10 px-5 relative w-full py-20 flex text-center items-center flex-col m-auto gap-[30px]"
         >
@@ -499,7 +438,7 @@ export default function Home() {
             {language.pricing.headline}
           </h2>
           <p className="md:w-6/12 text-lg tracking-tight text-slate-900 font-medium lh-3 leading-9 break-words">
-            {language.pricing.subheadline}
+            Pick a plan that works for you - or get started for free.
           </p>
           <RadioGroup
             value={license.billingCycle}
@@ -512,8 +451,8 @@ export default function Home() {
               {({ checked }) => (
                 <span
                   className={`${
-                    checked && 'bg-tech text-white'
-                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
+                    checked ? 'bg-tech text-white' : "bg-white"
+                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none  text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
                 >
                   {language.price.monthly}
                 </span>
@@ -523,8 +462,8 @@ export default function Home() {
               {({ checked }) => (
                 <span
                   className={`${
-                    checked && 'bg-tech text-white'
-                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none bg-white text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
+                    checked ? 'bg-tech text-white' : "bg-white"
+                  } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
                 >
                   {language.price.yearly}
                 </span>
@@ -560,12 +499,21 @@ export default function Home() {
                           {language.oneSite}
                         </div>
                         <span>
-                          {(license.currency.code == 'usd' ||
+                            <span className="line-through-diagonal text-xs text-slate-600 mr-1">
+                            {(license.currency.code == 'usd' ||
                             license.currency.code == 'gbp') &&
                             license.currency.symbol}
-                          {license.billingCycle == 'monthly' ? '4.99' : '3.99'}
-                          {license.currency.code == 'eur' &&
+                            {license.billingCycle == 'monthly' ? '5.99' : '4.99'}
+                            {license.currency.code == 'eur' &&
                             license.currency.symbol}
+                            </span>
+                            <span>{(license.currency.code == 'usd' ||
+                            license.currency.code == 'gbp') &&
+                            license.currency.symbol}
+                            {license.billingCycle == 'monthly' ? '4.99' : '3.99'}
+                            {license.currency.code == 'eur' &&
+                            license.currency.symbol}
+                            </span>
                         </span>
                       </span>
                     )}
@@ -586,12 +534,21 @@ export default function Home() {
                           {language.threeSites}
                         </div>
                         <span>
-                          {(license.currency.code == 'usd' ||
+                            <span className="line-through-diagonal text-xs text-slate-600 mr-1">
+                            {(license.currency.code == 'usd' ||
                             license.currency.code == 'gbp') &&
                             license.currency.symbol}
-                          {license.billingCycle == 'monthly' ? '7.99' : '5.99'}
-                          {license.currency.code == 'eur' &&
+                            {license.billingCycle == 'monthly' ? '8.99' : '6.99'}
+                            {license.currency.code == 'eur' &&
                             license.currency.symbol}
+                            </span>
+                            <span>{(license.currency.code == 'usd' ||
+                            license.currency.code == 'gbp') &&
+                            license.currency.symbol}
+                            {license.billingCycle == 'monthly' ? '7.99' : '5.99'}
+                            {license.currency.code == 'eur' &&
+                            license.currency.symbol}
+                            </span>
                         </span>
                       </span>
                     )}
@@ -612,12 +569,21 @@ export default function Home() {
                           {language.tenSites}
                         </div>
                         <span>
-                          {(license.currency.code == 'usd' ||
+                        <span className="line-through-diagonal text-xs text-slate-600 mr-1">
+                            {(license.currency.code == 'usd' ||
                             license.currency.code == 'gbp') &&
                             license.currency.symbol}
-                          {license.billingCycle == 'monthly' ? '10.99' : '8.99'}
-                          {license.currency.code == 'eur' &&
+                            {license.billingCycle == 'monthly' ? '11.99' : '9.99'}
+                            {license.currency.code == 'eur' &&
                             license.currency.symbol}
+                            </span>
+                            <span>{(license.currency.code == 'usd' ||
+                            license.currency.code == 'gbp') &&
+                            license.currency.symbol}
+                            {license.billingCycle == 'monthly' ? '10.99' : '8.99'}
+                            {license.currency.code == 'eur' &&
+                            license.currency.symbol}
+                            </span>
                         </span>
                       </span>
                     )}
@@ -802,7 +768,6 @@ export default function Home() {
             </Dialog>
           </Transition>
         </section>
-
         <section className="max-w-screen-xl w-full relative md:flex text-center items-center flex-col m-auto gap-[50px] md:px-10 px-5">
           <h2 className="md:w-8/12  text-4xl md:mb-0 mb-10 md:block font-bold font-serif">
             {language.pricing.faqTitle}

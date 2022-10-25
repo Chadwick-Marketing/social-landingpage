@@ -7,11 +7,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-html[lang='de'] .header p {
-  -webkit-hyphens: auto;
-  hyphens: auto;
-}
-
 .links-wrap:before {
   content: '';
   z-index: 1;
@@ -172,7 +167,18 @@ table th .-help-circle:hover ~ .-info-box {
   -webkit-transform: translateX(0px) rotateY(0deg) scale(1);
   transform: translateX(0px) rotateY(0deg) scale(1);
 }
+.line-through-diagonal {
+  display: inline-block;
+  position: relative;
+}
 
-.bg-hero-pattern {
-  background-image: url('https://ik.imagekit.io/chadwickmarketing/social/headline-background_xvhOflgxj_1YbJ9_-sW.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1661447144505');
+.line-through-diagonal::before {
+  content: '';
+  position: absolute;
+  left: -0.1em;
+  right: -0.1em;
+  top: 0.38em;
+  bottom: 0.38em;
+  background: linear-gradient(to left top, transparent 45.5%, currentColor 47.5%, currentColor 52.5%, transparent 54.5%);
+  pointer-events: none;
 }
