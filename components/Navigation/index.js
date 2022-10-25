@@ -64,7 +64,7 @@ const Navigation = ({ language, pricingInView }) => {
         </div>
       </div>
       <Transition
-     show={pricingInView}
+     show={pricingInView || false}
      appear={true}
      enter="transition ease-out duration-100"
        enterFrom="transform opacity-0 scale-95"
