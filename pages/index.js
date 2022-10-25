@@ -350,7 +350,7 @@ export default function Home() {
           </div>
           <div className="flex md:flex-row-reverse flex-col max-w-screen-lg items-center gap-20 py-10 m-auto">
           <div className="md:w-6/12 w-full overflow-hidden relative ">
-             <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_30-2_JuqXuNgEs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710570153"/>
+             <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_30_TT20_vGtn.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710371483"/>
             </div>
             <div className="md:w-6/12 md:py-20 ">
             <h6 className="font-bold text-tech my-3 ">Sharing</h6>
