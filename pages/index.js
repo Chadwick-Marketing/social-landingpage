@@ -13,6 +13,9 @@ import {
   ColorSwatchIcon,
   CodeIcon,
   SearchIcon,
+  CurrencyDollarIcon,
+  PlayIcon,
+  RssIcon,
 } from '@heroicons/react/outline';
 
 import { jsonLdScriptProps } from 'react-schemaorg';
@@ -312,12 +315,12 @@ export default function Home() {
              <img src="https://ik.imagekit.io/chadwickmarketing/social/social-design.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666691036620"/>
             </div>
             <div className="md:w-6/12 w-full py-20">
-            <h6 className="font-bold text-tech my-3 ">Easy setup</h6>
+            <h6 className="font-bold text-tech my-3 ">Setup</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold whitespace-pre-line font-serif">
                 Create your bio link in minutes
               </h2>
               <p className="pt-5 pb-10 font-inter text-lg text-slate-800 font-medium ">
-                {language.branding.content}
+                Getting started is easy. Design your custom bio link in minutes, or use one of our pre-made templates. No coding required.
               </p>
               <div className="grid grid-cols-2 gap-y-5 mb-8">
                 <div className="flex font-semibold font-serif items-center">
@@ -336,10 +339,7 @@ export default function Home() {
                   <SearchIcon className="w-7 h-7 mr-3 bg-tech text-white rounded-full p-1" />
                   SEO-Optimized
                 </div>
-               
               </div>
-             
-
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
                   <span className="font-normal">{language.heroCta[1]}</span>{' '}
@@ -353,31 +353,33 @@ export default function Home() {
              <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_30-2_JuqXuNgEs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710570153"/>
             </div>
             <div className="md:w-6/12 md:py-20 ">
-            <h6 className="font-bold text-tech my-3 ">Content sharing</h6>
+            <h6 className="font-bold text-tech my-3 ">Sharing</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold whitespace-pre-line font-serif">
                 Share your work and drive sales
               </h2>
             
               <p className="pt-5 pb-10 font-inter text-lg tracking-tight text-slate-800 font-medium ">
-                {language.reach.content}
+                Social offers different content blocks. You can embed videos, collect donations, share your latest blog posts, and more. The possibilities are endless.
               </p>
-              <div className="grid grid-cols-2 gap-y-5 mb-8">
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Different Link Types
-                </div>
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  External Content Embeds
-                </div>
-                  <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  SEO Optimization
-                </div>
-                  <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Content Scheduling
-                </div>
+              <div className="grid grid-cols-2 gap-5 mb-8">
+                
+                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
+                  <CurrencyDollarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                  Collect Donations
+                  </div>
+                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
+                  <PlayIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                  Embed Videos
+                  </div>
+                   <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
+                  <RssIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                  Share Your Posts
+                  </div>
+                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
+                  <CurrencyDollarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                  Organize Your Links
+                  </div>
+                  
               </div>
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
@@ -392,12 +394,12 @@ export default function Home() {
              <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_28-4_1v3Wa6Sw_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710052620"/>
             </div>
             <div className="md:w-6/12 md:py-20">
-            <h6 className="font-bold text-tech my-3 ">Advanced analytics</h6>
+            <h6 className="font-bold text-tech my-3 ">Analytics</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-20 md:pt-0 whitespace-pre-line font-serif">
                 Get meaningful stats, in realtime
               </h2>
               <p className="pt-5 pb-10 font-inter text-lg tracking-tight text-slate-800 font-medium ">
-                {language.analytics.content}
+               With Social's analytics, you get meaningful insights - in realtime. Gather all the data you need to analyze your audience and optimize your content.
               </p>
               <div className="grid grid-cols-2 gap-y-5 mb-8">
                 <div className="flex font-semibold font-serif items-center">
@@ -605,7 +607,7 @@ export default function Home() {
             <div className="w-12/12 flex mt-5 mb-0 md:mb-0 flex-col items-center">
               <a
                 onClick={() => handleCheckout()}
-                className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
+                className="group cursor-pointer inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
               >
                 <span className="font-medium">
                   {language.pricing.startTrial}
@@ -618,12 +620,16 @@ export default function Home() {
           </div>
           <div className="mt-2 lg:flex lg:items-center lg:justify-center">
             <div className="flex flex-shrink-0 justify-center -space-x-4 overflow-hidden lg:justify-start">
+            <img
+                className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+                src="https://ik.imagekit.io/chadwickmarketing/social/9686740C-DCCF-42F6-983B-30683F791760_kbEjc_BVD.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654532793838"
+              />
               <img
                 className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
                 src="https://ik.imagekit.io/chadwickmarketing/social/60EAD10D-A767-4C4D-BED0-7F25DF2850F7_pOZChPL7F.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654544909975"
               />
               <img
-                className="inline-block  h-10 w-10 rounded-full ring-2 ring-white"
+                className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
                 src="https://ik.imagekit.io/chadwickmarketing/social/FEA14AC0-E0E8-4218-8E84-4F459823DC07_kMgoD5m_0.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654532791049"
               />
             </div>
