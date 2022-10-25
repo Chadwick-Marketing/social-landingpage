@@ -24,6 +24,10 @@ import en from '../locales/en';
 
 import jsonp from 'jsonp';
 
+import ScrollAnimation from 'react-animate-on-scroll';
+
+import "animate.css";
+
 export default function Home() {
 
   const language = en;
@@ -174,6 +178,33 @@ export default function Home() {
         : console.error(err)
     );
 
+    let constrain = 100;
+let mouseOverContainer = document.getElementById("ex1");
+let ex1Layer = document.getElementById("ex1-layer");
+
+function transforms(x, y, el) {
+  let box = el.getBoundingClientRect();
+  let calcX = -(y - box.y - (box.height / 2)) / constrain;
+  let calcY = (x - box.x - (box.width / 2)) / constrain;
+  
+  return "perspective(600px) "
+    + "   rotateX("+ calcX +"deg) "
+    + "   rotateY("+ calcY +"deg) ";
+};
+
+ function transformElement(el, xyEl) {
+  el.style.transform  = transforms.apply(null, xyEl);
+}
+
+mouseOverContainer.onmousemove = function(e) {
+  let xy = [e.clientX, e.clientY];
+  let position = xy.concat([ex1Layer]);
+
+  window.requestAnimationFrame(function(){
+    transformElement(ex1Layer, position);
+  });
+};
+
 
   }, []);
 
@@ -196,7 +227,7 @@ export default function Home() {
           <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
           <h1
             className="lg:text-5xl
-             xl:w-7/12 md:w-8/12 w-full text-slate-900 w-full text-4xl  font-bold font-serif"
+             xl:w-7/12 md:w-8/12 w-full text-slate-900 w-full text-4xl m-auto  font-bold font-serif"
           >
             The
             <div className="relative text-tech mx-2 inline w-fit">complete</div>
@@ -311,32 +342,60 @@ export default function Home() {
         </section>
         <section className="w-full bg-white p-9 md:mx-10  border-2 border-neutral-100 relative mt-[150px]  md:flex items-center flex-col m-auto ">
           <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
-            <div className="md:w-6/12 w-full overflow-hidden relative ">
-             <img src="https://ik.imagekit.io/chadwickmarketing/social/social-design.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666691036620"/>
+            <div className="md:w-6/12 w-full relative" id="ex1">
+              <div id="ex1-layer" style={{ transformStyle: "preserve-3d", transform: "perspective(600px)" }}>
+              <ScrollAnimation  animateIn="bounceIn" >
+              <img className="w-8/12 m-auto" src="https://ik.imagekit.io/chadwickmarketing/social/Group_33_73CoDwPIh.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717283096"/>
+              </ScrollAnimation>
+              <div className="absolute top-1/2 left-1/2 w-8/12" style={{transform:"translateZ(80px) translateX(-50%) translateY(-100px) scale(.75)"}} >
+              <ScrollAnimation  animateIn="bounceIn" >
+             <img  src="https://ik.imagekit.io/chadwickmarketing/social/Group_32_gH65KGaOrX.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717280699"/>
+              </ScrollAnimation>
+              </div>
+              <div className="absolute bottom-0 left-0 w-8/12" style={{transform:"translateZ(150px) translateX(-27px) translateY(-26px) scale(.55)"}} >
+              <ScrollAnimation  animateIn="bounceIn"  delay={500}>
+             <img  src="https://ik.imagekit.io/chadwickmarketing/social/Group_27_6GyEkmJsQ.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717281514"/>
+              </ScrollAnimation>
+              </div>
+              <div className="absolute top-0 right-0 w-8/12" style={{transform:"translateZ(175px) translateX(50px) scale(.5)"}} >
+              <ScrollAnimation  animateIn="bounceIn"  delay={1000}>
+             <img  src="https://ik.imagekit.io/chadwickmarketing/social/Group_31_DV_1CT817t.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717280078"/>
+              </ScrollAnimation>
+              </div>
+              <div className="absolute top-0 right-0 w-8/12" style={{transform:"translateZ(195px) translateX(40px) translateY(100px) scale(.25)"}} >
+              <ScrollAnimation  animateIn="bounceIn"  delay={500}>
+             <img  src="https://ik.imagekit.io/chadwickmarketing/social/Group_26_7CXvHiZZYn.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717279386"/>
+              </ScrollAnimation>
+              </div>
+        
+              </div>
+            
             </div>
             <div className="md:w-6/12 w-full py-20">
-            <h6 className="font-bold text-tech my-3 ">Setup</h6>
+            <h6 className="font-bold text-tech my-3 ">Easy Setup</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold whitespace-pre-line font-serif">
                 Create your bio link in minutes
               </h2>
               <p className="pt-5 pb-10 font-inter text-lg text-slate-800 font-medium ">
                 Getting started is easy. Design your custom bio link in minutes, or use one of our pre-made templates. No coding required.
               </p>
-              <div className="grid grid-cols-2 gap-y-5 mb-8">
-                <div className="flex font-semibold font-serif items-center">
-                  <ColorSwatchIcon className="w-7 h-7 mr-3 bg-tech text-white rounded-full p-1" />
+              <div className="grid grid-cols-2 gap-5 mb-8">
+              <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
+                  <ColorSwatchIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
                   Pre-made Designs
-                </div>
-                <div className="flex font-semibold font-serif items-center">
-                  <CursorClickIcon className="w-7 h-7 mr-3 bg-tech text-white rounded-full p-1" />
-                  Drag-and-Drop Builder
-                </div>
-                <div className="flex font-semibold font-serif items-center">
-                  <CodeIcon className="w-7 h-7 mr-3 bg-tech text-white rounded-full p-1" />
+                  </div>
+               
+                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
+                  <CursorClickIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                 Drag & Drop Editor
+                  </div>
+               
+                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
+                  <CodeIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1"  />
                   No Coding Required
                 </div>
-                <div className="flex font-semibold font-serif items-center">
-                  <SearchIcon className="w-7 h-7 mr-3 bg-tech text-white rounded-full p-1" />
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
+                  <SearchIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1"  />
                   SEO-Optimized
                 </div>
               </div>

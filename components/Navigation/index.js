@@ -73,7 +73,7 @@ const Navigation = ({ language, pricingInView }) => {
        leaveFrom="transform opacity-100 scale-100"
        leaveTo="transform opacity-0 scale-95"
    >
-     <div className="flex justify-center gap-2 items-center bg-gradient-to-r text-white py-1 from-[#e1eaff] to-[#fbf0f4] ">
+     <div className="flex md:flex-row flex-col justify-center gap-2 items-center shadow-sm bg-gradient-to-r text-white py-1 from-[#e1eaff] to-[#fbf0f4] ">
        <p className='text-xs text-slate-800 '>Launch sale: <strong>Up to 20% off</strong> on all plans. Time left:</p>
        <Countdown date="2022-12-31" zeroPadTime={2}  renderer={countdownRenderer} />
        
