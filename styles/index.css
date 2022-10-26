@@ -182,3 +182,12 @@ table th .-help-circle:hover ~ .-info-box {
   background: linear-gradient(to left top, transparent 45.5%, currentColor 47.5%, currentColor 52.5%, transparent 54.5%);
   pointer-events: none;
 }
+
+.social-parallax-effect-layer {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform: perspective(600px);
+}

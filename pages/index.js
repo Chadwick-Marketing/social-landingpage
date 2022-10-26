@@ -1,9 +1,9 @@
-import Head from 'next/head';
-import Navigation from '../components/Navigation';
-import Footer from '../components/Footer';
-import { useEffect, useState, Fragment, useRef } from 'react';
-import { Disclosure, RadioGroup, Transition, Dialog } from '@headlessui/react';
-import Link from 'next/link';
+import Head from "next/head";
+import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
+import { useEffect, useState, Fragment, useRef } from "react";
+import { Disclosure, RadioGroup, Transition, Dialog } from "@headlessui/react";
+import Link from "next/link";
 import {
   ChevronUpIcon,
   CheckIcon,
@@ -16,20 +16,24 @@ import {
   CurrencyDollarIcon,
   PlayIcon,
   RssIcon,
-} from '@heroicons/react/outline';
+  CalendarIcon,
+  RefreshIcon,
+  LockClosedIcon,
+  CollectionIcon,
+  LinkIcon,
+} from "@heroicons/react/outline";
 
-import { jsonLdScriptProps } from 'react-schemaorg';
+import { jsonLdScriptProps } from "react-schemaorg";
 
-import en from '../locales/en';
+import en from "../locales/en";
 
-import jsonp from 'jsonp';
+import jsonp from "jsonp";
 
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from "react-animate-on-scroll";
 
 import "animate.css";
 
 export default function Home() {
-
   const language = en;
 
   const linkWrapRefs = [useRef(null), useRef(null)];
@@ -37,11 +41,11 @@ export default function Home() {
   const pricingRef = useRef(null);
 
   const [license, setLicense] = useState({
-    amount: '1',
-    billingCycle: 'monthly',
+    amount: "1",
+    billingCycle: "monthly",
     currency: {
-      code: 'EUR',
-      symbol: '€',
+      code: "EUR",
+      symbol: "€",
     },
   });
 
@@ -115,7 +119,7 @@ export default function Home() {
         try {
           JSON.parse(data.contents.replace(/\:null/gi, ':""'));
         } catch (e) {
-          fetch('https://api.wordpress.org/plugins/info/1.0/social-lite.json')
+          fetch("https://api.wordpress.org/plugins/info/1.0/social-lite.json")
             .then((data) => data.json())
             .then((data) =>
               setInstallModal((previous) => ({
@@ -132,44 +136,85 @@ export default function Home() {
       });
   };
 
-
   const handleCheckout = () => {
     let handler = FS.Checkout.configure({
-      plugin_id: '10702',
-      plan_id: '18404',
-      public_key: 'pk_b8bb9e62381f312b76f0633cd602a',
+      plugin_id: "10702",
+      plan_id: "18404",
+      public_key: "pk_b8bb9e62381f312b76f0633cd602a",
       image:
-        'https://ik.imagekit.io/chadwickmarketing/social/icon_128_uEfTliaqvG.png',
-      currency: 'auto',
-      trial: 'paid',
+        "https://ik.imagekit.io/chadwickmarketing/social/icon_128_uEfTliaqvG.png",
+      currency: "auto",
+      trial: "paid",
     });
 
     handler.open({
-      name: 'Social',
+      name: "Social",
       licenses: license.amount,
       billing_cycle: license.billingCycle,
     });
   };
 
   useEffect(() => {
+    window.addEventListener("scroll", () => {
+      linkWrapRefs[1].current.style.transform = `translateX(${
+        window.scrollY * 0.25
+      }px)`;
 
-    const scrollListener = window.addEventListener('scroll', () => {
-
-      linkWrapRefs[1].current.style.transform = `translateX(${window.scrollY * 0.25}px)`;
-
-      linkWrapRefs[0].current.style.transform = `translateX(${window.scrollY * -0.35}px)`;
-
+      linkWrapRefs[0].current.style.transform = `translateX(${
+        window.scrollY * -0.35
+      }px)`;
     });
 
-    new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setPricingInView(entry.isIntersecting);
-        });
-      }
-    ).observe(pricingRef.current);
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        setPricingInView(entry.isIntersecting);
+      });
+    }).observe(pricingRef.current);
 
-    jsonp('https://checkout.freemius.com/geo.json', null, (err, data) =>
+    let constrain = 100;
+    let mouseOverContainers = document.querySelectorAll(
+      ".social-parallax-container"
+    );
+
+    function transforms(x, y, el) {
+      let box = el.getBoundingClientRect();
+      let calcX = -(y - box.y - box.height / 2) / constrain;
+      let calcY = (x - box.x - box.width / 2) / constrain;
+
+      return (
+        "perspective(600px) " +
+        "   rotateX(" +
+        calcX +
+        "deg) " +
+        "   rotateY(" +
+        calcY +
+        "deg) "
+      );
+    }
+
+    function transformElement(el, xyEl) {
+      el.style.transform = transforms.apply(null, xyEl);
+    }
+
+    mouseOverContainers.forEach((container) => {
+      let layer = container.querySelector(".social-parallax-effect-layer");
+
+      container.addEventListener("mousemove", (e) => {
+        let xy = [e.clientX, e.clientY];
+        let position = xy.concat([layer]);
+
+        window.requestAnimationFrame(function () {
+          transformElement(layer, position);
+        });
+      });
+
+      container.addEventListener("mouseleave", (e) => {
+        layer.style.transform =
+          "perspective(600px) rotateX(0deg) rotateY(0deg)";
+      });
+    });
+
+    jsonp("https://checkout.freemius.com/geo.json", null, (err, data) =>
       !err
         ? setLicense((previous) => ({
             ...previous,
@@ -177,35 +222,6 @@ export default function Home() {
           }))
         : console.error(err)
     );
-
-    let constrain = 100;
-let mouseOverContainer = document.getElementById("ex1");
-let ex1Layer = document.getElementById("ex1-layer");
-
-function transforms(x, y, el) {
-  let box = el.getBoundingClientRect();
-  let calcX = -(y - box.y - (box.height / 2)) / constrain;
-  let calcY = (x - box.x - (box.width / 2)) / constrain;
-  
-  return "perspective(600px) "
-    + "   rotateX("+ calcX +"deg) "
-    + "   rotateY("+ calcY +"deg) ";
-};
-
- function transformElement(el, xyEl) {
-  el.style.transform  = transforms.apply(null, xyEl);
-}
-
-mouseOverContainer.onmousemove = function(e) {
-  let xy = [e.clientX, e.clientY];
-  let position = xy.concat([ex1Layer]);
-
-  window.requestAnimationFrame(function(){
-    transformElement(ex1Layer, position);
-  });
-};
-
-
   }, []);
 
   return (
@@ -221,7 +237,7 @@ mouseOverContainer.onmousemove = function(e) {
         <link rel="alternate" hrefLang="x-default" href="https://socialwp.io" />
         <script {...jsonLdScriptProps(language.schema)} />
       </Head>
-      <Navigation language={language} pricingInView={pricingInView}  />
+      <Navigation language={language} pricingInView={pricingInView} />
       <main className="flex items-center flex-col">
         <section className="header relative bg-no-repeat bg-top bg-[length:60%] flex justify-center items-center text-center px-8 flex-col max-w-screen-xl m-auto pt-5">
           <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
@@ -248,58 +264,75 @@ mouseOverContainer.onmousemove = function(e) {
                   {language.heroCta[2]}
                 </a>
               </Link>
-                <a
-                  className="group cursor-pointer inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300"
-                  onClick={() => openVideoModal('snjPbqfqTyQ')}
-                >
-                  <svg aria-hidden="true" class="h-3 w-3 mr-2 flex-none fill-blue-600 group-active:fill-current"><path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z"></path></svg>
-                  <span>Watch video</span>
-                </a>
-              <Transition appear show={videoModal.open} as={Fragment}>
-            <Dialog
-              as="div"
-              className="relative z-50"
-              onClose={closeVideoModal}
-            >
-              
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
+              <a
+                className="group cursor-pointer inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-200 text-slate-700 hover:text-slate-900 hover:ring-slate-300 active:bg-slate-100 active:text-slate-600 focus-visible:outline-blue-600 focus-visible:ring-slate-300"
+                onClick={() => openVideoModal("snjPbqfqTyQ")}
               >
-                <div className="fixed inset-0 bg-black bg-opacity-25" />
-              </Transition.Child>
-
-              <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4 text-center">
+                <svg
+                  aria-hidden="true"
+                  class="h-3 w-3 mr-2 flex-none fill-blue-600 group-active:fill-current"
+                >
+                  <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z"></path>
+                </svg>
+                <span>Watch video</span>
+              </a>
+              <Transition appear show={videoModal.open} as={Fragment}>
+                <Dialog
+                  as="div"
+                  className="relative z-50"
+                  onClose={closeVideoModal}
+                >
                   <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
                     leave="ease-in duration-200"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
                   >
-                  <Dialog.Panel className="transform transition-all w-full max-w-4xl">
-                      <div className="w-full max-w-4xl inline-block relative m-auto">
-                        <div className="overflow-hidden rounded-2xl shadow-xl h-0 w-full" style={{ paddingTop: "56.25%" }}>
-                          <iframe className="rounded-2xl absolute left-0 top-0 w-full h-full block" src={`https://www.youtube-nocookie.com/embed/${videoModal.video}?autoplay=1`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
-                        </div>
-                      </div>
-                      <div onClick={() => closeVideoModal()} className="cursor-pointer flex items-center justify-center w-10 h-10 bg-white m-auto rounded-full mb-2 p-2">
-                        <XIcon className="w-5 h-5" />
-                      </div>
-                  </Dialog.Panel>
+                    <div className="fixed inset-0 bg-black bg-opacity-25" />
                   </Transition.Child>
-                </div>
-              </div>
-            </Dialog>
-          </Transition>
+
+                  <div className="fixed inset-0 overflow-y-auto">
+                    <div className="flex min-h-full items-center justify-center p-4 text-center">
+                      <Transition.Child
+                        as={Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0 scale-95"
+                        enterTo="opacity-100 scale-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100 scale-100"
+                        leaveTo="opacity-0 scale-95"
+                      >
+                        <Dialog.Panel className="transform transition-all w-full max-w-4xl">
+                          <div className="w-full max-w-4xl inline-block relative m-auto">
+                            <div
+                              className="overflow-hidden rounded-2xl shadow-xl h-0 w-full"
+                              style={{ paddingTop: "56.25%" }}
+                            >
+                              <iframe
+                                className="rounded-2xl absolute left-0 top-0 w-full h-full block"
+                                src={`https://www.youtube-nocookie.com/embed/${videoModal.video}?autoplay=1`}
+                                title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen
+                              />
+                            </div>
+                          </div>
+                          <div
+                            onClick={() => closeVideoModal()}
+                            className="cursor-pointer flex items-center justify-center w-10 h-10 bg-white m-auto rounded-full mb-2 p-2"
+                          >
+                            <XIcon className="w-5 h-5" />
+                          </div>
+                        </Dialog.Panel>
+                      </Transition.Child>
+                    </div>
+                  </div>
+                </Dialog>
+              </Transition>
             </div>
           </div>
           <img className="md:w-10/12 w-12/12 " src={language.heroImage} />
@@ -326,7 +359,10 @@ mouseOverContainer.onmousemove = function(e) {
             </div>
           </div>
           <div className="links-wrap md:w-11/12 w-full overflow-hidden relative flex justify-center">
-            <div ref={linkWrapRefs[1]} className="links-2 flex md:mt-0 mt-5 md:gap-10 gap-5">
+            <div
+              ref={linkWrapRefs[1]}
+              className="links-2 flex md:mt-0 mt-5 md:gap-10 gap-5"
+            >
               {language.links2.map((link) => (
                 <div
                   key={link}
@@ -342,147 +378,296 @@ mouseOverContainer.onmousemove = function(e) {
         </section>
         <section className="w-full bg-white p-9 md:mx-10  border-2 border-neutral-100 relative mt-[150px]  md:flex items-center flex-col m-auto ">
           <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
-            <div className="md:w-6/12 w-full relative" id="ex1">
-              <div id="ex1-layer" style={{ transformStyle: "preserve-3d", transform: "perspective(600px)" }}>
-              <ScrollAnimation  animateIn="bounceIn" >
-              <img className="w-8/12 m-auto" src="https://ik.imagekit.io/chadwickmarketing/social/Group_33_73CoDwPIh.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717283096"/>
-              </ScrollAnimation>
-              <div className="absolute top-1/2 left-1/2 w-8/12" style={{transform:"translateZ(80px) translateX(-50%) translateY(-100px) scale(.75)"}} >
-              <ScrollAnimation  animateIn="bounceIn" >
-             <img  src="https://ik.imagekit.io/chadwickmarketing/social/Group_32_gH65KGaOrX.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717280699"/>
-              </ScrollAnimation>
+            <div className="md:w-6/12 w-full relative social-parallax-container">
+              <div className="social-parallax-effect-layer">
+                <ScrollAnimation animateIn="bounceIn">
+                  <img
+                    className="w-8/12 m-auto"
+                    src="https://ik.imagekit.io/chadwickmarketing/social/Group_33_73CoDwPIh.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717283096"
+                  />
+                </ScrollAnimation>
+                <div
+                  className="absolute top-1/2 left-1/2 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(80px) translateX(-50%) translateY(-100px) scale(.75)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn">
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_32_gH65KGaOrX.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717280699" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute bottom-0 left-0 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(150px) translateX(-27px) translateY(-26px) scale(.55)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={500}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_27_6GyEkmJsQ.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717281514" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute top-0 right-0 w-8/12"
+                  style={{
+                    transform: "translateZ(175px) translateX(50px) scale(.5)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_31_DV_1CT817t.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717280078" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute top-0 right-0 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(195px) translateX(40px) translateY(100px) scale(.25)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={500}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_26_7CXvHiZZYn.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717279386" />
+                  </ScrollAnimation>
+                </div>
               </div>
-              <div className="absolute bottom-0 left-0 w-8/12" style={{transform:"translateZ(150px) translateX(-27px) translateY(-26px) scale(.55)"}} >
-              <ScrollAnimation  animateIn="bounceIn"  delay={500}>
-             <img  src="https://ik.imagekit.io/chadwickmarketing/social/Group_27_6GyEkmJsQ.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717281514"/>
-              </ScrollAnimation>
-              </div>
-              <div className="absolute top-0 right-0 w-8/12" style={{transform:"translateZ(175px) translateX(50px) scale(.5)"}} >
-              <ScrollAnimation  animateIn="bounceIn"  delay={1000}>
-             <img  src="https://ik.imagekit.io/chadwickmarketing/social/Group_31_DV_1CT817t.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717280078"/>
-              </ScrollAnimation>
-              </div>
-              <div className="absolute top-0 right-0 w-8/12" style={{transform:"translateZ(195px) translateX(40px) translateY(100px) scale(.25)"}} >
-              <ScrollAnimation  animateIn="bounceIn"  delay={500}>
-             <img  src="https://ik.imagekit.io/chadwickmarketing/social/Group_26_7CXvHiZZYn.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717279386"/>
-              </ScrollAnimation>
-              </div>
-        
-              </div>
-            
             </div>
             <div className="md:w-6/12 w-full py-20">
-            <h6 className="font-bold text-tech my-3 ">Easy Setup</h6>
-              <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold whitespace-pre-line font-serif">
+              <h6 className="font-bold text-tech my-3 ">Easy Setup</h6>
+              <h2 className="lg:leading-none md:text-5xl text-3xl md:block text-slate-900 font-bold whitespace-pre-line font-serif">
                 Create your bio link in minutes
               </h2>
               <p className="pt-5 pb-10 font-inter text-lg text-slate-800 font-medium ">
-                Getting started is easy. Design your custom bio link in minutes, or use one of our pre-made templates. No coding required.
+                Getting started is easy. Design your custom bio link in minutes,
+                or use one of our pre-made templates. No coding required.
               </p>
               <div className="grid grid-cols-2 gap-5 mb-8">
-              <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
-                  <ColorSwatchIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <ColorSwatchIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Pre-made Designs
-                  </div>
-               
-                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
-                  <CursorClickIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
-                 Drag & Drop Editor
-                  </div>
-               
-                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
-                  <CodeIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1"  />
+                </div>
+
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <CursorClickIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
+                  Drag & Drop Editor
+                </div>
+
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <CodeIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   No Coding Required
                 </div>
-                <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
-                  <SearchIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1"  />
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <SearchIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   SEO-Optimized
                 </div>
               </div>
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
-                  <span className="font-normal">{language.heroCta[1]}</span>{' '}
+                  <span className="font-normal">{language.heroCta[1]}</span>{" "}
                   {language.heroCta[2]}
                 </a>
               </Link>
             </div>
           </div>
           <div className="flex md:flex-row-reverse flex-col max-w-screen-lg items-center gap-20 py-10 m-auto">
-          <div className="md:w-6/12 w-full overflow-hidden relative ">
-             <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_30_TT20_vGtn.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710371483"/>
+            <div className="md:w-6/12 w-full relative social-parallax-container">
+              <div className="social-parallax-effect-layer">
+                <ScrollAnimation animateIn="bounceIn">
+                  <img
+                    className="w-8/12 m-auto"
+                    src="https://ik.imagekit.io/chadwickmarketing/social/phone-frame.d4b6b62a_1_YE7Ufxsme6.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774862438"
+                  />
+                </ScrollAnimation>
+                <div
+                  className="absolute top-1/2 left-1/2 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(80px) translateX(-60%) translateY(-50px) scale(.85)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn">
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_16_4oiteBPIk.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337771" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute bottom-0 left-0 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(150px) translateX(-27px) translateY(-26px) scale(.65)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={500}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_36_Ci-4AV9Tw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337874" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute bottom-0 left-0 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(160px) translateX(-27px) translateY(-100px) scale(.5)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={500}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_34_j-V8xvop6.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337561" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute top-0 right-0 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(150px) translateX(50px) translateY(100px) scale(.75)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Rectangle_68_wJxp9XWsx.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337998" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute top-0 right-0 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(200px) translateX(65px) translateY(125px) scale(0.3)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_35_s5nrEcYOX.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337876" />
+                  </ScrollAnimation>
+                </div>
+              </div>
             </div>
             <div className="md:w-6/12 md:py-20 ">
-            <h6 className="font-bold text-tech my-3 ">Sharing</h6>
+              <h6 className="font-bold text-tech my-3 ">Sharing</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold whitespace-pre-line font-serif">
                 Share your work and drive sales
               </h2>
-            
               <p className="pt-5 pb-10 font-inter text-lg tracking-tight text-slate-800 font-medium ">
-                Social offers different content blocks. You can embed videos, collect donations, share your latest blog posts, and more. The possibilities are endless.
+                Social offers different content blocks. You can embed videos,
+                collect donations, share your latest blog posts, and more. The
+                possibilities are endless.
               </p>
               <div className="grid grid-cols-2 gap-5 mb-8">
-                
-                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
-                  <CurrencyDollarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <CurrencyDollarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Collect Donations
-                  </div>
-                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
-                  <PlayIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                </div>
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <PlayIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Embed Videos
-                  </div>
-                   <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
-                  <RssIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                </div>
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <RssIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Share Your Posts
-                  </div>
-                  <div className="flex font-semibold font-serif border border-gray-200 rounded-2xl p-2 items-center">
-                  <CurrencyDollarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-2xl p-1" />
+                </div>
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <CollectionIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Organize Your Links
-                  </div>
-                  
+                </div>
               </div>
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
-                  <span className="font-normal">{language.heroCta[1]}</span>{' '}
+                  <span className="font-normal">{language.heroCta[1]}</span>{" "}
                   {language.heroCta[2]}
                 </a>
               </Link>
             </div>
           </div>
           <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
-          <div className="md:w-6/12 w-full overflow-hidden relative ">
-             <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_28-4_1v3Wa6Sw_.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710052620"/>
+            <div className="md:w-6/12 w-full relative social-parallax-container">
+              <div className="social-parallax-effect-layer">
+                <ScrollAnimation animateIn="bounceIn">
+                  <img
+                    className="w-9/12 m-auto"
+                    src="https://ik.imagekit.io/chadwickmarketing/social/Group_39_Yfq2zdvr2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775761130"
+                  />
+                </ScrollAnimation>
+                <div
+                  className="w-9/12 m-auto absolute top-0 left-1/2"
+                  style={{
+                    transform:
+                      "translateZ(-1px) translateX(-50%) translateY(75%) scale(1.2)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn">
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/magicpattern-svg-chart-1666536805079_1__1__uJNyx4iz-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775812187" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute top-1/2 left-1/2 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(80px) translateX(-50%) translateY(-50px) scale(.85)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn">
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_38_5ken4rtnX.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775762613" />
+                  </ScrollAnimation>
+                </div>
+
+                <div
+                  className="absolute top-0 left-0 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(150px) translateX(-50px) translateY(50px) scale(.6)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_28__1__fWG9nA9Lz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775761661" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute top-0 left-0 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(200px) translateX(-15px) translateY(250px) scale(0.2)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_21_X1ZJ9IMA9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775761673" />
+                  </ScrollAnimation>
+                </div>
+                <div
+                  className="absolute top-0 right-0 w-8/12"
+                  style={{
+                    transform:
+                      "translateZ(225px) translateX(0px) translateY(175px) scale(0.25)",
+                  }}
+                >
+                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                    <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_37_uA8t1uFdx.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666776924918" />
+                  </ScrollAnimation>
+                </div>
+              </div>
             </div>
             <div className="md:w-6/12 md:py-20">
-            <h6 className="font-bold text-tech my-3 ">Analytics</h6>
+              <h6 className="font-bold text-tech my-3 ">Analytics</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-20 md:pt-0 whitespace-pre-line font-serif">
                 Get meaningful stats, in realtime
               </h2>
               <p className="pt-5 pb-10 font-inter text-lg tracking-tight text-slate-800 font-medium ">
-               With Social's analytics, you get meaningful insights - in realtime. Gather all the data you need to analyze your audience and optimize your content.
+                With Social's analytics, you get meaningful insights - in
+                realtime. Gather all the data you need to analyze your audience
+                and optimize your content.
               </p>
-              <div className="grid grid-cols-2 gap-y-5 mb-8">
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
+              <div className="grid grid-cols-2 gap-5 mb-8">
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <CalendarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Custom Date Ranges
                 </div>
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <RefreshIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
+                  Realtime Updates
+                </div>
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <LinkIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Individual Link Analytics
-                </div>{' '}
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Realtime Data Updates
-                </div>{' '}
-                <div className="flex font-semibold font-serif items-center">
-                  <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                  Devices, Locations & More
+                </div>
+                <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
+                  <LockClosedIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
+                  Privacy-friendly
                 </div>
               </div>
-            
-
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
-                  <span className="font-normal">{language.heroCta[1]}</span>{' '}
+                  <span className="font-normal">{language.heroCta[1]}</span>{" "}
                   {language.heroCta[2]}
                 </a>
               </Link>
@@ -512,7 +697,7 @@ mouseOverContainer.onmousemove = function(e) {
               {({ checked }) => (
                 <span
                   className={`${
-                    checked ? 'bg-tech text-white' : "bg-white"
+                    checked ? "bg-tech text-white" : "bg-white"
                   } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none  text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
                 >
                   {language.price.monthly}
@@ -523,7 +708,7 @@ mouseOverContainer.onmousemove = function(e) {
               {({ checked }) => (
                 <span
                   className={`${
-                    checked ? 'bg-tech text-white' : "bg-white"
+                    checked ? "bg-tech text-white" : "bg-white"
                   } cursor-pointer border-solid border-2 border-neutral-100 focus:outline-none text-sm flex items-center justify-center rounded-full py-2 px-3 font-medium`}
                 >
                   {language.price.yearly}
@@ -548,33 +733,38 @@ mouseOverContainer.onmousemove = function(e) {
                     {({ checked }) => (
                       <span
                         className={`${
-                          checked ? 'text-black' : 'text-gray-600'
+                          checked ? "text-black" : "text-gray-600"
                         } cursor-pointer justify-between border-solid border-2 border-neutral-100 focus:outline-none bg-white flex items-center rounded-full py-3 px-5 font-medium`}
                       >
                         <div className="shrink-0 flex">
                           <CheckIcon
                             className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && 'text-white bg-tech'
+                              checked && "text-white bg-tech"
                             }`}
                           />
                           {language.oneSite}
                         </div>
                         <span>
-                            <span className="line-through-diagonal text-xs text-slate-600 mr-1">
-                            {(license.currency.code == 'usd' ||
-                            license.currency.code == 'gbp') &&
-                            license.currency.symbol}
-                            {license.billingCycle == 'monthly' ? '5.99' : '4.99'}
-                            {license.currency.code == 'eur' &&
-                            license.currency.symbol}
-                            </span>
-                            <span>{(license.currency.code == 'usd' ||
-                            license.currency.code == 'gbp') &&
-                            license.currency.symbol}
-                            {license.billingCycle == 'monthly' ? '4.99' : '3.99'}
-                            {license.currency.code == 'eur' &&
-                            license.currency.symbol}
-                            </span>
+                          <span className="line-through-diagonal text-xs text-slate-600 mr-1">
+                            {(license.currency.code == "usd" ||
+                              license.currency.code == "gbp") &&
+                              license.currency.symbol}
+                            {license.billingCycle == "monthly"
+                              ? "5.99"
+                              : "4.99"}
+                            {license.currency.code == "eur" &&
+                              license.currency.symbol}
+                          </span>
+                          <span>
+                            {(license.currency.code == "usd" ||
+                              license.currency.code == "gbp") &&
+                              license.currency.symbol}
+                            {license.billingCycle == "monthly"
+                              ? "4.99"
+                              : "3.99"}
+                            {license.currency.code == "eur" &&
+                              license.currency.symbol}
+                          </span>
                         </span>
                       </span>
                     )}
@@ -583,33 +773,38 @@ mouseOverContainer.onmousemove = function(e) {
                     {({ checked }) => (
                       <span
                         className={`${
-                          checked ? 'text-black' : 'text-gray-600'
+                          checked ? "text-black" : "text-gray-600"
                         } my-5 cursor-pointer justify-between border-solid border-2 border-neutral-100 focus:outline-none bg-white flex items-center rounded-full py-3 px-5 font-medium`}
                       >
                         <div className="shrink-0 flex">
                           <CheckIcon
                             className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && 'text-white bg-tech border-tech'
+                              checked && "text-white bg-tech border-tech"
                             }`}
                           />
                           {language.threeSites}
                         </div>
                         <span>
-                            <span className="line-through-diagonal text-xs text-slate-600 mr-1">
-                            {(license.currency.code == 'usd' ||
-                            license.currency.code == 'gbp') &&
-                            license.currency.symbol}
-                            {license.billingCycle == 'monthly' ? '8.99' : '6.99'}
-                            {license.currency.code == 'eur' &&
-                            license.currency.symbol}
-                            </span>
-                            <span>{(license.currency.code == 'usd' ||
-                            license.currency.code == 'gbp') &&
-                            license.currency.symbol}
-                            {license.billingCycle == 'monthly' ? '7.99' : '5.99'}
-                            {license.currency.code == 'eur' &&
-                            license.currency.symbol}
-                            </span>
+                          <span className="line-through-diagonal text-xs text-slate-600 mr-1">
+                            {(license.currency.code == "usd" ||
+                              license.currency.code == "gbp") &&
+                              license.currency.symbol}
+                            {license.billingCycle == "monthly"
+                              ? "8.99"
+                              : "6.99"}
+                            {license.currency.code == "eur" &&
+                              license.currency.symbol}
+                          </span>
+                          <span>
+                            {(license.currency.code == "usd" ||
+                              license.currency.code == "gbp") &&
+                              license.currency.symbol}
+                            {license.billingCycle == "monthly"
+                              ? "7.99"
+                              : "5.99"}
+                            {license.currency.code == "eur" &&
+                              license.currency.symbol}
+                          </span>
                         </span>
                       </span>
                     )}
@@ -618,33 +813,38 @@ mouseOverContainer.onmousemove = function(e) {
                     {({ checked }) => (
                       <span
                         className={`${
-                          checked ? 'text-black' : 'text-gray-600'
+                          checked ? "text-black" : "text-gray-600"
                         } cursor-pointer justify-between border-solid border-2 border-neutral-100 focus:outline-none bg-white flex items-center rounded-full py-3 px-5 font-medium`}
                       >
                         <div className="shrink-0 flex">
                           <CheckIcon
                             className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && 'text-white bg-tech border-tech'
+                              checked && "text-white bg-tech border-tech"
                             }`}
                           />
                           {language.tenSites}
                         </div>
                         <span>
-                        <span className="line-through-diagonal text-xs text-slate-600 mr-1">
-                            {(license.currency.code == 'usd' ||
-                            license.currency.code == 'gbp') &&
-                            license.currency.symbol}
-                            {license.billingCycle == 'monthly' ? '11.99' : '9.99'}
-                            {license.currency.code == 'eur' &&
-                            license.currency.symbol}
-                            </span>
-                            <span>{(license.currency.code == 'usd' ||
-                            license.currency.code == 'gbp') &&
-                            license.currency.symbol}
-                            {license.billingCycle == 'monthly' ? '10.99' : '8.99'}
-                            {license.currency.code == 'eur' &&
-                            license.currency.symbol}
-                            </span>
+                          <span className="line-through-diagonal text-xs text-slate-600 mr-1">
+                            {(license.currency.code == "usd" ||
+                              license.currency.code == "gbp") &&
+                              license.currency.symbol}
+                            {license.billingCycle == "monthly"
+                              ? "11.99"
+                              : "9.99"}
+                            {license.currency.code == "eur" &&
+                              license.currency.symbol}
+                          </span>
+                          <span>
+                            {(license.currency.code == "usd" ||
+                              license.currency.code == "gbp") &&
+                              license.currency.symbol}
+                            {license.billingCycle == "monthly"
+                              ? "10.99"
+                              : "8.99"}
+                            {license.currency.code == "eur" &&
+                              license.currency.symbol}
+                          </span>
                         </span>
                       </span>
                     )}
@@ -679,7 +879,7 @@ mouseOverContainer.onmousemove = function(e) {
           </div>
           <div className="mt-2 lg:flex lg:items-center lg:justify-center">
             <div className="flex flex-shrink-0 justify-center -space-x-4 overflow-hidden lg:justify-start">
-            <img
+              <img
                 className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
                 src="https://ik.imagekit.io/chadwickmarketing/social/9686740C-DCCF-42F6-983B-30683F791760_kbEjc_BVD.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654532793838"
               />
@@ -693,10 +893,10 @@ mouseOverContainer.onmousemove = function(e) {
               />
             </div>
             <p className="mt-4 text-center text-base text-gray-900 lg:mt-0 lg:ml-4">
-              Join{/* */}{' '}
+              Join{/* */}{" "}
               <span className="font-bold">
                 100's of creators, bloggers and makers
-              </span>{' '}
+              </span>{" "}
               <br />
               and start building your bio link today
             </p>
@@ -705,10 +905,10 @@ mouseOverContainer.onmousemove = function(e) {
             onClick={openInstallModal}
             className="text-sm font-medium text-gray-600"
           >
-            {language.freeCta.or}{' '}
+            {language.freeCta.or}{" "}
             <a className="underline text-gray-800 cursor-pointer">
               {language.freeCta.base}
-            </a>{' '}
+            </a>{" "}
             {language.freeCta.free}
           </p>
 
@@ -781,7 +981,7 @@ mouseOverContainer.onmousemove = function(e) {
                           >
                             <ExclamationCircleIcon className="w-10 h-10" />
                             <span className="block sm:inline">
-                              {language.installModal.incompatible}{' '}
+                              {language.installModal.incompatible}{" "}
                               <a
                                 className="underline"
                                 href={installModal.downloadLink}
@@ -819,7 +1019,7 @@ mouseOverContainer.onmousemove = function(e) {
                                   d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                 ></path>
                               </svg>
-                            )}{' '}
+                            )}{" "}
                             {installModal.compatible
                               ? `${language.installModal.install} ${installModal.userSite}`
                               : language.installModal.continue}
@@ -845,13 +1045,13 @@ mouseOverContainer.onmousemove = function(e) {
                     <>
                       <Disclosure.Button
                         className={`pt-10 flex border-b-0 ${
-                          !open && 'mb-10 rounded-3xl border-b-2'
+                          !open && "mb-10 rounded-3xl border-b-2"
                         } border-2 border-neutral-100  bg-white justify-between w-full rounded-t-3xl text-xl px-10 pb-10 font-serif font-bold text-left focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75`}
                       >
                         <span>{question.question}</span>
                         <ChevronUpIcon
                           className={`${
-                            open ? 'transform rotate-180' : ''
+                            open ? "transform rotate-180" : ""
                           } w-5 h-5`}
                         />
                       </Disclosure.Button>
