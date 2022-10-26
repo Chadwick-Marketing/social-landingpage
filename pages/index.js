@@ -606,7 +606,7 @@ export default function Home() {
                   className="absolute top-0 left-0 w-8/12"
                   style={{
                     transform:
-                      "translateZ(150px) translateX(-50px) translateY(50px) scale(.6)",
+                      "translateZ(159px) translateX(-40px) translateY(48px) scale(.5)",
                   }}
                 >
                   <ScrollAnimation animateIn="bounceIn" delay={1000}>
@@ -721,7 +721,7 @@ export default function Home() {
               src={language.pricing.save20}
             />
           </RadioGroup>
-          <div className="md:w-8/12 -mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:gap-x-8">
+          <div className="md:w-8/12 -mx-4 mt-10 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:gap-x-8">
             <section className="flex flex-col rounded-3xl px-6 sm:px-8 lg:py-8 bg-white border-2 border-neutral-100">
               <h3 className="mt-5 font-serif font-bold text-lg text-slate-800">
                 Lite
@@ -730,7 +730,7 @@ export default function Home() {
                 Good for anyone who is just getting started, or for personal
                 use.
               </p>
-              <p className="order-first font-serif text-5xl font-bold tracking-tight text-slate-800">
+              <p className="order-first font-serif text-4xl font-bold tracking-tight text-slate-800">
                 {(license.currency.code == "usd" ||
                   license.currency.code == "gbp") &&
                   license.currency.symbol}
@@ -861,16 +861,21 @@ export default function Home() {
                 Level up your bio link with custom designs, advanced analytics,
                 dynamic content links, and more.
               </p>
-              <p className="order-first font-serif text-5xl font-bold tracking-tight text-white">
+              <p className="order-first font-serif text-4xl font-bold tracking-tight text-white">
                 {(license.currency.code == "usd" ||
                   license.currency.code == "gbp") &&
                   license.currency.symbol}
-                4.99{license.currency.code == "eur" && license.currency.symbol}
-                <span className="inline text-sm opacity-50">/ month </span>
+                <span className="line-through-diagonal text-base opacity-50 mr-2">
+                  {license.billingCycle == "monthly" ? "5.99" : "4.99"}
+                </span>
+                {license.billingCycle == "monthly" ? "4.99" : "3.99"}
+                {license.currency.code == "eur" && license.currency.symbol}
+                <span className="block text-sm opacity-50">/ month </span>
               </p>
+
               <ul
                 role="list"
-                className="order-last mt-10 flex flex-col gap-y-3 text-sm text-white"
+                className="order-last mt-10 flex flex-col gap-y-3 text-sm  text-white"
               >
                 <li className="flex">
                   <svg
@@ -891,7 +896,7 @@ export default function Home() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="ml-4">Send 25 quotes and invoices</span>
+                  <span className="ml-4">Everything from Lite</span>
                 </li>
                 <li className="flex">
                   <svg
@@ -912,7 +917,49 @@ export default function Home() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="ml-4">Connect up to 5 bank accounts</span>
+                  <span className="ml-4">Create your own designs</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-white"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Prioritize links with animations</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-white"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Schedule your links and content</span>
                 </li>
                 <li className="flex">
                   <svg
@@ -934,7 +981,7 @@ export default function Home() {
                     />
                   </svg>
                   <span className="ml-4">
-                    Track up to 50 expenses per month
+                    Share your socials with social icons
                   </span>
                 </li>
                 <li className="flex">
@@ -956,7 +1003,7 @@ export default function Home() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="ml-4">Automated payroll support</span>
+                  <span className="ml-4">Set your bio link as homepage</span>
                 </li>
                 <li className="flex">
                   <svg
@@ -977,7 +1024,7 @@ export default function Home() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="ml-4">Export up to 12 reports</span>
+                  <span className="ml-4">Gather advanced analytics</span>
                 </li>
                 <li className="flex">
                   <svg
@@ -998,7 +1045,7 @@ export default function Home() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="ml-4">Bulk reconcile transactions</span>
+                  <span className="ml-4">Hide the Social badge</span>
                 </li>
                 <li className="flex">
                   <svg
@@ -1019,174 +1066,16 @@ export default function Home() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="ml-4">Track in multiple currencies</span>
+                  <span className="ml-4">Priority email support</span>
                 </li>
               </ul>
-              <a
+              <button
                 className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white mt-8"
-                aria-label="Get started with the Small business plan for $15"
-                href="/register"
+                onClick={handleCheckout}
               >
-                Get started
-              </a>
+                Start 7-day free trial
+              </button>
             </section>
-          </div>
-          <div className="md:w-8/12 bg-white w-full pt-5 border-2 border-neutral-100 md:p-12 p-0 rounded-3xl">
-            <div className="flex md:flex-row flex-col items-center gap-5">
-              <div className="md:w-6/12 w-10/12">
-                <RadioGroup
-                  value={license.amount}
-                  onChange={(value) =>
-                    setLicense((previous) => ({ ...previous, amount: value }))
-                  }
-                >
-                  <RadioGroup.Option value="1">
-                    {({ checked }) => (
-                      <span
-                        className={`${
-                          checked ? "text-black" : "text-gray-600"
-                        } cursor-pointer justify-between border-solid border-2 border-neutral-100 focus:outline-none bg-white flex items-center rounded-full py-3 px-5 font-medium`}
-                      >
-                        <div className="shrink-0 flex">
-                          <CheckIcon
-                            className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && "text-white bg-tech"
-                            }`}
-                          />
-                          {language.oneSite}
-                        </div>
-                        <span>
-                          <span className="line-through-diagonal text-xs text-slate-600 mr-1">
-                            {(license.currency.code == "usd" ||
-                              license.currency.code == "gbp") &&
-                              license.currency.symbol}
-                            {license.billingCycle == "monthly"
-                              ? "5.99"
-                              : "4.99"}
-                            {license.currency.code == "eur" &&
-                              license.currency.symbol}
-                          </span>
-                          <span>
-                            {(license.currency.code == "usd" ||
-                              license.currency.code == "gbp") &&
-                              license.currency.symbol}
-                            {license.billingCycle == "monthly"
-                              ? "4.99"
-                              : "3.99"}
-                            {license.currency.code == "eur" &&
-                              license.currency.symbol}
-                          </span>
-                        </span>
-                      </span>
-                    )}
-                  </RadioGroup.Option>
-                  <RadioGroup.Option value="3">
-                    {({ checked }) => (
-                      <span
-                        className={`${
-                          checked ? "text-black" : "text-gray-600"
-                        } my-5 cursor-pointer justify-between border-solid border-2 border-neutral-100 focus:outline-none bg-white flex items-center rounded-full py-3 px-5 font-medium`}
-                      >
-                        <div className="shrink-0 flex">
-                          <CheckIcon
-                            className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && "text-white bg-tech border-tech"
-                            }`}
-                          />
-                          {language.threeSites}
-                        </div>
-                        <span>
-                          <span className="line-through-diagonal text-xs text-slate-600 mr-1">
-                            {(license.currency.code == "usd" ||
-                              license.currency.code == "gbp") &&
-                              license.currency.symbol}
-                            {license.billingCycle == "monthly"
-                              ? "8.99"
-                              : "6.99"}
-                            {license.currency.code == "eur" &&
-                              license.currency.symbol}
-                          </span>
-                          <span>
-                            {(license.currency.code == "usd" ||
-                              license.currency.code == "gbp") &&
-                              license.currency.symbol}
-                            {license.billingCycle == "monthly"
-                              ? "7.99"
-                              : "5.99"}
-                            {license.currency.code == "eur" &&
-                              license.currency.symbol}
-                          </span>
-                        </span>
-                      </span>
-                    )}
-                  </RadioGroup.Option>
-                  <RadioGroup.Option value="10">
-                    {({ checked }) => (
-                      <span
-                        className={`${
-                          checked ? "text-black" : "text-gray-600"
-                        } cursor-pointer justify-between border-solid border-2 border-neutral-100 focus:outline-none bg-white flex items-center rounded-full py-3 px-5 font-medium`}
-                      >
-                        <div className="shrink-0 flex">
-                          <CheckIcon
-                            className={`h-7 w-7 mr-5 text-white border-solid border-2 rounded-full p-1 border-neutral-100 ${
-                              checked && "text-white bg-tech border-tech"
-                            }`}
-                          />
-                          {language.tenSites}
-                        </div>
-                        <span>
-                          <span className="line-through-diagonal text-xs text-slate-600 mr-1">
-                            {(license.currency.code == "usd" ||
-                              license.currency.code == "gbp") &&
-                              license.currency.symbol}
-                            {license.billingCycle == "monthly"
-                              ? "11.99"
-                              : "9.99"}
-                            {license.currency.code == "eur" &&
-                              license.currency.symbol}
-                          </span>
-                          <span>
-                            {(license.currency.code == "usd" ||
-                              license.currency.code == "gbp") &&
-                              license.currency.symbol}
-                            {license.billingCycle == "monthly"
-                              ? "10.99"
-                              : "8.99"}
-                            {license.currency.code == "eur" &&
-                              license.currency.symbol}
-                          </span>
-                        </span>
-                      </span>
-                    )}
-                  </RadioGroup.Option>
-                </RadioGroup>
-              </div>
-              <div className="md:w-6/12 w-10/12 flex gap-4 flex-col md:pl-5">
-                {language.pricing.pro.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className="flex items-center text-sm font-bold gap-2"
-                  >
-                    <CheckIcon className="w-6 h-6 mr-3 bg-tech text-white rounded-full p-1" />
-                    {feature}
-                  </li>
-                ))}
-              </div>
-            </div>
-            <div className="w-12/12 flex mt-5 mb-0 md:mb-0 flex-col items-center">
-              <a
-                onClick={() => handleCheckout()}
-                className="group cursor-pointer inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900"
-              >
-                <span className="font-medium">
-                  {language.pricing.startTrial}
-                </span>
-              </a>
-              <p className="text-sm mt-3 font-medium text-gray-600">
-                {language.trial}
-              </p>
-            </div>
           </div>
           <div className="mt-2 lg:flex lg:items-center lg:justify-center">
             <div className="flex flex-shrink-0 justify-center -space-x-4 overflow-hidden lg:justify-start">
@@ -1212,17 +1101,6 @@ export default function Home() {
               and start building your bio link today
             </p>
           </div>
-          <p
-            onClick={openInstallModal}
-            className="text-sm font-medium text-gray-600"
-          >
-            {language.freeCta.or}{" "}
-            <a className="underline text-gray-800 cursor-pointer">
-              {language.freeCta.base}
-            </a>{" "}
-            {language.freeCta.free}
-          </p>
-
           <Transition appear show={installModal.open} as={Fragment}>
             <Dialog
               as="div"

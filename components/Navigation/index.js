@@ -24,13 +24,13 @@ const Navigation = ({ language, pricingInView }) => {
   const countdownRenderer = ({ hours, minutes, seconds }) => {
     return (
       <div className="flex gap-2 text-slate-800">
-        <span className="border border-grey-300 p-1  bg-white/20 rounded-lg text-xs text-center">
+        <span className="border border-grey-300 p-1  bg-white/20 rounded-full text-xs text-center">
           {hours}h
         </span>
-        <span className="border border-grey-300 p-1  bg-white/20 rounded-lg text-xs text-center">
+        <span className="border border-grey-300 p-1  bg-white/20 rounded-full text-xs text-center">
           {minutes}min
         </span>
-        <span className="border border-grey-300 p-1  bg-white/20 rounded-lg text-xs text-center">
+        <span className="border border-grey-300 p-1  bg-white/20 rounded-full text-xs text-center">
           {seconds}s
         </span>
       </div>
