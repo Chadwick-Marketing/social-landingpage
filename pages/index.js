@@ -678,8 +678,9 @@ export default function Home() {
         <section
           ref={pricingRef}
           id="pricing"
-          className="max-w-screen-xl md:px-10 px-5 relative w-full py-20 flex text-center items-center flex-col m-auto gap-[30px]"
+          className="max-w-screen-xl md:px-10 px-5 relative w-full py-20 flex text-center items-center flex-col m-auto gap-[20px]"
         >
+          <h6 className="font-bold text-tech">Pricing</h6>
           <h2 className="md:text-5xl text-3xl font-bold font-serif tracking-tight text-slate-900">
             {language.pricing.headline}
           </h2>
@@ -720,6 +721,316 @@ export default function Home() {
               src={language.pricing.save20}
             />
           </RadioGroup>
+          <div className="md:w-8/12 -mx-4 mt-16 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:gap-x-8">
+            <section className="flex flex-col rounded-3xl px-6 sm:px-8 lg:py-8 bg-white border-2 border-neutral-100">
+              <h3 className="mt-5 font-serif font-bold text-lg text-slate-800">
+                Lite
+              </h3>
+              <p className="mt-2 text-base text-slate-600">
+                Good for anyone who is just getting started, or for personal
+                use.
+              </p>
+              <p className="order-first font-serif text-5xl font-bold tracking-tight text-slate-800">
+                {(license.currency.code == "usd" ||
+                  license.currency.code == "gbp") &&
+                  license.currency.symbol}
+                0{license.currency.code == "eur" && license.currency.symbol}
+              </p>
+              <ul
+                role="list"
+                className="order-last mt-10 flex flex-col gap-y-3 text-sm text-slate-800"
+              >
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-slate-800"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Add unlimited links</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-slate-800"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Choose a pre-made design</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-slate-800"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Add thumbnails to your links</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-slate-800"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Set a custom URL ending</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-slate-800"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Gather basic analytics</span>
+                </li>
+              </ul>
+              <button
+                className="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-700 text-slate-800 hover:ring-slate-500 active:ring-slate-700 active:text-slate-400 focus-visible:outline-white mt-8"
+                onClick={openInstallModal}
+              >
+                Get started
+              </button>
+            </section>
+            <section className="flex flex-col rounded-3xl px-6 sm:px-8 order-first bg-tech py-8 border-2 border-neutral-100 lg:order-none">
+              <h3 className="mt-5 font-serif font-bold text-lg text-white">
+                Pro
+              </h3>
+              <p className="mt-2 text-base text-white">
+                Level up your bio link with custom designs, advanced analytics,
+                dynamic content links, and more.
+              </p>
+              <p className="order-first font-serif text-5xl font-bold tracking-tight text-white">
+                {(license.currency.code == "usd" ||
+                  license.currency.code == "gbp") &&
+                  license.currency.symbol}
+                4.99{license.currency.code == "eur" && license.currency.symbol}
+                <span className="inline text-sm opacity-50">/ month </span>
+              </p>
+              <ul
+                role="list"
+                className="order-last mt-10 flex flex-col gap-y-3 text-sm text-white"
+              >
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-white"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Send 25 quotes and invoices</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-white"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Connect up to 5 bank accounts</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-white"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">
+                    Track up to 50 expenses per month
+                  </span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-white"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Automated payroll support</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-white"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Export up to 12 reports</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-white"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Bulk reconcile transactions</span>
+                </li>
+                <li className="flex">
+                  <svg
+                    aria-hidden="true"
+                    className="h-6 w-6 flex-none fill-current stroke-current text-white"
+                  >
+                    <path
+                      d="M9.307 12.248a.75.75 0 1 0-1.114 1.004l1.114-1.004ZM11 15.25l-.557.502a.75.75 0 0 0 1.15-.043L11 15.25Zm4.844-5.041a.75.75 0 0 0-1.188-.918l1.188.918Zm-7.651 3.043 2.25 2.5 1.114-1.004-2.25-2.5-1.114 1.004Zm3.4 2.457 4.25-5.5-1.187-.918-4.25 5.5 1.188.918Z"
+                      strokeWidth={0}
+                    />
+                    <circle
+                      cx={12}
+                      cy={12}
+                      r="8.25"
+                      fill="none"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span className="ml-4">Track in multiple currencies</span>
+                </li>
+              </ul>
+              <a
+                className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white mt-8"
+                aria-label="Get started with the Small business plan for $15"
+                href="/register"
+              >
+                Get started
+              </a>
+            </section>
+          </div>
           <div className="md:w-8/12 bg-white w-full pt-5 border-2 border-neutral-100 md:p-12 p-0 rounded-3xl">
             <div className="flex md:flex-row flex-col items-center gap-5">
               <div className="md:w-6/12 w-10/12">
