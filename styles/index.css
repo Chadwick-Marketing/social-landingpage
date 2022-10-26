@@ -203,6 +203,3 @@ table th .-help-circle:hover ~ .-info-box {
   transform: perspective(600px);
 }
 
-.navigation {
-  transform: translateZ(1000px)
-}

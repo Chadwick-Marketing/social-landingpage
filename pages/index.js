@@ -560,7 +560,7 @@ export default function Home() {
                   />
                 </ScrollAnimation>
                 <div
-                  className="absolute top-1/2 left-1/2 w-8/12"
+                  className="absolute top-1/2 left-1/2 w-8/12 md:mt-0 mt-9"
                   style={{
                     transform:
                       "translateZ(80px) translateX(-50%) translateY(-100px) scale(.75)",
@@ -600,7 +600,7 @@ export default function Home() {
                   </ScrollAnimation>
                 </div>
                 <div
-                  className="absolute top-0 right-0 w-8/12"
+                  className="absolute top-0 right-0 w-8/12 md:mt-0 -mt-5"
                   style={{
                     transform:
                       "translateZ(195px) translateX(40px) translateY(100px) scale(.25)",
@@ -617,7 +617,7 @@ export default function Home() {
               </div>
             </div>
             <div className="md:w-6/12 w-full py-20">
-              <h6 className="font-bold text-tech my-3 ">Easy Setup</h6>
+              <h6 className="font-bold text-tech my-3 ">Easy setup</h6>
               <h2 className="lg:leading-none md:text-5xl text-3xl md:block text-slate-900 font-bold whitespace-pre-line font-serif">
                 Create your bio link in minutes
               </h2>
@@ -689,7 +689,7 @@ export default function Home() {
                   </ScrollAnimation>
                 </div>
                 <div
-                  className="absolute bottom-0 left-0 w-8/12"
+                  className="absolute bottom-0 left-0 w-8/12 md:mt-0 mt-5"
                   style={{
                     transform:
                       "translateZ(160px) translateX(-27px) translateY(-100px) scale(.5)",
@@ -719,7 +719,7 @@ export default function Home() {
                   </ScrollAnimation>
                 </div>
                 <div
-                  className="absolute top-0 right-0 w-8/12"
+                  className="absolute top-0 right-0 w-8/12 md:mt-0 -mt-5"
                   style={{
                     transform:
                       "translateZ(200px) translateX(65px) translateY(125px) scale(0.3)",
@@ -834,7 +834,7 @@ export default function Home() {
                   </ScrollAnimation>
                 </div>
                 <div
-                  className="absolute top-0 right-0 w-8/12"
+                  className="absolute top-0 right-0 w-8/12 md:mt-0 -mt-10"
                   style={{
                     transform:
                       "translateZ(225px) translateX(0px) translateY(175px) scale(0.25)",
@@ -891,7 +891,7 @@ export default function Home() {
         <section
           ref={pricingRef}
           id="pricing"
-          className="max-w-screen-xl md:px-10 px-5 relative w-full py-20 flex text-center items-center flex-col m-auto gap-[20px]"
+          className="max-w-screen-xl md:px-10 px-5 relative w-full py-20 flex text-center items-center flex-col m-auto md:gap-[20px] gap-[10px]"
         >
           <h6 className="font-bold text-tech">Pricing</h6>
           <h2 className="md:text-5xl text-3xl font-bold font-serif tracking-tight text-slate-900">
@@ -935,7 +935,7 @@ export default function Home() {
             />
           </RadioGroup>
           <div className="md:w-8/12 md:-mx-4 mt-10 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:gap-x-8">
-            <section className="flex flex-col rounded-3xl px-6 sm:px-8 lg:py-8 bg-white border-2 border-neutral-100">
+            <section className="flex flex-col rounded-3xl px-6 sm:px-8 py-8 bg-white border-2 border-neutral-100">
               <h3 className="mt-5 font-serif font-bold text-lg text-slate-800">
                 Lite
               </h3>
