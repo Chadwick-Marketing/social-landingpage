@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import LanguagePicker from '../LanguagePicker';
-import { SocialIcon } from 'react-social-icons';
-import Image from 'next/image';
+import Link from "next/link";
+import LanguagePicker from "../LanguagePicker";
+import { SocialIcon } from "react-social-icons";
+import Image from "next/image";
 
 const Footer = ({ language }) => {
   return (
@@ -29,13 +29,17 @@ const Footer = ({ language }) => {
                   {language.privacy}
                 </a>
               </Link>
-              <a className="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900" href="https://help.socialwp.io" target="_blank" >
+              <a
+                className="inline-block rounded-lg py-1 px-2 text-sm text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                href="https://help.socialwp.io"
+                target="_blank"
+              >
                 Help center
               </a>
             </div>
           </nav>
         </div>
-        <div className="flex flex-col items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
+        <div className="flex flex-col md:items-center border-t border-slate-400/10 py-10 sm:flex-row-reverse sm:justify-between">
           <div className="flex gap-x-6">
             <SocialIcon
               className="w-5 ml-[-4%] md:ml-0"
@@ -45,7 +49,7 @@ const Footer = ({ language }) => {
             />
           </div>
           <p className="mt-6 text-sm text-slate-500 flex flex-col gap-3 sm:mt-0">
-            <LanguagePicker language={language}></LanguagePicker> Copyright ©{' '}
+            <LanguagePicker language={language}></LanguagePicker> Copyright ©{" "}
             {new Date().getFullYear()} Chadwick Marketing. All rights reserved.
           </p>
         </div>

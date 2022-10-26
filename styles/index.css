@@ -7,6 +7,17 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Fix Safari perspective z-index bug */
+
+main {
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+
+main .feature-section {
+  transform: translateZ(1000px);
+transform-style: preserve-3d;
+}
+
 .links-wrap:before {
   content: '';
   z-index: 1;
@@ -182,3 +193,13 @@ table th .-help-circle:hover ~ .-info-box {
   background: linear-gradient(to left top, transparent 45.5%, currentColor 47.5%, currentColor 52.5%, transparent 54.5%);
   pointer-events: none;
 }
+
+.social-parallax-effect-layer {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform: perspective(600px);
+}
+
