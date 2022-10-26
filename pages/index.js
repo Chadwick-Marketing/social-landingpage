@@ -701,7 +701,7 @@ export default function Home() {
                   </ScrollAnimation>
                 </div>
                 <div
-                  className="absolute bottom-0 left-0 w-8/12 md:mt-0 -mb-5"
+                  className="absolute bottom-0 left-0 w-8/12 md:mb-0 -mb-5"
                   style={{
                     transform:
                       "translateZ(160px) translateX(-27px) translateY(-100px) scale(.5)",
