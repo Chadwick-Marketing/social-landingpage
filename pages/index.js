@@ -253,7 +253,7 @@ export default function Home() {
           </h1>
           <div className="md:w-11/12 pb-10 flex md:items-center flex-col md:order-none order-4">
             <p
-              className={`md:pt-5 pt-3 xl:w-7/12 md:w-7/12 w-12/12 font-inter text-lg text-slate-800 font-medium leading-9`}
+              className={`md:pt-5 pt-3 xl:w-7/12 md:w-8/12 w-12/12 font-inter text-lg text-slate-800 font-medium leading-9`}
             >
               {language.heroDescription}
             </p>
@@ -393,7 +393,6 @@ export default function Home() {
                   animateOnce={true}
                   animateIn="bounceIn"
                   delay={700}
-                  animateOnce={true}
                   animatePreScroll={true}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_45_7j3Y-7UOED.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784747465"></img>
@@ -511,7 +510,7 @@ export default function Home() {
           </div>
         </section>
         <section className="max-w-screen-xl w-full relative mt-[100px] overflow-hidden flex  md:text-center md:items-center flex-col m-auto gap-[20px] md:px-10 px-8">
-          <h2 className="lg:w-6/12 md:w-10/12 md:text-5xl text-3xl md:block font-bold text-slate-900 whitespace-pre-line font-serif">
+          <h2 className="lg:w-8/12 md:w-10/12 md:text-5xl text-3xl md:block font-bold text-slate-900 whitespace-pre-line font-serif">
             Everything you are. <br /> In one simple place.
           </h2>
           <p className="md:w-6/12 pb-10 font-inter text-lg text-slate-800 font-medium leading-9">
@@ -625,7 +624,7 @@ export default function Home() {
                 Getting started is easy. Design your custom bio link in minutes,
                 or use one of our pre-made templates. No coding required.
               </p>
-              <div className="grid grid-cols-2 gap-5 mb-8">
+              <div className="grid md:grid-cols-2 gap-5 mb-8">
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <ColorSwatchIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Pre-made designs
@@ -689,7 +688,7 @@ export default function Home() {
                   </ScrollAnimation>
                 </div>
                 <div
-                  className="absolute bottom-0 left-0 w-8/12 md:mt-0 mt-5"
+                  className="absolute bottom-0 left-0 w-8/12 md:mt-0 -mb-5"
                   style={{
                     transform:
                       "translateZ(160px) translateX(-27px) translateY(-100px) scale(.5)",
@@ -745,7 +744,7 @@ export default function Home() {
                 collect donations, share your latest blog posts, and more. The
                 possibilities are endless.
               </p>
-              <div className="grid grid-cols-2 gap-5 mb-8">
+              <div className="grid md:grid-cols-2 gap-5 mb-8">
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <CurrencyDollarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Collect donations
@@ -819,7 +818,7 @@ export default function Home() {
                   </ScrollAnimation>
                 </div>
                 <div
-                  className="absolute top-0 left-0 w-8/12"
+                  className="absolute top-0 left-0 w-8/12 md:mt-0 -mt-10"
                   style={{
                     transform:
                       "translateZ(200px) translateX(-15px) translateY(250px) scale(0.2)",
@@ -860,7 +859,7 @@ export default function Home() {
                 realtime. Gather all the data you need to analyze your audience
                 and optimize your content.
               </p>
-              <div className="grid grid-cols-2 gap-5 mb-8">
+              <div className="grid md:grid-cols-2 gap-5 mb-8">
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <CalendarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
                   Custom date ranges
