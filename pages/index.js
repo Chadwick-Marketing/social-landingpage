@@ -266,7 +266,7 @@ export default function Home() {
           </h1>
           <div className="md:w-11/12 pb-10 flex md:items-center flex-col md:order-none order-4">
             <p
-              className={`md:pt-5 pt-3 xl:w-7/12 md:w-8/12 w-12/12 font-inter text-lg text-slate-800 font-medium leading-9`}
+              className={`md:pt-5 pt-3 lg:w-7/12 md:w-8/12 w-12/12 font-inter text-lg text-slate-800 font-medium leading-9`}
             >
               {language.heroDescription}
             </p>
@@ -946,7 +946,7 @@ export default function Home() {
               src={language.pricing.save20}
             />
           </RadioGroup>
-          <div className="md:w-8/12 md:-mx-4 mt-10 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:gap-x-8">
+          <div className="md:w-8/12 md:-mx-4 mt-10 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 md:gap-x-8">
             <section className="flex flex-col rounded-3xl px-6 sm:px-8 py-8 bg-white border-2 border-neutral-100">
               <h3 className="mt-5 font-serif font-bold text-lg text-slate-800">
                 Lite
@@ -1422,6 +1422,18 @@ export default function Home() {
               </div>
             </Dialog>
           </Transition>
+          <div className="flex items-center gap-3 pt-5">
+            <h5 className="font-bold font-serif text-base">As featured on:</h5>
+            <a
+              href="https://layerwp.com/product/social-link-in-bio-creator/"
+              target="_blank"
+            >
+              <img
+                className="w-20"
+                src="https://ik.imagekit.io/chadwickmarketing/social/logo--layerwp_VPxRMZSl7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666816591774"
+              />
+            </a>
+          </div>
         </section>
         <section className="max-w-screen-xl w-full relative md:flex text-center items-center flex-col m-auto gap-[50px] md:px-10 px-5">
           <h2 className="md:w-8/12  text-4xl md:mb-0 mb-10 md:block font-bold font-serif">
