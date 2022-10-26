@@ -239,23 +239,25 @@ export default function Home() {
       </Head>
       <Navigation language={language} pricingInView={pricingInView} />
       <main className="flex items-center flex-col">
-        <section className="header relative bg-no-repeat bg-top bg-[length:60%] flex justify-center items-center text-center px-8 flex-col max-w-screen-xl m-auto pt-5">
-          <h6 className="font-bold text-tech my-3 ">Introducing Social</h6>
+        <section className="header relative bg-no-repeat bg-top flex justify-center md:items-center md:text-center px-8 flex-col max-w-screen-xl m-auto pt-5">
+          <h6 className="font-bold text-tech my-3 md:order-none order-2">
+            Introducing Social
+          </h6>
           <h1
             className="lg:text-5xl
-             xl:w-7/12 md:w-8/12 w-full text-slate-900 w-full text-4xl m-auto  font-bold font-serif"
+             xl:w-7/12 md:w-8/12 w-full text-slate-900 w-full text-4xl m-auto  font-bold font-serif md:order-none order-3"
           >
             The
             <div className="relative text-tech mx-2 inline w-fit">complete</div>
             bio link solution for WordPress
           </h1>
-          <div className="md:w-11/12 pb-10 flex items-center flex-col">
+          <div className="md:w-11/12 pb-10 flex md:items-center flex-col md:order-none order-4">
             <p
               className={`md:pt-5 pt-3 xl:w-7/12 md:w-7/12 w-12/12 font-inter text-lg text-slate-800 font-medium leading-9`}
             >
               {language.heroDescription}
             </p>
-            <div className="flex justify-center mt-5 gap-3 items-center">
+            <div className="flex md:justify-center mt-5 gap-3 items-center">
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
                   <span className="font-medium mr-1">
@@ -336,7 +338,7 @@ export default function Home() {
             </div>
           </div>
           <div
-            className="w-full social-parallax-container py-5 relative"
+            className="w-full social-parallax-container py-5 relative md:order-none order-1"
             src={language.heroImage}
           >
             <div className="social-parallax-effect-layer">
@@ -346,30 +348,54 @@ export default function Home() {
                   src="https://ik.imagekit.io/chadwickmarketing/social/phone-frame.d4b6b62a_1_mIQ_lKoHIa.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627928"
                 ></img>
               </ScrollAnimation>
+
               <div
                 className="absolute left-0 top-0 w-6/12"
                 style={{
                   transform: "translateZ(-200px) translateY(-50px)",
                 }}
               >
-                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_43__9s4owxMs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784684029"></img>
+                {" "}
+                <ScrollAnimation
+                  animateIn="bounceIn"
+                  delay={1000}
+                  animatePreScroll={true}
+                >
+                  <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_43__9s4owxMs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784684029"></img>
+                </ScrollAnimation>
               </div>
+
               <div
                 className="absolute left-0 top-0 w-6/12"
                 style={{
                   transform: "translateZ(-200px) translateY(-50px)",
                 }}
               >
-                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_43__9s4owxMs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784684029"></img>
+                <ScrollAnimation
+                  animateIn="bounceIn"
+                  delay={1000}
+                  animatePreScroll={true}
+                >
+                  <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_43__9s4owxMs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784684029"></img>
+                </ScrollAnimation>{" "}
               </div>
+
               <div
                 className="absolute right-0 top-0 w-6/12"
                 style={{
                   transform: "translateZ(-200px) translateY(-50px)",
                 }}
               >
-                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_45_7j3Y-7UOED.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784747465"></img>
+                {" "}
+                <ScrollAnimation
+                  animateIn="bounceIn"
+                  delay={700}
+                  animatePreScroll={true}
+                >
+                  <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_45_7j3Y-7UOED.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784747465"></img>
+                </ScrollAnimation>{" "}
               </div>
+
               <div
                 className="absolute top-1/2 left-1/2 w-4/12"
                 style={{
@@ -377,17 +403,34 @@ export default function Home() {
                     "translateZ(100px) translateY(-50%) translateX(-50%)",
                 }}
               >
-                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_40_DrSUljxTa.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784630715"></img>
+                {" "}
+                <ScrollAnimation
+                  animateIn="bounceIn"
+                  delay={300}
+                  animatePreScroll={true}
+                  offset={-2500}
+                >
+                  <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_40_DrSUljxTa.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784630715"></img>
+                </ScrollAnimation>{" "}
               </div>
+
               <div
                 className="absolute left-1/2 w-1/12 top-0"
                 style={{
                   transform:
-                    "translateZ(150px) translateY(25px) translateX(-150%)",
+                    "translateZ(100px) translateY(10px) translateX(-175%)",
                 }}
               >
-                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_41_HzKBxQmL3.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784628212" />
+                {" "}
+                <ScrollAnimation
+                  animateIn="bounceIn"
+                  delay={1000}
+                  animatePreScroll={true}
+                >
+                  <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_41_HzKBxQmL3.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784628212" />
+                </ScrollAnimation>
               </div>
+
               <div
                 className="absolute right-1/2 w-1/12 bottom-0"
                 style={{
@@ -395,30 +438,69 @@ export default function Home() {
                     "translateZ(150px) translateY(-25px) translateX(150%)",
                 }}
               >
-                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_42_bYZbhCT4p.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627710" />
+                {" "}
+                <ScrollAnimation
+                  animateIn="bounceIn"
+                  delay={800}
+                  animatePreScroll={true}
+                >
+                  <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_42_bYZbhCT4p.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627710" />
+                </ScrollAnimation>{" "}
               </div>
+
               <div
                 className="absolute right-0 w-5 bottom-0"
                 style={{
                   transform:
                     "translateZ(100px) translateX(-25%) translateY(-75px)",
+                  right: "25%",
                 }}
               >
-                <img src="https://ik.imagekit.io/chadwickmarketing/social/youtube_nLUUBZlHgz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627661" />
+                <ScrollAnimation
+                  animateIn="bounceIn"
+                  delay={700}
+                  animatePreScroll={true}
+                >
+                  <img src="https://ik.imagekit.io/chadwickmarketing/social/youtube_nLUUBZlHgz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627661" />
+                </ScrollAnimation>{" "}
               </div>
+
+              <div
+                className="absolute right-0 w-1/6 top-0"
+                style={{
+                  transform: "translateZ(80px) translateY(0px)",
+                  right: "20%",
+                }}
+              >
+                <ScrollAnimation
+                  animateIn="bounceIn"
+                  delay={700}
+                  animatePreScroll={true}
+                >
+                  <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_46_GtPBU_mfNx.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666789153448" />
+                </ScrollAnimation>{" "}
+              </div>
+
               <div
                 className="absolute left-0 w-5 top-0"
                 style={{
                   transform:
-                    "translateZ(100px) translateX(25%) translateY(25%)",
+                    "translateZ(100px) translateX(25%) translateY(250%)",
+                  left: "25%",
                 }}
               >
-                <img src="https://ik.imagekit.io/chadwickmarketing/social/instagram__1__ZnOD_1Kjox.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627726" />
+                <ScrollAnimation
+                  animateIn="bounceIn"
+                  delay={1000}
+                  animatePreScroll={true}
+                >
+                  <img src="https://ik.imagekit.io/chadwickmarketing/social/instagram__1__ZnOD_1Kjox.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627726" />
+                </ScrollAnimation>{" "}
               </div>
             </div>
           </div>
         </section>
-        <section className="max-w-screen-xl w-full relative mt-[100px] overflow-hidden flex  text-center items-center flex-col m-auto md:gap-[20px] md:px-10 px-8">
+        <section className="max-w-screen-xl w-full relative mt-[100px] overflow-hidden flex  md:text-center md:items-center flex-col m-auto gap-[20px] md:px-10 px-8">
           <h2 className="lg:w-6/12 md:w-10/12 md:text-5xl text-3xl md:block font-bold text-slate-900 whitespace-pre-line font-serif">
             Everything you are. <br /> In one simple place.
           </h2>
@@ -524,21 +606,21 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-5 mb-8">
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <ColorSwatchIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Pre-made Designs
+                  Pre-made designs
                 </div>
 
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <CursorClickIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Drag & Drop Editor
+                  Drag & drop editor
                 </div>
 
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <CodeIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  No Coding Required
+                  No coding required
                 </div>
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <SearchIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  SEO-Optimized
+                  SEO-optimized
                 </div>
               </div>
               <Link href="#pricing">
@@ -628,19 +710,19 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-5 mb-8">
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <CurrencyDollarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Collect Donations
+                  Collect donations
                 </div>
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <PlayIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Embed Videos
+                  Embed videos
                 </div>
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <RssIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Share Your Posts
+                  Share your posts
                 </div>
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <CollectionIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Organize Your Links
+                  Organize your links
                 </div>
               </div>
               <Link href="#pricing">
@@ -731,15 +813,15 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-5 mb-8">
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <CalendarIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Custom Date Ranges
+                  Custom date ranges
                 </div>
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <RefreshIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Realtime Updates
+                  Realtime updates
                 </div>
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <LinkIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Individual Link Analytics
+                  Individual link analytics
                 </div>
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <LockClosedIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
