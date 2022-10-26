@@ -335,7 +335,88 @@ export default function Home() {
               </Transition>
             </div>
           </div>
-          <img className="md:w-10/12 w-12/12 " src={language.heroImage} />
+          <div
+            className="w-full social-parallax-container py-5 relative"
+            src={language.heroImage}
+          >
+            <div className="social-parallax-effect-layer">
+              <ScrollAnimation animateIn="bounceIn">
+                <img
+                  className="w-3/12 m-auto rounded-2xl"
+                  src="https://ik.imagekit.io/chadwickmarketing/social/phone-frame.d4b6b62a_1_mIQ_lKoHIa.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627928"
+                ></img>
+              </ScrollAnimation>
+              <div
+                className="absolute left-0 top-0 w-6/12"
+                style={{
+                  transform: "translateZ(-200px) translateY(-50px)",
+                }}
+              >
+                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_43__9s4owxMs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784684029"></img>
+              </div>
+              <div
+                className="absolute left-0 top-0 w-6/12"
+                style={{
+                  transform: "translateZ(-200px) translateY(-50px)",
+                }}
+              >
+                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_43__9s4owxMs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784684029"></img>
+              </div>
+              <div
+                className="absolute right-0 top-0 w-6/12"
+                style={{
+                  transform: "translateZ(-200px) translateY(-50px)",
+                }}
+              >
+                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_45_7j3Y-7UOED.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784747465"></img>
+              </div>
+              <div
+                className="absolute top-1/2 left-1/2 w-4/12"
+                style={{
+                  transform:
+                    "translateZ(100px) translateY(-50%) translateX(-50%)",
+                }}
+              >
+                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_40_DrSUljxTa.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784630715"></img>
+              </div>
+              <div
+                className="absolute left-1/2 w-1/12 top-0"
+                style={{
+                  transform:
+                    "translateZ(150px) translateY(25px) translateX(-150%)",
+                }}
+              >
+                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_41_HzKBxQmL3.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784628212" />
+              </div>
+              <div
+                className="absolute right-1/2 w-1/12 bottom-0"
+                style={{
+                  transform:
+                    "translateZ(150px) translateY(-25px) translateX(150%)",
+                }}
+              >
+                <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_42_bYZbhCT4p.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627710" />
+              </div>
+              <div
+                className="absolute right-0 w-5 bottom-0"
+                style={{
+                  transform:
+                    "translateZ(100px) translateX(-25%) translateY(-75px)",
+                }}
+              >
+                <img src="https://ik.imagekit.io/chadwickmarketing/social/youtube_nLUUBZlHgz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627661" />
+              </div>
+              <div
+                className="absolute left-0 w-5 top-0"
+                style={{
+                  transform:
+                    "translateZ(100px) translateX(25%) translateY(25%)",
+                }}
+              >
+                <img src="https://ik.imagekit.io/chadwickmarketing/social/instagram__1__ZnOD_1Kjox.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627726" />
+              </div>
+            </div>
+          </div>
         </section>
         <section className="max-w-screen-xl w-full relative mt-[100px] overflow-hidden flex  text-center items-center flex-col m-auto md:gap-[20px] md:px-10 px-8">
           <h2 className="lg:w-6/12 md:w-10/12 md:text-5xl text-3xl md:block font-bold text-slate-900 whitespace-pre-line font-serif">
@@ -1076,30 +1157,6 @@ export default function Home() {
                 Start 7-day free trial
               </button>
             </section>
-          </div>
-          <div className="mt-2 lg:flex lg:items-center lg:justify-center">
-            <div className="flex flex-shrink-0 justify-center -space-x-4 overflow-hidden lg:justify-start">
-              <img
-                className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-                src="https://ik.imagekit.io/chadwickmarketing/social/9686740C-DCCF-42F6-983B-30683F791760_kbEjc_BVD.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654532793838"
-              />
-              <img
-                className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-                src="https://ik.imagekit.io/chadwickmarketing/social/60EAD10D-A767-4C4D-BED0-7F25DF2850F7_pOZChPL7F.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654544909975"
-              />
-              <img
-                className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
-                src="https://ik.imagekit.io/chadwickmarketing/social/FEA14AC0-E0E8-4218-8E84-4F459823DC07_kMgoD5m_0.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1654532791049"
-              />
-            </div>
-            <p className="mt-4 text-center text-base text-gray-900 lg:mt-0 lg:ml-4">
-              Join{/* */}{" "}
-              <span className="font-bold">
-                100's of creators, bloggers and makers
-              </span>{" "}
-              <br />
-              and start building your bio link today
-            </p>
           </div>
           <Transition appear show={installModal.open} as={Fragment}>
             <Dialog
