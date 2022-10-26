@@ -342,7 +342,7 @@ export default function Home() {
             src={language.heroImage}
           >
             <div className="social-parallax-effect-layer">
-              <ScrollAnimation animateIn="bounceIn">
+              <ScrollAnimation animateOnce={true} animateIn="bounceIn">
                 <img
                   className="w-3/12 m-auto rounded-2xl"
                   src="https://ik.imagekit.io/chadwickmarketing/social/phone-frame.d4b6b62a_1_mIQ_lKoHIa.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627928"
@@ -357,6 +357,7 @@ export default function Home() {
               >
                 {" "}
                 <ScrollAnimation
+                  animateOnce={true}
                   animateIn="bounceIn"
                   delay={1000}
                   animatePreScroll={true}
@@ -372,6 +373,7 @@ export default function Home() {
                 }}
               >
                 <ScrollAnimation
+                  animateOnce={true}
                   animateIn="bounceIn"
                   delay={1000}
                   animatePreScroll={true}
@@ -388,8 +390,10 @@ export default function Home() {
               >
                 {" "}
                 <ScrollAnimation
+                  animateOnce={true}
                   animateIn="bounceIn"
                   delay={700}
+                  animateOnce={true}
                   animatePreScroll={true}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_45_7j3Y-7UOED.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784747465"></img>
@@ -405,6 +409,7 @@ export default function Home() {
               >
                 {" "}
                 <ScrollAnimation
+                  animateOnce={true}
                   animateIn="bounceIn"
                   delay={300}
                   animatePreScroll={true}
@@ -423,6 +428,7 @@ export default function Home() {
               >
                 {" "}
                 <ScrollAnimation
+                  animateOnce={true}
                   animateIn="bounceIn"
                   delay={1000}
                   animatePreScroll={true}
@@ -440,6 +446,7 @@ export default function Home() {
               >
                 {" "}
                 <ScrollAnimation
+                  animateOnce={true}
                   animateIn="bounceIn"
                   delay={800}
                   animatePreScroll={true}
@@ -457,6 +464,7 @@ export default function Home() {
                 }}
               >
                 <ScrollAnimation
+                  animateOnce={true}
                   animateIn="bounceIn"
                   delay={700}
                   animatePreScroll={true}
@@ -473,8 +481,9 @@ export default function Home() {
                 }}
               >
                 <ScrollAnimation
+                  animateOnce={true}
                   animateIn="bounceIn"
-                  delay={700}
+                  delay={300}
                   animatePreScroll={true}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_46_GtPBU_mfNx.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666789153448" />
@@ -490,6 +499,7 @@ export default function Home() {
                 }}
               >
                 <ScrollAnimation
+                  animateOnce={true}
                   animateIn="bounceIn"
                   delay={1000}
                   animatePreScroll={true}
@@ -539,11 +549,11 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-white p-9 md:mx-10  border-2 border-neutral-100 relative mt-[150px]  md:flex items-center flex-col m-auto ">
-          <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
+        <section className="w-full bg-white p-9 md:mx-10  border-2 border-neutral-100 relative mt-[150px] md:flex items-center flex-col m-auto">
+          <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10  feature-section">
             <div className="md:w-6/12 w-full relative social-parallax-container">
               <div className="social-parallax-effect-layer">
-                <ScrollAnimation animateIn="bounceIn">
+                <ScrollAnimation animateOnce={true} animateIn="bounceIn">
                   <img
                     className="w-8/12 m-auto"
                     src="https://ik.imagekit.io/chadwickmarketing/social/Group_33_73CoDwPIh.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717283096"
@@ -556,7 +566,7 @@ export default function Home() {
                       "translateZ(80px) translateX(-50%) translateY(-100px) scale(.75)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn">
+                  <ScrollAnimation animateOnce={true} animateIn="bounceIn">
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_32_gH65KGaOrX.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717280699" />
                   </ScrollAnimation>
                 </div>
@@ -567,7 +577,11 @@ export default function Home() {
                       "translateZ(150px) translateX(-27px) translateY(-26px) scale(.55)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={500}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={500}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_27_6GyEkmJsQ.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717281514" />
                   </ScrollAnimation>
                 </div>
@@ -577,7 +591,11 @@ export default function Home() {
                     transform: "translateZ(175px) translateX(50px) scale(.5)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={1000}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_31_DV_1CT817t.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717280078" />
                   </ScrollAnimation>
                 </div>
@@ -588,7 +606,11 @@ export default function Home() {
                       "translateZ(195px) translateX(40px) translateY(100px) scale(.25)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={500}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={500}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_26_7CXvHiZZYn.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666717279386" />
                   </ScrollAnimation>
                 </div>
@@ -631,10 +653,10 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex md:flex-row-reverse flex-col max-w-screen-lg items-center gap-20 py-10 m-auto">
+          <div className="flex md:flex-row-reverse flex-col max-w-screen-lg items-center gap-20 py-10 m-auto feature-section">
             <div className="md:w-6/12 w-full relative social-parallax-container">
               <div className="social-parallax-effect-layer">
-                <ScrollAnimation animateIn="bounceIn">
+                <ScrollAnimation animateOnce={true} animateIn="bounceIn">
                   <img
                     className="w-8/12 m-auto"
                     src="https://ik.imagekit.io/chadwickmarketing/social/phone-frame.d4b6b62a_1_YE7Ufxsme6.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774862438"
@@ -647,7 +669,7 @@ export default function Home() {
                       "translateZ(80px) translateX(-60%) translateY(-50px) scale(.85)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn">
+                  <ScrollAnimation animateOnce={true} animateIn="bounceIn">
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_16_4oiteBPIk.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337771" />
                   </ScrollAnimation>
                 </div>
@@ -658,7 +680,11 @@ export default function Home() {
                       "translateZ(150px) translateX(-27px) translateY(-26px) scale(.65)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={500}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={500}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_36_Ci-4AV9Tw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337874" />
                   </ScrollAnimation>
                 </div>
@@ -669,7 +695,11 @@ export default function Home() {
                       "translateZ(160px) translateX(-27px) translateY(-100px) scale(.5)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={500}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={500}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_34_j-V8xvop6.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337561" />
                   </ScrollAnimation>
                 </div>
@@ -680,7 +710,11 @@ export default function Home() {
                       "translateZ(150px) translateX(50px) translateY(100px) scale(.75)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={1000}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Rectangle_68_wJxp9XWsx.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337998" />
                   </ScrollAnimation>
                 </div>
@@ -691,7 +725,11 @@ export default function Home() {
                       "translateZ(200px) translateX(65px) translateY(125px) scale(0.3)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={1000}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_35_s5nrEcYOX.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666774337876" />
                   </ScrollAnimation>
                 </div>
@@ -733,10 +771,10 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10">
+          <div className="flex md:flex-row flex-col max-w-screen-lg md:gap-20 m-auto items-center py-10 feature-section">
             <div className="md:w-6/12 w-full relative social-parallax-container">
               <div className="social-parallax-effect-layer">
-                <ScrollAnimation animateIn="bounceIn">
+                <ScrollAnimation animateOnce={true} animateIn="bounceIn">
                   <img
                     className="w-9/12 m-auto"
                     src="https://ik.imagekit.io/chadwickmarketing/social/Group_39_Yfq2zdvr2.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775761130"
@@ -749,7 +787,7 @@ export default function Home() {
                       "translateZ(-1px) translateX(-50%) translateY(75%) scale(1.2)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn">
+                  <ScrollAnimation animateOnce={true} animateIn="bounceIn">
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/magicpattern-svg-chart-1666536805079_1__1__uJNyx4iz-.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775812187" />
                   </ScrollAnimation>
                 </div>
@@ -760,7 +798,7 @@ export default function Home() {
                       "translateZ(80px) translateX(-50%) translateY(-50px) scale(.85)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn">
+                  <ScrollAnimation animateOnce={true} animateIn="bounceIn">
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_38_5ken4rtnX.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775762613" />
                   </ScrollAnimation>
                 </div>
@@ -772,7 +810,11 @@ export default function Home() {
                       "translateZ(159px) translateX(-40px) translateY(48px) scale(.5)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={1000}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_28__1__fWG9nA9Lz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775761661" />
                   </ScrollAnimation>
                 </div>
@@ -783,7 +825,11 @@ export default function Home() {
                       "translateZ(200px) translateX(-15px) translateY(250px) scale(0.2)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={1000}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_21_X1ZJ9IMA9.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666775761673" />
                   </ScrollAnimation>
                 </div>
@@ -794,7 +840,11 @@ export default function Home() {
                       "translateZ(225px) translateX(0px) translateY(175px) scale(0.25)",
                   }}
                 >
-                  <ScrollAnimation animateIn="bounceIn" delay={1000}>
+                  <ScrollAnimation
+                    animateOnce={true}
+                    animateIn="bounceIn"
+                    delay={1000}
+                  >
                     <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_37_uA8t1uFdx.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666776924918" />
                   </ScrollAnimation>
                 </div>
@@ -802,7 +852,7 @@ export default function Home() {
             </div>
             <div className="md:w-6/12 md:py-20">
               <h6 className="font-bold text-tech my-3 ">Analytics</h6>
-              <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold pt-20 md:pt-0 whitespace-pre-line font-serif">
+              <h2 className="lg:leading-none md:text-5xl text-3xl md:block  text-slate-900 font-bold md:pt-0 whitespace-pre-line font-serif">
                 Get meaningful stats, in realtime
               </h2>
               <p className="pt-5 pb-10 font-inter text-lg tracking-tight text-slate-800 font-medium ">
@@ -884,7 +934,7 @@ export default function Home() {
               src={language.pricing.save20}
             />
           </RadioGroup>
-          <div className="md:w-8/12 -mx-4 mt-10 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:gap-x-8">
+          <div className="md:w-8/12 md:-mx-4 mt-10 grid max-w-2xl grid-cols-1 gap-y-10 sm:mx-auto lg:-mx-8 lg:max-w-none lg:grid-cols-2 xl:mx-0 xl:gap-x-8">
             <section className="flex flex-col rounded-3xl px-6 sm:px-8 lg:py-8 bg-white border-2 border-neutral-100">
               <h3 className="mt-5 font-serif font-bold text-lg text-slate-800">
                 Lite
