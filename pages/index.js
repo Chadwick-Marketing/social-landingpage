@@ -86,6 +86,19 @@ export default function Home() {
     setInstallModal((previous) => ({ ...previous, open: false }));
   };
 
+  async function fetchWithTimeout(resource, options = {}) {
+    const { timeout = 8000 } = options;
+
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+    const response = await fetch(resource, {
+      ...options,
+      signal: controller.signal,
+    });
+    clearTimeout(id);
+    return response;
+  }
+
   const checkSiteCompatibility = (e) => {
     e.preventDefault();
 
@@ -103,7 +116,7 @@ export default function Home() {
 
     setInstallModal((previous) => ({ ...previous, loading: true }));
 
-    fetch(
+    fetchWithTimeout(
       `https://api.allorigins.win/get?url=${encodeURIComponent(
         `${userSite}/wp-json`
       )}`
