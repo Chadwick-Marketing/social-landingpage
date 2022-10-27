@@ -42,9 +42,9 @@ const Navigation = ({ language, pricingInView }) => {
       <div
         className={`${
           headerSticky
-            ? `bg-white/90 py-1.5 px-5 shadow-sm max-w-full py-2`
+            ? `bg-white py-1.5 px-5 shadow-sm max-w-full py-2`
             : "md:py-10 md:px-5 lg:px-5 xl:px-0 px-5 py-3 max-w-screen-xl "
-        } backdrop-blur-xl  m-auto items-center flex justify-between transition-all `}
+        }  m-auto items-center flex justify-between transition-all `}
       >
         <div className="logo ">
           <Link href="/" passHref>
@@ -81,7 +81,7 @@ const Navigation = ({ language, pricingInView }) => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <div className="flex md:flex-row flex-col justify-center gap-2 items-center shadow-sm bg-gradient-to-r text-white py-1 from-[#e1eaff] to-[#fbf0f4] ">
+        <div className="flex md:flex-row flex-col justify-center gap-2 items-center shadow-sm bg-gradient-to-r text-white py-2 from-[#e1eaff] to-[#fbf0f4] ">
           <p className="text-xs text-slate-800 ">
             Launch sale: <strong>Up to 20% off</strong> on Pro plan. Time left:
           </p>

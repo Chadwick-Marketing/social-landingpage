@@ -244,7 +244,7 @@ export default function Home() {
         <meta name="description" content={language.home.description} />
         <meta
           property="og:image"
-          content="https://ik.imagekit.io/chadwickmarketing/social/banner-772x250_zGfos61xsHN.png?ik-sdk-version=javascript-1.4.3&updatedAt=1643727968060"
+          content="https://ik.imagekit.io/chadwickmarketing/social/og--image_haZDiZynP.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666863781752"
         />
         <link rel="icon" href="/favicon.ico" />
         <link rel="alternate" hrefLang="x-default" href="https://socialwp.io" />
@@ -1331,10 +1331,10 @@ export default function Home() {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                   >
-                    <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-white p-12 text-left align-middle shadow-xl transition-all">
+                    <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-white p-8 text-left align-middle shadow-xl transition-all">
                       <Dialog.Title
                         as="h2"
-                        className="font-medium text-2xl leading-6 text-gray-900 mb-5 relative"
+                        className="font-bold text-base font-serif leading-6 text-gray-900 mb-5 relative"
                       >
                         {installModal.compatible
                           ? language.installModal.titleSuccess
@@ -1386,7 +1386,7 @@ export default function Home() {
                         <div className="mt-4 text-right">
                           <button
                             type="submit"
-                            className="inline-flex justify-center rounded-full border border-transparent bg-tech text-white px-4 py-3 text-sm font-medium  focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                            className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:text-slate-100 hover:bg-blue-600 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600"
                           >
                             {installModal.loading && (
                               <svg
@@ -1422,7 +1422,7 @@ export default function Home() {
               </div>
             </Dialog>
           </Transition>
-          <div className="flex items-center gap-3 pt-5">
+          <div className="flex items-center gap-3 pt-8 w-8/12 m-auto justify-center border-t border-grey-200">
             <h5 className="font-bold font-serif text-base">As featured on:</h5>
             <a
               href="https://layerwp.com/product/social-link-in-bio-creator/"
