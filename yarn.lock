@@ -479,6 +479,11 @@ fraction.js@^4.2.0:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
+freemius-checkout-js@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/freemius-checkout-js/-/freemius-checkout-js-1.0.0.tgz#a789666c322eb91d8de6c5dd68778e32bbf7f91f"
+  integrity sha512-POTasc6e9/HISO6RA0HVJlgKqz3pVvKOpsfYKK5EBI+52jGjxMlKf0uliHgwKw/JAVd8lKNXtym1+5tQK40Q2A==
+
 fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"

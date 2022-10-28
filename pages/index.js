@@ -23,6 +23,8 @@ import {
   LinkIcon,
 } from "@heroicons/react/outline";
 
+import "animate.css";
+
 import { jsonLdScriptProps } from "react-schemaorg";
 
 import en from "../locales/en";
@@ -31,7 +33,7 @@ import jsonp from "jsonp";
 
 import ScrollAnimation from "react-animate-on-scroll";
 
-import "animate.css";
+import { FSCheckout } from "freemius-checkout-js";
 
 export default function Home() {
   const language = en;
@@ -150,7 +152,7 @@ export default function Home() {
   };
 
   const handleCheckout = () => {
-    let handler = FS.Checkout.configure({
+    let handler = new FSCheckout({
       plugin_id: "10702",
       plan_id: "18404",
       public_key: "pk_b8bb9e62381f312b76f0633cd602a",
@@ -164,6 +166,14 @@ export default function Home() {
       name: "Social",
       licenses: license.amount,
       billing_cycle: license.billingCycle,
+      purchaseCompleted: (response) => {
+        gtag("event", "conversion", {
+          send_to: "AW-10833648628/80WNCIq4xIAYEPS38a0o",
+          value: response.purchase.initial_amount.toString(),
+          currency: response.purchase.currency.toString().toUpperCase(),
+          transaction_id: response.purchase.id.toString(),
+        });
+      },
     });
   };
 
