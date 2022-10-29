@@ -7,6 +7,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+body iframe {
+  visibility: visible!important;
+}
+
 /* Fix Safari perspective z-index bug */
 
 main {
@@ -17,6 +21,8 @@ main .feature-section {
   transform: translateZ(1000px);
 transform-style: preserve-3d;
 }
+
+
 
 .links-wrap:before {
   content: '';

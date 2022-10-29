@@ -268,7 +268,7 @@ export default function Home() {
           </h6>
           <h1
             className="lg:text-5xl
-             xl:w-7/12 md:w-8/12 w-full text-slate-900 w-full text-4xl m-auto  font-bold font-serif md:order-none order-3"
+             xl:w-7/12 md:w-8/12 w-full text-slate-900 w-full sm:text-4xl text-3xl m-auto  font-bold font-serif md:order-none order-3"
           >
             The
             <div className="relative text-tech mx-2 inline w-fit">complete</div>
