@@ -19,10 +19,8 @@ main {
 
 main .feature-section {
   transform: translateZ(1000px);
-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
-
-
 
 .links-wrap:before {
   content: '';
