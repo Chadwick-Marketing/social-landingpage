@@ -7,10 +7,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body iframe {
-  visibility: visible!important;
-}
-
 /* Fix Safari perspective z-index bug */
 
 main {
