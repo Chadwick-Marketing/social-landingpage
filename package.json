@@ -14,7 +14,7 @@
     "animate.css": "3.7.0",
     "autoprefixer": "^10.4.8",
     "cssnano": "^5.1.13",
-    "freemius-checkout-js": "^1.0.0",
+    "freemius-checkout-js": "^1.2.1",
     "heroicons": "^1.0.6",
     "heroicons-react": "^1.4.1",
     "jsonp": "^0.2.1",
