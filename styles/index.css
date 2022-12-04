@@ -208,6 +208,7 @@ table th .-help-circle:hover ~ .-info-box {
   position: absolute;
   top: 0;
   left: 0;
+  display: none;
   width: 100%;
   overflow: hidden;
   line-height: 0;
@@ -226,6 +227,7 @@ table th .-help-circle:hover ~ .-info-box {
 
 .custom-shape-divider-bottom-1670159920 {
     position: absolute;
+    display: none;
     bottom: 0;
     left: 0;
     width: 100%;

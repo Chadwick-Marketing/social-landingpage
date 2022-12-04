@@ -1018,9 +1018,6 @@ export default function Home() {
                 {(license.currency.code == "usd" ||
                   license.currency.code == "gbp") &&
                   license.currency.symbol}
-                <span className="line-through-diagonal text-base opacity-50 mr-2">
-                  {license.billingCycle == "monthly" ? "5.99" : "4.99"}
-                </span>
                 {license.billingCycle == "monthly" ? "4.99" : "3.99"}
                 {license.currency.code == "eur" && license.currency.symbol}
                 <span className="block text-sm opacity-50">/ month </span>
@@ -1231,7 +1228,7 @@ export default function Home() {
             </section>
           </div>
         </section>
-        <section className="w-full border-neutral-100 relative bg-tech md:flex hidden text-white text-center items-center flex-col m-auto py-24 md:px-0 px-5">
+        <section className="z-[-1] w-full -mt-40 pt-40 border-y-2 border-neutral-100 relative bg-tech/5 md:flex hidden text-tech text-center items-center flex-col m-auto py-24 md:px-0 px-5">
           <div class="custom-shape-divider-top-1670159803">
             <svg
               data-name="Layer 1"
@@ -1245,7 +1242,7 @@ export default function Home() {
               ></path>
             </svg>
           </div>
-          <div className="md:w-8/12 md:flex-row-reverse flex-col w-full flex max-w-screen-md justify-center gap-10 items-center md:text-left md:shrink-0">
+          <div className="md:w-8/12 md:flex-row flex-col w-full flex max-w-screen-md justify-center gap-10 items-center md:text-left md:shrink-0">
             <div className="flex flex-col w-full md:w-6/12 items-center md:items-start">
               <span className="mb-8 text-sm">
                 <StarIcon className="h-5 w-5 inline-block" />
