@@ -1229,8 +1229,8 @@ export default function Home() {
             </section>
           </div>
         </section>
-        <section className="w-full border-y-2 border-neutral-100 relative bg-tech md:flex text-white text-center items-center flex-col m-auto py-14 md:px-0 px-5">
-          <div className="md:w-8/12 md:flex-row flex-col w-full flex max-w-screen-md justify-center gap-10 items-center md:text-left md:shrink-0 cursor-pointer">
+        <section className="w-full border-y-2 border-neutral-100 relative bg-tech md:flex text-white text-center items-center flex-col m-auto py-20 md:px-0 px-5">
+          <div className="md:w-8/12 md:flex-row-reverse flex-col w-full flex max-w-screen-md justify-center gap-10 items-center md:text-left md:shrink-0 ">
             <div className="flex flex-col w-full md:w-6/12 items-center md:items-start">
               <span className="mb-8 text-sm">★★★★★</span>
               <p className="font-bold font-serif text-2xl md:text-3xl whitespace-pre-line tracking-tight">
@@ -1258,7 +1258,7 @@ export default function Home() {
             >
               <span class="flex h-14 w-14 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-20"></span>
-                <span class="relative inline-flex items-center justify-center rounded-full h-14 w-14 bg-white">
+                <span class="relative inline-flex items-center justify-center rounded-full h-14 w-14 bg-white cursor-pointer">
                   <svg
                     aria-hidden="true"
                     class="h-3 w-3 flex-none scale-125 fill-tech group-active:fill-current"
