@@ -1228,7 +1228,7 @@ export default function Home() {
             </section>
           </div>
         </section>
-        <section className="z-[-1] w-full -mt-40 pt-40 border-y-2 border-neutral-100 relative bg-tech/5 md:flex hidden text-tech text-center items-center flex-col m-auto py-24 md:px-0 px-5">
+        <section className="z-[-1] w-full -mt-40 pt-40 border-y-2 border-neutral-100 relative bg-tech/5 md:flex text-tech text-center items-center flex-col m-auto py-24 md:px-0 px-5">
           <div class="custom-shape-divider-top-1670159803">
             <svg
               data-name="Layer 1"
