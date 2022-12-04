@@ -51,14 +51,6 @@ export default function Home() {
     },
   });
 
-  const [installModal, setInstallModal] = useState({
-    open: false,
-    loading: false,
-    compatible: null,
-    userSite: null,
-    downloadLink: null,
-  });
-
   const [videoModal, setVideoModal] = useState({
     open: false,
     video: null,
@@ -80,81 +72,10 @@ export default function Home() {
     });
   };
 
-  const openInstallModal = () => {
-    setInstallModal((previous) => ({ ...previous, open: true }));
-  };
-
-  const closeInstallModal = () => {
-    setInstallModal((previous) => ({ ...previous, open: false }));
-  };
-
-  async function fetchWithTimeout(resource, options = {}) {
-    const { timeout = 8000 } = options;
-
-    const controller = new AbortController();
-    const id = setTimeout(() => controller.abort(), timeout);
-    const response = await fetch(resource, {
-      ...options,
-      signal: controller.signal,
-    });
-    clearTimeout(id);
-    return response;
-  }
-
-  const checkSiteCompatibility = (e) => {
-    e.preventDefault();
-
-    let userSite = installModal.userSite.replace(
-      /^(?:(.*:)?\/\/)?(.*)/i,
-      (match, schemma, nonSchemmaUrl) =>
-        schemma ? match : `http://${installModal.userSite}`
-    );
-
-    if (installModal.compatible) {
-      window.location = `${userSite}/wp-admin/plugin-install.php?tab=plugin-information&plugin=social-lite&TB_iframe=true`;
-
-      return false;
-    }
-
-    setInstallModal((previous) => ({ ...previous, loading: true }));
-
-    fetchWithTimeout(
-      `https://api.allorigins.win/get?url=${encodeURIComponent(
-        `${userSite}/wp-json`
-      )}`
-    )
-      .then((response) => {
-        setInstallModal((previous) => ({ ...previous, loading: false }));
-
-        if (response.ok) {
-          return response.json();
-        }
-      })
-      .then((data) => {
-        try {
-          JSON.parse(data.contents.replace(/\:null/gi, ':""'));
-        } catch (e) {
-          fetch("https://api.wordpress.org/plugins/info/1.0/social-lite.json")
-            .then((data) => data.json())
-            .then((data) =>
-              setInstallModal((previous) => ({
-                ...previous,
-                downloadLink: data.download_link,
-                compatible: false,
-              }))
-            );
-
-          return false;
-        }
-
-        setInstallModal((previous) => ({ ...previous, compatible: true }));
-      });
-  };
-
-  const handleCheckout = () => {
+  const handleCheckout = (plan_id) => {
     let handler = new FSCheckout({
       plugin_id: "10702",
-      plan_id: "18404",
+      plan_id: plan_id,
       public_key: "pk_b8bb9e62381f312b76f0633cd602a",
       image:
         "https://ik.imagekit.io/chadwickmarketing/social/icon_128_uEfTliaqvG.png",
@@ -378,7 +299,6 @@ export default function Home() {
                   transform: "translateZ(-200px) translateY(-50px)",
                 }}
               >
-                {" "}
                 <ScrollAnimation
                   animateOnce={true}
                   animateIn="bounceIn"
@@ -402,7 +322,7 @@ export default function Home() {
                   animatePreScroll={true}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_43__9s4owxMs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784684029"></img>
-                </ScrollAnimation>{" "}
+                </ScrollAnimation>
               </div>
 
               <div
@@ -411,7 +331,6 @@ export default function Home() {
                   transform: "translateZ(-200px) translateY(-50px)",
                 }}
               >
-                {" "}
                 <ScrollAnimation
                   animateOnce={true}
                   animateIn="bounceIn"
@@ -419,7 +338,7 @@ export default function Home() {
                   animatePreScroll={true}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_45_7j3Y-7UOED.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784747465"></img>
-                </ScrollAnimation>{" "}
+                </ScrollAnimation>
               </div>
 
               <div
@@ -429,7 +348,6 @@ export default function Home() {
                     "translateZ(100px) translateY(-50%) translateX(-50%)",
                 }}
               >
-                {" "}
                 <ScrollAnimation
                   animateOnce={true}
                   animateIn="bounceIn"
@@ -438,7 +356,7 @@ export default function Home() {
                   offset={-2500}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_40_DrSUljxTa.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784630715"></img>
-                </ScrollAnimation>{" "}
+                </ScrollAnimation>
               </div>
 
               <div
@@ -448,7 +366,6 @@ export default function Home() {
                     "translateZ(100px) translateY(10px) translateX(-175%)",
                 }}
               >
-                {" "}
                 <ScrollAnimation
                   animateOnce={true}
                   animateIn="bounceIn"
@@ -466,7 +383,6 @@ export default function Home() {
                     "translateZ(150px) translateY(-25px) translateX(150%)",
                 }}
               >
-                {" "}
                 <ScrollAnimation
                   animateOnce={true}
                   animateIn="bounceIn"
@@ -474,7 +390,7 @@ export default function Home() {
                   animatePreScroll={true}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_42_bYZbhCT4p.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627710" />
-                </ScrollAnimation>{" "}
+                </ScrollAnimation>
               </div>
 
               <div
@@ -492,7 +408,7 @@ export default function Home() {
                   animatePreScroll={true}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/youtube_nLUUBZlHgz.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627661" />
-                </ScrollAnimation>{" "}
+                </ScrollAnimation>
               </div>
 
               <div
@@ -509,7 +425,7 @@ export default function Home() {
                   animatePreScroll={true}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_46_GtPBU_mfNx.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666789153448" />
-                </ScrollAnimation>{" "}
+                </ScrollAnimation>
               </div>
 
               <div
@@ -527,7 +443,7 @@ export default function Home() {
                   animatePreScroll={true}
                 >
                   <img src="https://ik.imagekit.io/chadwickmarketing/social/instagram__1__ZnOD_1Kjox.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666784627726" />
-                </ScrollAnimation>{" "}
+                </ScrollAnimation>
               </div>
             </div>
           </div>
@@ -669,7 +585,7 @@ export default function Home() {
               </div>
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
-                  <span className="font-normal">{language.heroCta[1]}</span>{" "}
+                  <span className="font-normal">{language.heroCta[1]}</span>
                   {language.heroCta[2]}
                 </a>
               </Link>
@@ -787,7 +703,7 @@ export default function Home() {
               </div>
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
-                  <span className="font-normal">{language.heroCta[1]}</span>{" "}
+                  <span className="font-normal">{language.heroCta[1]}</span>
                   {language.heroCta[2]}
                 </a>
               </Link>
@@ -902,7 +818,7 @@ export default function Home() {
               </div>
               <Link href="#pricing">
                 <a className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:bg-slate-700 hover:text-slate-100 active:bg-slate-800 active:text-slate-300 focus-visible:outline-slate-900">
-                  <span className="font-normal">{language.heroCta[1]}</span>{" "}
+                  <span className="font-normal">{language.heroCta[1]}</span>
                   {language.heroCta[2]}
                 </a>
               </Link>
@@ -1083,7 +999,7 @@ export default function Home() {
               </ul>
               <button
                 className="group inline-flex ring-1 items-center justify-center rounded-full py-2 px-4 text-sm focus:outline-none ring-slate-700 text-slate-800 hover:ring-slate-500 active:ring-slate-700 active:text-slate-400 focus-visible:outline-white mt-8"
-                onClick={openInstallModal}
+                onClick={() => handleCheckout("18126")}
               >
                 Get started
               </button>
@@ -1306,146 +1222,59 @@ export default function Home() {
               </ul>
               <button
                 className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-white text-slate-900 hover:bg-blue-50 active:bg-blue-200 active:text-slate-600 focus-visible:outline-white mt-8"
-                onClick={handleCheckout}
+                onClick={() => handleCheckout("18404")}
               >
                 Start 7-day free trial
               </button>
             </section>
           </div>
-          <Transition appear show={installModal.open} as={Fragment}>
-            <Dialog
-              as="div"
-              className="relative z-50"
-              onClose={closeInstallModal}
-            >
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0"
-                enterTo="opacity-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100"
-                leaveTo="opacity-0"
-              >
-                <div className="fixed inset-0 bg-black bg-opacity-25" />
-              </Transition.Child>
-
-              <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4 text-center">
-                  <Transition.Child
-                    as={Fragment}
-                    enter="ease-out duration-300"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="ease-in duration-200"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                  >
-                    <Dialog.Panel className="w-full max-w-lg transform overflow-hidden rounded-2xl bg-white p-8 text-left align-middle shadow-xl transition-all">
-                      <Dialog.Title
-                        as="h2"
-                        className="font-bold text-base font-serif leading-6 text-gray-900 mb-5 relative"
-                      >
-                        {installModal.compatible
-                          ? language.installModal.titleSuccess
-                          : language.installModal.title}
-                      </Dialog.Title>
-                      <form onSubmit={(e) => checkSiteCompatibility(e)}>
-                        <div className="mt-2">
-                          <p className="text-gray-500">
-                            {installModal.compatible
-                              ? language.installModal.contentSuccess
-                              : language.installModal.content}
-                          </p>
-                        </div>
-                        <div className="mt-5">
-                          <input
-                            className="shadow appearance-none border rounded-xl w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                            required
-                            pattern="(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-z]{2,9}\b([-a-zA-Z0-9@:%_\+.~#()?&//=]*)"
-                            value={installModal.userSite}
-                            onInput={(e) =>
-                              setInstallModal((previous) => ({
-                                ...previous,
-                                userSite: e.target.value,
-                                compatible: null,
-                              }))
-                            }
-                            placeholder={language.installModal.placeholder}
-                          />
-                        </div>
-                        {installModal.compatible == false && (
-                          <div
-                            className="bg-orange-50 text-orange-700 px-4 py-3 rounded-xl relative flex items-start gap-5 mt-5"
-                            role="alert"
-                          >
-                            <ExclamationCircleIcon className="w-10 h-10" />
-                            <span className="block sm:inline">
-                              {language.installModal.incompatible}{" "}
-                              <a
-                                className="underline"
-                                href={installModal.downloadLink}
-                                download
-                              >
-                                {language.installModal.installManually}
-                              </a>
-                              .
-                            </span>
-                          </div>
-                        )}
-                        <div className="mt-4 text-right">
-                          <button
-                            type="submit"
-                            className="group inline-flex items-center justify-center rounded-full py-2 px-4 text-sm font-semibold focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-tech text-white hover:text-slate-100 hover:bg-blue-600 active:bg-blue-800 active:text-blue-100 focus-visible:outline-blue-600"
-                          >
-                            {installModal.loading && (
-                              <svg
-                                className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                              >
-                                <circle
-                                  className="opacity-25"
-                                  cx="12"
-                                  cy="12"
-                                  r="10"
-                                  stroke="currentColor"
-                                  strokeWidth="4"
-                                ></circle>
-                                <path
-                                  className="opacity-75"
-                                  fill="currentColor"
-                                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                ></path>
-                              </svg>
-                            )}{" "}
-                            {installModal.compatible
-                              ? `${language.installModal.install} ${installModal.userSite}`
-                              : language.installModal.continue}
-                          </button>
-                        </div>
-                      </form>
-                    </Dialog.Panel>
-                  </Transition.Child>
-                </div>
+        </section>
+        <section className="w-full border-y-2 border-neutral-100 relative bg-tech md:flex text-white text-center items-center flex-col m-auto py-14 md:px-10 px-5">
+          <div className="md:w-7/12 md:flex-row flex-col w-full flex max-w-screen-md justify-center gap-10 items-center md:text-left md:shrink-0 cursor-pointer">
+            <div className="flex flex-col w-full md:w-6/12 items-center md:items-start">
+              <span className="mb-5 text-sm">★★★★★</span>
+              <p className="font-bold font-serif text-2xl md:text-3xl whitespace-pre-line tracking-tight">
+                “Im quite impressed by this tool. If you're active on social
+                media, this is a must-have.”
+              </p>
+              <div className="flex items-center mt-5">
+                <img
+                  className="relative inline-flex rounded-full mr-3 h-12 w-12"
+                  src="https://ik.imagekit.io/chadwickmarketing/social/channels4_profile_mD1feKOuA.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670151731202"
+                />
+                <a
+                  href="https://youtube.com/@WebSquadron"
+                  target="_blank"
+                  className="text-xs text-left flex flex-col"
+                >
+                  <span className="font-bold text-sm">WebSquadron</span>
+                  YouTuber
+                </a>
               </div>
-            </Dialog>
-          </Transition>
-          <div className="flex items-center gap-3 pt-8 w-8/12 m-auto justify-center border-t border-grey-200">
-            <h5 className="font-bold font-serif text-base">As featured on:</h5>
-            <a
-              href="https://layerwp.com/product/social-link-in-bio-creator/"
-              target="_blank"
+            </div>
+            <div
+              className="flex flex-col w-full md:w-6/12 relative"
+              onClick={() => openVideoModal("Nwl8hhoFVmo")}
             >
+              <span class="flex h-14 w-14 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-20"></span>
+                <span class="relative inline-flex items-center justify-center rounded-full h-14 w-14 bg-white">
+                  <svg
+                    aria-hidden="true"
+                    class="h-3 w-3 flex-none scale-125 fill-blue-600 group-active:fill-current"
+                  >
+                    <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z"></path>
+                  </svg>
+                </span>
+              </span>
               <img
-                className="w-20"
-                src="https://ik.imagekit.io/chadwickmarketing/social/logo--layerwp_VPxRMZSl7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666816591774"
+                className="md:h-96 h-72 object-cover relative inline-flex opacity-50 rounded-2xl border-2 border-neutral-100"
+                src="https://ik.imagekit.io/chadwickmarketing/social/Bildschirmfoto_2022-12-04_um_11.12.25_FA1i1z4qw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670148811706"
               />
-            </a>
+            </div>
           </div>
         </section>
-        <section className="max-w-screen-xl w-full relative md:flex text-center items-center flex-col m-auto gap-[50px] md:px-10 px-5">
+        <section className="max-w-screen-xl w-full relative md:flex text-center items-center flex-col m-auto gap-[50px] md:px-10 px-5 mt-20">
           <h2 className="md:w-8/12  text-4xl md:mb-0 mb-10 md:block font-bold font-serif">
             {language.pricing.faqTitle}
           </h2>
