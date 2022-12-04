@@ -1232,12 +1232,12 @@ export default function Home() {
         <section className="w-full border-y-2 border-neutral-100 relative bg-tech md:flex text-white text-center items-center flex-col m-auto py-14 md:px-0 px-5">
           <div className="md:w-8/12 md:flex-row flex-col w-full flex max-w-screen-md justify-center gap-10 items-center md:text-left md:shrink-0 cursor-pointer">
             <div className="flex flex-col w-full md:w-6/12 items-center md:items-start">
-              <span className="mb-5 text-sm">★★★★★</span>
+              <span className="mb-8 text-sm">★★★★★</span>
               <p className="font-bold font-serif text-2xl md:text-3xl whitespace-pre-line tracking-tight">
-                “Im quite impressed by this tool. If you're active on social
-                media, this is a must-have.”
+                “Im quite impressed by Social. If you're active on social media,
+                this plugin is a must-have.”
               </p>
-              <div className="flex items-center mt-5">
+              <div className="flex items-center mt-8">
                 <img
                   className="relative inline-flex rounded-full mr-3 h-12 w-12"
                   src="https://ik.imagekit.io/chadwickmarketing/social/channels4_profile_mD1feKOuA.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670151731202"
@@ -1261,14 +1261,14 @@ export default function Home() {
                 <span class="relative inline-flex items-center justify-center rounded-full h-14 w-14 bg-white">
                   <svg
                     aria-hidden="true"
-                    class="h-3 w-3 flex-none scale-125 fill-blue-600 group-active:fill-current"
+                    class="h-3 w-3 flex-none scale-125 fill-tech group-active:fill-current"
                   >
                     <path d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z"></path>
                   </svg>
                 </span>
               </span>
               <img
-                className="md:h-96 h-72 object-cover relative inline-flex opacity-50 rounded-2xl border-2 border-neutral-100"
+                className="md:h-[300px] h-72 object-cover relative inline-flex opacity-70 rounded-3xl border-2 border-neutral-100"
                 src="https://ik.imagekit.io/chadwickmarketing/social/Bildschirmfoto_2022-12-04_um_11.12.25_FA1i1z4qw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670148811706"
               />
             </div>
