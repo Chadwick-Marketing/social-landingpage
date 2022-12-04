@@ -1229,8 +1229,8 @@ export default function Home() {
             </section>
           </div>
         </section>
-        <section className="w-full border-y-2 border-neutral-100 relative bg-tech md:flex text-white text-center items-center flex-col m-auto py-14 md:px-10 px-5">
-          <div className="md:w-7/12 md:flex-row flex-col w-full flex max-w-screen-md justify-center gap-10 items-center md:text-left md:shrink-0 cursor-pointer">
+        <section className="w-full border-y-2 border-neutral-100 relative bg-tech md:flex text-white text-center items-center flex-col m-auto py-14 md:px-0 px-5">
+          <div className="md:w-8/12 md:flex-row flex-col w-full flex max-w-screen-md justify-center gap-10 items-center md:text-left md:shrink-0 cursor-pointer">
             <div className="flex flex-col w-full md:w-6/12 items-center md:items-start">
               <span className="mb-5 text-sm">★★★★★</span>
               <p className="font-bold font-serif text-2xl md:text-3xl whitespace-pre-line tracking-tight">
