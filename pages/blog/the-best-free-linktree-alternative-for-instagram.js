@@ -140,6 +140,24 @@ export default function Page() {
           experienced with them.
         </p>
         <p className="text-lg leading-9 mb-5"> </p>
+        <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid grid-cols-[0.2fr_0.7fr] gap-[50px]">
+          <img src="https://images.prismic.io/social-blog/e0ed9362-4cc6-4c9c-b6c5-9e610db0cdff_image.png?auto=compress,format" />
+          <div>
+            <h3 className="font-serif text-2xl">
+              The Ultimate Link Platform for WordPress
+            </h3>
+            <p>
+              Create, share and track branded links - directly from your
+              website.
+            </p>
+            <a
+              className="bg-white text-tech text-center mt-5 py-3 rounded-full block font-light"
+              href="/"
+            >
+              <span className="font-normal">Learn more</span>
+            </a>
+          </div>
+        </div>
         <p className="text-lg leading-9 mb-5">
           Our tip: Make content a priority. Invest in informative and
           high-quality texts, videos, podcasts. Address a customer at the
@@ -148,6 +166,17 @@ export default function Page() {
           they reach the end of the funnel and thus the conclusion of the
           purchase with the help of targeted and interesting content.
         </p>
+      </section>
+      <section className="author max-w-screen-md my-20 grid m-auto grid-cols-[0.2fr_0.8fr] px-10">
+        <img
+          className="rounded-full w-2/4"
+          src="https://images.prismic.io/social-blog/bab28d46-2222-4a57-bedd-78f786656b65_489EA74B-E15C-4ABF-8041-316A12771454.jpeg?auto=compress,format"
+        />
+        <div>
+          <span className="text-tech">Written by</span>
+          <h3 className="text-2xl my-2 font-serif">Colin Chadwick</h3>
+          <p>Hello World!</p>
+        </div>
       </section>
       <Footer language={language}></Footer>
     </div>

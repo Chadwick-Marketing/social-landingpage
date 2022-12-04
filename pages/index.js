@@ -1268,7 +1268,7 @@ export default function Home() {
                 </span>
               </span>
               <img
-                className="md:h-[300px] h-72 object-cover relative inline-flex opacity-70 rounded-3xl border-2 border-neutral-100"
+                className="md:h-[500px] h-72 object-cover relative inline-flex opacity-70 rounded-3xl border-2 border-neutral-100"
                 src="https://ik.imagekit.io/chadwickmarketing/social/Bildschirmfoto_2022-12-04_um_11.12.25_FA1i1z4qw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670148811706"
               />
             </div>
