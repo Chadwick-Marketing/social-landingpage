@@ -12,7 +12,10 @@ export default function Page() {
   return (
     <div>
       <Head>
-        <title>Social: The supercharged free Linktree alternative</title>
+        <title>
+          Social: The free Linktree alternative that will supercharge your bio
+          link
+        </title>
         <meta name="description" content="" />
         <meta
           property="og:image"
@@ -24,12 +27,12 @@ export default function Page() {
       <Navigation language={language} />
       <section className="px-10">
         <div className="header flex flex-col max-w-screen-md m-auto pt-10">
-          <span className="text-tech ">Marketing </span>
+          <span className="text-tech ">Introducing Social</span>
           <h1 className="font-bold text-5xl font-serif my-5">
-            What’s the right content for each stage of the sales funnel?
+            The free Linktree alternative that will supercharge your bio link.
           </h1>
           <span className="flex">
-            January 14, 2022
+            December 8, 2022
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -49,64 +52,102 @@ export default function Page() {
           </span>
         </div>
       </section>
-      <section className="max-w-screen-xl m-auto px-10">
+      <section className="max-w-screen-md m-auto">
         <img
-          className="rounded-3xl mt-10"
-          src="https://images.prismic.io/social-blog/4f7930a5-5d2a-47c2-a4df-829c9cfbe451_image.png?auto=compress,format"
+          className="rounded-3xl mt-10 w-full"
+          src="https://ik.imagekit.io/chadwickmarketing/social/link-in-bio-creator-socialwp_Q50SehKb7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670519094377"
         />
       </section>
       <section className="content max-w-screen-md m-auto pt-20 px-10">
-        <p className="text-lg leading-9 mb-5">
-          The sales funnel is a popular tool in the online marketing of
-          companies. It's not just the structure that matters, but also the
-          right content at the right point in the funnel. But which content
-          makes sense when?
+        <div className="flex flex-col bg-tech/5 rounded-xl">
+          <div className="flex flex-col p-10">
+            <h2 className="text-xl font-serif leading-9 font-bold mb-2">
+              Table of Contents
+            </h2>
+            <ul className="list-disc list-inside">
+              <li className="text-base leading-9 mb-2">
+                <a href="#linktree-what-is-that">Linktree - what is that?</a>
+              </li>
+              <li className="text-base leading-9 mb-2">
+                <a href="#linktree-alternative">Linktree alternative</a>
+              </li>
+              <li className="text-base leading-9 mb-2">
+                <a href="#linktree-alternative-for-instagram">
+                  Linktree alternative for Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="text-base leading-9 mb-5 mt-7">
+          If you're an influencer on Instagram, you've likely come across a link
+          that looks something like this:
+          <div className="p-1.5 mx-1 bg-gray-200/50 inline-block rounded-lg leading-none font-medium">
+            linktr.ee/name
+          </div>
+          . This is a link created with a tool called Linktree, which many
+          influencers use to share multiple links with their followers. While
+          Linktree is popular, it doesn't offer much beyond the ability to share
+          links.
         </p>
-        <p className="text-lg leading-9 mb-5"> </p>
-        <h2 className="text-4xl font-serif leading-9 my-10">
-          Sales funnel explained briefly
+        <p className="text-base leading-9 mb-5">
+          In this article, we'll recommend a free alternative that doesn't
+          require signing up on a third-party site. Instead, all you need is a
+          website, which you likely already use on a daily basis.
+        </p>
+        <p className="text-base leading-9 mb-5">
+          Before we get started, let's clarify a few things:
+        </p>
+        <h2 className="text-3xl font-serif leading-9 my-10 font-bold">
+          Linktree - what is that?
         </h2>
-        <p className="text-lg leading-9 mb-5">
-          The sales funnel is a tool from the B2B sector and sales, which is
-          divided into different stages.
+        <p className="text-base leading-9 mb-5">
+          With the help of this Linktree, you can create a small landing page
+          from which you can link to other pages. These can be pages on your
+          website, but also all other links that you want to make available to
+          your followers. The whole page looks something like this:
         </p>
-        <p className="text-lg leading-9 mb-5"> </p>
-        <p className=" block-img">
+        <p className="text-base leading-9 mb-5"> </p>
+        <p className="block-img">
           <img
-            src="https://images.prismic.io/social-blog/d6ebd801-e4c8-444a-bf01-bab6a0bfae52_image.jpeg?auto=compress,format"
+            src="https://ik.imagekit.io/chadwickmarketing/social/Frame_20_FfaZZnqHH.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670523521401"
             alt=""
-            className="rounded-3xl"
+            className="rounded-t-3xl"
           />
+          <div className="text-center  text-sm mb-2 p-3 bg-tech/5 rounded-b-3xl">
+            Example of a Linktree page
+          </div>
         </p>
-        <p className="text-lg leading-9 mb-5"> </p>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5"> </p>
+        <p className="text-base leading-9 mb-5">
           This tool is designed to accompany potential customers on their way to
           closing the sale. Here we talk about sales funnel marketing - to which
           you can also find a suitable article in our blog.
         </p>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           The goal of the sales funnel is to filter out customers who drop out
           for various reasons (e.g.: loss of interest, lack of budget) and focus
           on the customers who sign contracts or buy products.
         </p>
-        <p className="text-lg leading-9 mb-5"> </p>
+        <p className="text-base leading-9 mb-5"> </p>
         <h2 className="text-4xl font-serif leading-9 my-10">
           Why is custom content so important?
         </h2>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           The wave of daily offline and online offers and products makes it
           increasingly difficult to reach customers in a way that they actually
           buy. In order to address every customer at the point in the buying
           process where they are, the content must be tailored.
         </p>
-        <p className="text-lg leading-9 mb-5"> </p>
+        <p className="text-base leading-9 mb-5"> </p>
         <h2 className="text-4xl font-serif leading-9 my-10">
           Which content at which point in the funnel?
         </h2>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           Content - TOFU - Top of the funnel:
         </p>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           Content that provides more general information on selected topics is
           suitable for the first area in the funnel. Here, "informational
           keywords" should play a role without compromising the actual
@@ -114,32 +155,32 @@ export default function Page() {
           contributions in blogs, videos, animations, podcast formats or info
           graphics.
         </p>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           Content - MIFU - Middle of the funnel:C
         </p>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           In the middle of the funnel, the customer is already aware of what he
           is looking for. Here, the content may be much more specific and also
           offer clear solutions to problems. Convince the potential customer
           with checklists, well-researched e-books, white papers or your own
           case studies.
         </p>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           Content - BOFU - Bottom of the funnel:
         </p>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           At the funnel end, the customer has clear ideas of what he needs, but
           still has to make the decision to actually buy a product from a
           specific company.
         </p>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           Here it is important that you motivate them directly to buy and offer
           them the opportunity to contact your company at any time. Offer
           customers free demos, webinars, advantages over the competition and
           tell them about success stories that other customers have already
           experienced with them.
         </p>
-        <p className="text-lg leading-9 mb-5"> </p>
+        <p className="text-base leading-9 mb-5"> </p>
         <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid grid-cols-[0.2fr_0.7fr] gap-[50px]">
           <img src="https://images.prismic.io/social-blog/e0ed9362-4cc6-4c9c-b6c5-9e610db0cdff_image.png?auto=compress,format" />
           <div>
@@ -158,7 +199,7 @@ export default function Page() {
             </a>
           </div>
         </div>
-        <p className="text-lg leading-9 mb-5">
+        <p className="text-base leading-9 mb-5">
           Our tip: Make content a priority. Invest in informative and
           high-quality texts, videos, podcasts. Address a customer at the
           beginning of the funnel with valuable information, for example in your
