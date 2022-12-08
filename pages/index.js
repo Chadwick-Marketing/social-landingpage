@@ -1291,7 +1291,7 @@ export default function Home() {
               />
               <img
                 className="w-60 left-[-200px] bottom-[-50px] absolute md:block hidden"
-                src="https://ik.imagekit.io/chadwickmarketing/social/Group_49_dK-DPlebr.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670430209471"
+                src="https://ik.imagekit.io/chadwickmarketing/social/Group_48_18h_ixlBJ.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1670486860586"
               />
             </div>
           </div>
