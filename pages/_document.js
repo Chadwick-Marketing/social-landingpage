@@ -27,6 +27,11 @@ class MyDocument extends Document {
             data-settings-id="Pk7B7XUJr"
             async
           ></script>
+          <meta property="og:title" content="SocialWP" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://socialwp.io" />
+          <meta property="og:locale" content="en_US" />
+          <meta property="og:site_name" content="SocialWP" />
         </Head>
         <body>
           <Main />
