@@ -7,6 +7,8 @@ import Head from "next/head";
 import en from "../../locales/en";
 
 import { ChevronRightIcon, XIcon, CheckIcon } from "@heroicons/react/outline";
+import Link from "next/link";
+import ReactCompareImage from "react-compare-image";
 
 export default function Page() {
   const language = en;
@@ -105,8 +107,17 @@ export default function Page() {
                   href="#but-is-linktree-really-the-best-solution"
                   className="flex items-center"
                 >
-                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Introducing our
-                  bio link creator plugin
+                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Introducing the
+                  SocialWP plugin
+                </a>
+              </li>
+              <li className="text-base leading-9 mb-2">
+                <a
+                  href="#but-is-linktree-really-the-best-solution"
+                  className="flex items-center"
+                >
+                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Building a link
+                  page with SocialWP
                 </a>
               </li>
             </ul>
@@ -261,9 +272,8 @@ export default function Page() {
           If you're a website owner looking to create a dedicated link page for
           your Instagram followers, consider using a plugin that automatically
           generates it for you. This will save you time and effort, as you won't
-          have to manually update the link page every time you want to add a new
-          link. Your followers will also have access to the most up-to-date
-          information without you having to lift a finger.
+          have to manually update the link page with a page builder every time
+          you want to add a new link.
         </p>
         <p className="text-base leading-9 mb-5">
           We created <a href="https://socialwp.io">SocialWP </a>– a plugin that
@@ -341,18 +351,8 @@ export default function Page() {
                 </div>
               </div>
             </li>
-            <li className="text-base leading-9 mb-2">
-              <div className="flex ">
-                <CheckIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
-                <div>
-                  <span className="font-bold font-serif text-lg">
-                    And so much more
-                  </span>
-                </div>
-              </div>
-            </li>
           </ul>
-          <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid grid-cols-[0.2fr_0.7fr] gap-[50px]">
+          <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid grid-cols-[0.2fr_0.7fr] gap-[50px] mt-10">
             <img src="https://images.prismic.io/social-blog/e0ed9362-4cc6-4c9c-b6c5-9e610db0cdff_image.png?auto=compress,format" />
             <div>
               <h3 className="font-serif text-xl font-bold">
@@ -363,18 +363,164 @@ export default function Page() {
                 more. Meet our bio link for WordPress - a place your fans will
                 love.
               </p>
-              <a
-                className="bg-white text-tech text-center mt-5 py-3 rounded-full block font-light"
-                href="https://socialwp.io/?utm_source=blog&utm_medium=linktree&utm_campaign=linktree"
-              >
-                <span className="font-normal">Get the plugin for free</span>
-              </a>
+              <Link href="/">
+                <a
+                  className="bg-white text-tech text-center mt-5 py-2 rounded-full block font-light"
+                  href="https://socialwp.io/?utm_source=blog&utm_medium=linktree&utm_campaign=linktree"
+                >
+                  <span className="font-bold">Get the plugin for free</span>
+                </a>
+              </Link>
             </div>
           </div>
         </p>
         <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
-          Setting up your link page with SocialWP
+          Building a link page with SocialWP
         </h2>
+        <p className="text-base leading-9 mb-5">
+          Getting started with SocialWP is easy. Here's how to set up your link
+          page in less than 5 minutes:
+          <ul className="mt-5 flex flex-col gap-3">
+            <li className="text-base leading-9 mb-2">
+              <div className="flex ">
+                <div className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0 flex items-center">
+                  1
+                </div>
+                <div>
+                  <span className="font-bold font-serif text-lg">
+                    Installing and activating the plugin
+                  </span>
+                  <p>
+                    To get started with SocialWP, simply install and activate
+                    the plugin. In your WordPress dashboard, go to Plugins > Add
+                    New and search for "Link in Bio". Look for "Link in Bio
+                    Creator - Social", click Install and then Activate.
+                  </p>
+                  <p className="block-img my-5">
+                    <img
+                      alt="Installing and activating SocialWP within the WordPress dashboard"
+                      src="https://ik.imagekit.io/chadwickmarketing/social/ezgif-2-87e2a49ef0_uThQWP7WV.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1670688494314"
+                      className="rounded-t-3xl w-full"
+                    />
+                    <div className="text-center  text-sm mb-2 p-3 bg-tech/5 rounded-b-3xl">
+                      Installing and activating the plugin
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className="text-base leading-9 mb-2">
+              <div className="flex ">
+                <div className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0 flex items-center justify-center">
+                  2
+                </div>
+                <div>
+                  <span className="font-bold font-serif text-lg">
+                    Customizing your link page
+                  </span>
+                  <p>
+                    After activating SocialWP, you'll be able to access the
+                    plugin's dashboard. The navigation bar at the top allows you
+                    to access the settings of your bio link. Here, you can
+                    upload a profile picture, give your link page a name and
+                    description, and choose a theme for your link page.
+                  </p>
+                  <p className="block-img my-5">
+                    <img
+                      alt="Customizing your link page"
+                      src="https://ik.imagekit.io/chadwickmarketing/social/ezgif-2-9a291e8979_jT0NJV1Jn.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1670690912855"
+                      className="rounded-t-3xl w-full"
+                    />
+                    <div className="text-center  text-sm mb-2 p-3 bg-tech/5 rounded-b-3xl">
+                      Customizing your link page
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className="text-base leading-9 mb-2">
+              <div className="flex ">
+                <div className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0 flex items-center justify-center">
+                  3
+                </div>
+                <div>
+                  <span className="font-bold font-serif text-lg">
+                    Adding your first links and content
+                  </span>
+                  <p>
+                    If you're done customizing your link page, you can start
+                    adding links. In the links view, click Add New Link. Enter
+                    the title of your link and its URL. You can also add an icon
+                    to your link or make it stand out with an animation. The
+                    Explore button allows you to add dynamic content blocks,
+                    such as blog posts, YouTube videos, or headers.
+                  </p>
+                  <p className="block-img my-5">
+                    <img
+                      alt="Adding your first links and content"
+                      src="https://ik.imagekit.io/chadwickmarketing/social/ezgif-5-2640ac8bd2_H7Jr0qG1g.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1670690907103"
+                      className="rounded-t-3xl w-full"
+                    />
+                    <div className="text-center  text-sm mb-2 p-3 bg-tech/5 rounded-b-3xl">
+                      Adding your first links and content
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className="text-base leading-9 mb-2">
+              <div className="flex ">
+                <div className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0 flex items-center justify-center">
+                  4
+                </div>
+                <div>
+                  <span className="font-bold font-serif text-lg">
+                    Sharing your link page
+                  </span>
+                  <p>
+                    If you're ready to share your link page, you can do so by
+                    clicking on the Share button in the top right corner of the
+                    navigation bar. Here, you can copy your link page's URL and
+                    put it in your bio on social media.
+                  </p>
+                  <p className="block-img my-5">
+                    <img
+                      alt="Copying your link page's URL"
+                      src="https://ik.imagekit.io/chadwickmarketing/social/ezgif-5-9918f33871_r9wMropv1.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1670691616536"
+                      className="rounded-t-3xl w-full"
+                    />
+                    <div className="text-center  text-sm mb-2 p-3 bg-tech/5 rounded-b-3xl">
+                      Copying your link page's URL
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </p>
+        <h2 className="text-2xl font-bold font-serif my-5">Wrapping up</h2>
+        <p className="text-base leading-9 mb-2">
+          As a website owner, you shouldn't have to rely on third-party sites to
+          create your link page. With SocialWP, you can easily create a bio link
+          that is fully integrated into your website. No coding or page building
+          skills are required. continue the text Additionally, SocialWP allows
+          you to customize the design of your bio link to match your brand.
+          Choose from a variety of pre-made templates or use the built-in editor
+          to create your own. This way, your bio link will be consistent with
+          the rest of your website and reflect your unique style. SocialWP also
+          offers different content blocks that you can use to share a wide range
+          of content with your followers, including blog posts, newsletters, and
+          product catalogs. This will help you to build a strong brand and stand
+          out from the crowd. If you want to save time and effort when creating
+          your Instagram bio link, try SocialWP today. It's easy to use and will
+          help you to create a professional-looking bio link that is fully
+          integrated into your website.
+          <ReactCompareImage
+            className="rounded-3xl"
+            leftImage="https://ik.imagekit.io/chadwickmarketing/social/ezgif-5-9918f33871_r9wMropv1.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1670691616536"
+            rightImage="https://ik.imagekit.io/chadwickmarketing/social/ezgif-5-9918f33871_r9wMropv1.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1670691616536"
+          />
+        </p>
       </section>
       <section className="author max-w-screen-md my-20 grid m-auto grid-cols-[0.2fr_0.8fr] px-10">
         <img
