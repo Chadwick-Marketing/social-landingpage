@@ -49,7 +49,7 @@ export default function Page() {
                 d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
               ></path>
             </svg>{" "}
-            5 Min.
+            10 Min.
           </span>
         </div>
       </section>
@@ -87,8 +87,26 @@ export default function Page() {
                   href="#but-is-linktree-really-the-best-solution"
                   className="flex items-center"
                 >
-                  <ChevronRightIcon className="w-4 h-4 mr-2" /> But is Linktree
+                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Is Linktree
                   really the best solution?
+                </a>
+              </li>
+              <li className="text-base leading-9 mb-2">
+                <a
+                  href="#but-is-linktree-really-the-best-solution"
+                  className="flex items-center"
+                >
+                  <ChevronRightIcon className="w-4 h-4 mr-2" /> What should you
+                  use instead of Linktree?
+                </a>
+              </li>
+              <li className="text-base leading-9 mb-2">
+                <a
+                  href="#but-is-linktree-really-the-best-solution"
+                  className="flex items-center"
+                >
+                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Introducing
+                  SocialWP
                 </a>
               </li>
             </ul>
@@ -236,6 +254,48 @@ export default function Page() {
           </li>
         </ul>
         <p className="text-base leading-9 mb-5"> </p>
+        <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
+          What should you use instead of Linktree?
+        </h2>
+        <p className="text-base leading-9 mb-5">
+          If you are a website owner looking to create a dedicated link page for
+          your Instagram followers, you may have considered using page builder
+          tools. However, this approach is not ideal, as it requires manual
+          updates every time you want to add a new link, which can be
+          time-consuming if you have a large number of links to share.
+        </p>
+        <p className="text-base leading-9 mb-5">
+          A more efficient solution is to use a plugin that automatically
+          generates a link page for you. This will save you a lot of time and
+          effort, as you will not have to manually update your link page every
+          time you want to add a new link. Instead, the plugin will
+          automatically update the link page for you, ensuring that your
+          followers have access to the most up-to-date information.
+        </p>
+        <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
+          Introducing SocialWP
+        </h2>
+        <p className="text-base leading-9 mb-5">
+          We have created just such a plugin – SocialWP. This plugin allows you
+          to automatically generate a link page for your Instagram followers
+          that is hosted on your own website. This means that you are not
+          leaving important traffic on the table and can share a wide range of
+          content with your followers. It also supports your efforts to build a
+          strong brand and stand out from the crowd.
+          <ol className="list-decimal list-inside">
+            <li className="text-base leading-9 mb-5">
+              Install and activate the SocialWP plugin.
+            </li>
+            <li className="text-base leading-9 mb-5">
+              Navigate to the SocialWP settings page and click on the
+              "Instagram" tab.
+            </li>
+            <li className="text-base leading-9 mb-5">
+              Enter your Instagram username and click on the "Save Changes"
+              button.
+            </li>
+          </ol>
+        </p>
       </section>
       <section className="author max-w-screen-md my-20 grid m-auto grid-cols-[0.2fr_0.8fr] px-10">
         <img
