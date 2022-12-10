@@ -700,7 +700,7 @@ export default function Home() {
                 </div>
                 <div className="flex font-semibold font-serif border border-gray-200 rounded-full p-2 items-center">
                   <CollectionIcon className="w-9 h-9 mr-3 bg-tech text-white rounded-full p-1" />
-                  Organize your links
+                  Add contact forms
                 </div>
               </div>
               <Link href="#pricing">
@@ -1288,10 +1288,6 @@ export default function Home() {
               <img
                 className="md:h-72 h-64 object-cover relative inline-flex opacity-70 rounded-3xl border-2 border-neutral-100"
                 src="https://ik.imagekit.io/chadwickmarketing/social/Bildschirmfoto_2022-12-04_um_11.12.25_FA1i1z4qw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670148811706"
-              />
-              <img
-                className="w-60 left-[-200px] bottom-[-80px] absolute md:block hidden"
-                src="https://ik.imagekit.io/chadwickmarketing/social/Group_48_18h_ixlBJ.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1670486860586"
               />
             </div>
           </div>

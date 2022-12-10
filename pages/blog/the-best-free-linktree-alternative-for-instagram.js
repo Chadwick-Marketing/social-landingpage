@@ -6,7 +6,7 @@ import Head from "next/head";
 
 import en from "../../locales/en";
 
-import { ChevronRightIcon } from "@heroicons/react/outline";
+import { ChevronRightIcon, XIcon } from "@heroicons/react/outline";
 
 export default function Page() {
   const language = en;
@@ -24,13 +24,12 @@ export default function Page() {
           content="https://ik.imagekit.io/chadwickmarketing/social/og--image_haZDiZynP.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666863781752"
         />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="alternate" hrefLang="x-default" href="https://socialwp.io" />
       </Head>
       <Navigation language={language} />
       <section className="px-10">
         <div className="header flex flex-col max-w-screen-md m-auto pt-10">
-          <span className="text-tech ">Introducing Social</span>
-          <h1 className="font-bold text-5xl font-serif my-5">
+          <span className="text-tech font-bold">Introducing Social</span>
+          <h1 className="font-bold md:text-5xl text-3xl font-serif my-5 text-slate-800">
             The free Linktree alternative that will supercharge your bio link.
           </h1>
           <span className="flex">
@@ -61,7 +60,7 @@ export default function Page() {
           src="https://ik.imagekit.io/chadwickmarketing/social/link-in-bio-creator-socialwp_Q50SehKb7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670519094377"
         />
       </section>
-      <section className="content max-w-screen-md m-auto pt-20 px-10">
+      <section className="content max-w-screen-md m-auto pt-20 px-10 text-slate-800">
         <div className="flex flex-col bg-tech/5 rounded-xl">
           <div className="flex flex-col p-10">
             <h2 className="text-xl font-serif leading-9 font-bold mb-2">
@@ -75,15 +74,21 @@ export default function Page() {
                 </a>
               </li>
               <li className="text-base leading-9 mb-2">
-                <a href="#linktree-what-is-that" className="flex items-center">
-                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Linktree - what
-                  is that?
+                <a
+                  href="#why-do-i-need-such-a-link-page"
+                  className="flex items-center"
+                >
+                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Why do I need
+                  such a link page?
                 </a>
               </li>
               <li className="text-base leading-9 mb-2">
-                <a href="#linktree-what-is-that" className="flex items-center">
-                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Linktree - what
-                  is that?
+                <a
+                  href="#but-is-linktree-really-the-best-solution"
+                  className="flex items-center"
+                >
+                  <ChevronRightIcon className="w-4 h-4 mr-2" /> But is Linktree
+                  really the best solution?
                 </a>
               </li>
             </ul>
@@ -93,7 +98,7 @@ export default function Page() {
         <p className="text-base leading-9 mb-5 mt-7">
           If you're an influencer on Instagram, you've likely come across a link
           that looks something like this:
-          <div className="p-1.5 mx-1 bg-tech/5 inline-block rounded-lg leading-none font-medium">
+          <div className="p-1.5 bg-tech/5 inline-block rounded-lg leading-none font-medium">
             linktr.ee/name
           </div>
           . This is a link created with a tool called Linktree, which many
@@ -103,13 +108,16 @@ export default function Page() {
         </p>
         <p className="text-base leading-9 mb-5">
           In this article, we'll recommend a free alternative that doesn't
-          require signing up on a third-party site. Instead, all you need is a
-          website, which you likely already use on a daily basis.
+          require signing up on a third-party site. Instead, all you need is
+          your website, which you likely already use on a daily basis.
         </p>
         <p className="text-base leading-9 mb-5">
           Before we get started, let's clarify a few things:
         </p>
-        <h2 className="text-3xl font-serif leading-9 my-10 font-bold">
+        <h2
+          id="linktree-what-is-that"
+          className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold"
+        >
           Linktree - what is that?
         </h2>
         <p className="text-base leading-9 mb-5">
@@ -129,39 +137,104 @@ export default function Page() {
             Example of a link page
           </div>
         </p>
-        <h2 className="text-3xl font-serif leading-9 my-10 font-bold">
+        <h2
+          id="why-do-i-need-such-a-link-page"
+          className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold"
+        >
           Why do I need such a link page?
         </h2>
         <p className="text-base leading-9 mb-5">
-          It is important to remember that the goal of using Instagram is to
-          sell your products, market your blog, and collect newsletter
-          subscribers. In order to achieve this goal, it is essential to link
-          your followers to your website. Without a link, it will be difficult
-          for them to visit your site. Many people will not take the time to
-          open a web browser and manually enter your website's address. To
-          increase the likelihood that your followers will visit your site, it
-          is important to include a link in your Instagram profile.
+          It is important to remember what the goal of using Instagram is: Sell
+          your products, market your blog, or collect newsletter subscribers. In
+          order to achieve this goal, it is essential to link your followers to
+          your website. Without a link, it will be difficult for them to visit
+          your site. Many people will not take the time to open a web browser
+          and manually enter your website's address. To increase the likelihood
+          that your followers will visit your site, it is important to include a
+          link in your Instagram profile.
         </p>
-        <p className="text-base leading-9 mb-5"> </p>
-        <h2 className="text-3xl font-serif leading-9 my-10 font-bold">
+        <p className="text-base leading-9 mb-5"></p>
+        <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
           But is Linktree really the best solution?
         </h2>
         <p className="text-base leading-9 mb-5">
           While Linktree can be a useful tool for creating a dedicated link page
           for your Instagram followers, it may not be the best solution for
-          everyone. This is because Linktree is a third-party service that
-          requires your followers to leave the Instagram platform in order to
-          access your links. This can be inconvenient for your followers and may
-          decrease the likelihood that they will visit your website.
-          Additionally, using a third-party service like Linktree can also limit
-          your ability to fully customize the appearance and functionality of
-          your link page. If you want more control over the design and user
-          experience of your link page, it may be better to create your own link
-          page on your own website, using a platform such as WordPress or
-          Squarespace. This will allow you to fully customize the page to match
-          your brand and make it as easy as possible for your followers to
-          access the links you want to share with them.
+          everyone. Especially if you already have a website, you should
+          consider building your bio link on your own instead of using Linktree.
         </p>
+        <p className="text-base leading-9 mt-5">Here's why:</p>
+        <ul className="mt-5 flex flex-col gap-3">
+          <li className="text-base leading-9 mb-2">
+            <div className="flex ">
+              <XIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
+              <div>
+                <span className="font-bold font-serif text-lg">
+                  You leave important traffic on the table
+                </span>
+                <p>
+                  Using Linktree in your bio redirects traffic coming from your
+                  social media channels to Linktree instead of your website.
+                  This can be detrimental to your SEO efforts, as having a high
+                  volume of traffic on your website is important for improving
+                  your search engine rankings.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li className="text-base leading-9 mb-2">
+            <div className="flex ">
+              <XIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
+              <div>
+                <span className="font-bold font-serif text-lg">
+                  You're not allowing your brand to shine
+                </span>
+                <p>
+                  In today's competitive landscape, building a strong brand and
+                  standing out from the crowd is essential. Your bio should
+                  therefore include a link to your own website, rather than a
+                  third-party service, in order to support these efforts.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li className="text-base leading-9 mb-2">
+            <div className="flex ">
+              <XIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
+              <div>
+                <span className="font-bold font-serif text-lg">
+                  You miss out on advanced content sharing
+                </span>
+                <p>
+                  Your website is the central hub for all of your content. By
+                  building your bio link on your own site, you can integrate
+                  your content in a way that is not possible with Linktree. This
+                  allows you to share a wide range of content with your
+                  followers, including blog posts, newsletters, and product
+                  catalogs.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li className="text-base leading-9 mb-2">
+            <div className="flex ">
+              <XIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
+              <div>
+                <span className="font-bold font-serif text-lg">
+                  You're not owning your data
+                </span>
+                <p>
+                  It is always a good idea to own your data, rather than relying
+                  on third-party services to store it. By hosting your bio link
+                  on your own website, you can have greater control over the
+                  data collected and ensure that it is handled in compliance
+                  with relevant regulations, such as GDPR within the European
+                  Union.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
         <p className="text-base leading-9 mb-5"> </p>
       </section>
       <section className="author max-w-screen-md my-20 grid m-auto grid-cols-[0.2fr_0.8fr] px-10">
@@ -170,14 +243,16 @@ export default function Page() {
           src="https://ik.imagekit.io/chadwickmarketing/social/Thl93bsR_400x400_9UGujrLqT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1670524537559"
         />
         <div>
-          <span className="text-tech">Written by</span>
-          <h3 className="text-2xl my-2 font-serif font-bold">Colin Chadwick</h3>
-          <div className="flex items-center">
+          <span className="text-tech font-bold">Written by</span>
+          <h3 className="md:text-2xl text-xl my-2 font-serif font-bold">
+            Colin Chadwick
+          </h3>
+          <div className="flex md:items-center md:flex-row flex-col">
             <p className="font-bold">Tags:</p>
-            <div className="flex items-center p-1 mx-2 rounded-2xl bg-tech/5">
+            <div className="flex items-center p-2 md:mx-2 rounded-2xl bg-tech/5 text-sm font-bold text-tech">
               Marketing
             </div>
-            <div className="flex items-center p-1 rounded-2xl bg-tech/5">
+            <div className="flex items-center p-2 rounded-2xl bg-tech/5 text-sm font-bold text-tech">
               Social media
             </div>
           </div>
