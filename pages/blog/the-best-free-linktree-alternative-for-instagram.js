@@ -6,7 +6,7 @@ import Head from "next/head";
 
 import en from "../../locales/en";
 
-import { ChevronRightIcon, XIcon } from "@heroicons/react/outline";
+import { ChevronRightIcon, XIcon, CheckIcon } from "@heroicons/react/outline";
 
 export default function Page() {
   const language = en;
@@ -255,32 +255,103 @@ export default function Page() {
         </ul>
         <p className="text-base leading-9 mb-5"> </p>
         <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
-          What should you use instead of Linktree?
-        </h2>
-        <p className="text-base leading-9 mb-5">
-          If you are a website owner looking to create a dedicated link page for
-          your Instagram followers, you may have considered using page builder
-          tools. However, this approach is not ideal, as it requires manual
-          updates every time you want to add a new link, which can be
-          time-consuming if you have a large number of links to share.
-        </p>
-        <p className="text-base leading-9 mb-5">
-          Instead, consider using a plugin that automatically generates a link
-          page for you. This will save you time and effort, as you won't have to
-          manually update your link page every time you want to add a new link.
-          Your followers will also have access to the most up-to-date
-          information without you having to lift a finger.
-        </p>
-        <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
           Introducing the SocialWP plugin
         </h2>
         <p className="text-base leading-9 mb-5">
-          We were frustrated by the lack of good options for automatically
-          generating an Instagram link page, so we created SocialWP – a plugin
-          that does exactly that. With SocialWP, you can save time, ensure your
+          If you're a website owner looking to create a dedicated link page for
+          your Instagram followers, consider using a plugin that automatically
+          generates it for you. This will save you time and effort, as you won't
+          have to manually update the link page every time you want to add a new
+          link. Your followers will also have access to the most up-to-date
+          information without you having to lift a finger.
+        </p>
+        <p className="text-base leading-9 mb-5">
+          We created <a href="https://socialwp.io">SocialWP </a>– a plugin that
+          does exactly that. With SocialWP, you can save time, ensure your
           followers have access to the most up-to-date information, and host the
           link page on your own website to support your branding efforts and
           share a wide range of content with your followers.
+        </p>
+        <p className="text-base leading-9 mb-5">
+          Here are some of the features of SocialWP:
+          <ul className="mt-5 flex flex-col gap-3">
+            <li className="text-base leading-9 mb-2">
+              <div className="flex ">
+                <CheckIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
+                <div>
+                  <span className="font-bold font-serif text-lg">
+                    Easy 5-minute setup
+                  </span>
+                  <p>
+                    Skip the complicated setup processes and page builders. With
+                    SocialWP, you can create a link page in just 5 minutes.
+                    Simply install the plugin, choose a template, and add your
+                    links.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className="text-base leading-9 mb-2">
+              <div className="flex ">
+                <CheckIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
+                <div>
+                  <span className="font-bold font-serif text-lg">
+                    Custom design options
+                  </span>
+                  <p>
+                    SocialWP allows you to create a custom link page that
+                    reflects your brand. Choose from a variety of pre-made
+                    templates or use the built-in editor to design your own.
+                    This way, your link page will be consistent with the rest of
+                    your website and showcase your unique style.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className="text-base leading-9 mb-2">
+              <div className="flex ">
+                <CheckIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
+                <div>
+                  <span className="font-bold font-serif text-lg">
+                    Integrate your content like a pro
+                  </span>
+                  <p>
+                    SocialWP offers different content blocks, such as contact
+                    forms, donation buttons, blog feeds, headers, social icons,
+                    documents, and more. Automate your bio link and never worry
+                    about updating it again.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className="text-base leading-9 mb-2">
+              <div className="flex ">
+                <CheckIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
+                <div>
+                  <span className="font-bold font-serif text-lg">
+                    Own your data
+                  </span>
+                  <p>
+                    With SocialWP, the plugin and its data are hosted on your
+                    own website. This means that you have full control over the
+                    data collected and can ensure that it is handled in
+                    compliance with relevant regulations, such as GDPR within
+                    the European Union.
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li className="text-base leading-9 mb-2">
+              <div className="flex ">
+                <CheckIcon className="w-7 h-7 bg-tech/5 rounded-full text-tech p-1 mr-3 shrink-0" />
+                <div>
+                  <span className="font-bold font-serif text-lg">
+                    And so much more
+                  </span>
+                </div>
+              </div>
+            </li>
+          </ul>
           <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid grid-cols-[0.2fr_0.7fr] gap-[50px]">
             <img src="https://images.prismic.io/social-blog/e0ed9362-4cc6-4c9c-b6c5-9e610db0cdff_image.png?auto=compress,format" />
             <div>
@@ -296,11 +367,14 @@ export default function Page() {
                 className="bg-white text-tech text-center mt-5 py-3 rounded-full block font-light"
                 href="https://socialwp.io/?utm_source=blog&utm_medium=linktree&utm_campaign=linktree"
               >
-                <span className="font-normal">Learn more</span>
+                <span className="font-normal">Get the plugin for free</span>
               </a>
             </div>
           </div>
         </p>
+        <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
+          Setting up your link page with SocialWP
+        </h2>
       </section>
       <section className="author max-w-screen-md my-20 grid m-auto grid-cols-[0.2fr_0.8fr] px-10">
         <img
