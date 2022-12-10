@@ -105,8 +105,8 @@ export default function Page() {
                   href="#but-is-linktree-really-the-best-solution"
                   className="flex items-center"
                 >
-                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Introducing
-                  SocialWP
+                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Introducing our
+                  bio link creator plugin
                 </a>
               </li>
             </ul>
@@ -265,36 +265,41 @@ export default function Page() {
           time-consuming if you have a large number of links to share.
         </p>
         <p className="text-base leading-9 mb-5">
-          A more efficient solution is to use a plugin that automatically
-          generates a link page for you. This will save you a lot of time and
-          effort, as you will not have to manually update your link page every
-          time you want to add a new link. Instead, the plugin will
-          automatically update the link page for you, ensuring that your
-          followers have access to the most up-to-date information.
+          Instead, consider using a plugin that automatically generates a link
+          page for you. This will save you time and effort, as you won't have to
+          manually update your link page every time you want to add a new link.
+          Your followers will also have access to the most up-to-date
+          information without you having to lift a finger.
         </p>
         <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
-          Introducing SocialWP
+          Introducing the SocialWP plugin
         </h2>
         <p className="text-base leading-9 mb-5">
-          We have created just such a plugin – SocialWP. This plugin allows you
-          to automatically generate a link page for your Instagram followers
-          that is hosted on your own website. This means that you are not
-          leaving important traffic on the table and can share a wide range of
-          content with your followers. It also supports your efforts to build a
-          strong brand and stand out from the crowd.
-          <ol className="list-decimal list-inside">
-            <li className="text-base leading-9 mb-5">
-              Install and activate the SocialWP plugin.
-            </li>
-            <li className="text-base leading-9 mb-5">
-              Navigate to the SocialWP settings page and click on the
-              "Instagram" tab.
-            </li>
-            <li className="text-base leading-9 mb-5">
-              Enter your Instagram username and click on the "Save Changes"
-              button.
-            </li>
-          </ol>
+          We were frustrated by the lack of good options for automatically
+          generating an Instagram link page, so we created SocialWP – a plugin
+          that does exactly that. With SocialWP, you can save time, ensure your
+          followers have access to the most up-to-date information, and host the
+          link page on your own website to support your branding efforts and
+          share a wide range of content with your followers.
+          <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid grid-cols-[0.2fr_0.7fr] gap-[50px]">
+            <img src="https://images.prismic.io/social-blog/e0ed9362-4cc6-4c9c-b6c5-9e610db0cdff_image.png?auto=compress,format" />
+            <div>
+              <h3 className="font-serif text-xl font-bold">
+                The complete bio link solution for WordPress
+              </h3>
+              <p>
+                Turn your site into a launchpad for your links, products, and
+                more. Meet our bio link for WordPress - a place your fans will
+                love.
+              </p>
+              <a
+                className="bg-white text-tech text-center mt-5 py-3 rounded-full block font-light"
+                href="https://socialwp.io/?utm_source=blog&utm_medium=linktree&utm_campaign=linktree"
+              >
+                <span className="font-normal">Learn more</span>
+              </a>
+            </div>
+          </div>
         </p>
       </section>
       <section className="author max-w-screen-md my-20 grid m-auto grid-cols-[0.2fr_0.8fr] px-10">
