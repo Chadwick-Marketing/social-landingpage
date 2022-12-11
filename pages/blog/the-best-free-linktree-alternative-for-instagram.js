@@ -412,7 +412,7 @@ export default function Page() {
           </ul>
           <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid md:grid-cols-[0.2fr_0.7fr] gap-[50px] mt-10">
             <img
-              className="w-24 md:w-full"
+              className="w-12 md:w-full"
               src="https://ik.imagekit.io/chadwickmarketing/social/Group_30-2_JuqXuNgEs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710570153"
             />
             <div>
@@ -589,12 +589,12 @@ export default function Page() {
           <h3 className="md:text-2xl text-xl my-2 font-serif font-bold">
             Colin Chadwick
           </h3>
-          <div className="flex md:items-center md:flex-row flex-col">
-            <p className="font-bold">Tags:</p>
-            <div className="flex items-center p-2 md:mx-2 my-2 md:my-0 rounded-2xl bg-tech/5 text-sm font-bold text-tech">
+          <div className="flex md:items-center md:flex-row">
+            <p className="font-bold hidden md:block">Tags:</p>
+            <div className="flex items-center p-2 mr-2 md:mx-2 rounded-2xl bg-tech/5 text-sm font-bold text-tech">
               Marketing
             </div>
-            <div className="flex items-center p-2 rounded-2xl bg-tech/5 text-sm font-bold text-tech">
+            <div className="flex items-center p-2 rounded-2xl bg-tech/5 text-sm font-bold text-tech ">
               Social media
             </div>
           </div>
