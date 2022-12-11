@@ -8,7 +8,6 @@ import en from "../../locales/en";
 
 import { ChevronRightIcon, XIcon, CheckIcon } from "@heroicons/react/outline";
 import Link from "next/link";
-import ReactCompareImage from "react-compare-image";
 
 export default function Page() {
   const language = en;
@@ -23,9 +22,38 @@ export default function Page() {
         <meta name="description" content="" />
         <meta
           property="og:image"
-          content="https://ik.imagekit.io/chadwickmarketing/social/og--image_haZDiZynP.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666863781752"
+          content="https://ik.imagekit.io/chadwickmarketing/social/link-in-bio-creator-socialwp_Q50SehKb7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670519094377"
         />
+        <meta
+          property="og:title"
+          content="Social: The free Linktree alternative that will supercharge your bio link"
+        />
+        <meta property="og:description" content="" />
+
         <link rel="icon" href="/favicon.ico" />
+        <script type="application/ld+json">
+          {`{
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": "Social: The free Linktree alternative that will supercharge your bio link",
+            "image": "https://ik.imagekit.io/chadwickmarketing/social/link-in-bio-creator-socialwp_Q50SehKb7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670519094377",
+            "datePublished": "2021-08-08",
+            "dateModified": "2021-08-08",
+            "author": {
+              "@type": "Person",
+              "name": "Colin Chadwick"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "SocialWP.io",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://ik.imagekit.io/chadwickmarketing/social/icon_128_uEfTliaqvG.png"
+              }
+            },
+            "description": "The free Linktree alternative that will supercharge your bio link."
+          }`}
+        </script>
       </Head>
       <Navigation language={language} />
       <section className="px-10">
@@ -120,6 +148,14 @@ export default function Page() {
                   page with SocialWP
                 </a>
               </li>
+              <li className="text-base leading-9 mb-2">
+                <a
+                  href="#but-is-linktree-really-the-best-solution"
+                  className="flex items-center"
+                >
+                  <ChevronRightIcon className="w-4 h-4 mr-2" /> Conclusion
+                </a>
+              </li>
             </ul>
           </div>
         </div>
@@ -138,7 +174,7 @@ export default function Page() {
         <p className="text-base leading-9 mb-5">
           In this article, we'll recommend a free alternative that doesn't
           require signing up on a third-party site. Instead, all you need is
-          your website, which you likely already use on a daily basis.
+          your website, which you likely already manage on a daily basis.
         </p>
         <p className="text-base leading-9 mb-5">
           Before we get started, let's clarify a few things:
@@ -150,10 +186,10 @@ export default function Page() {
           Linktree - what is that?
         </h2>
         <p className="text-base leading-9 mb-5">
-          With the help of this Linktree, you can create a small landing page
-          from which you can link to other pages. These can be pages on your
-          website, but also all other links that you want to make available to
-          your followers. The whole page looks something like this:
+          With the help of Linktree, you can create a small landing page from
+          which you can link to other pages. These can be pages on your website,
+          but also all other links that you want to make available to your
+          followers. The whole page looks something like this:
         </p>
 
         <p className="block-img my-5">
@@ -270,17 +306,20 @@ export default function Page() {
         </h2>
         <p className="text-base leading-9 mb-5">
           If you're a website owner looking to create a dedicated link page for
-          your Instagram followers, consider using a plugin that automatically
-          generates it for you. This will save you time and effort, as you won't
-          have to manually update the link page with a page builder every time
-          you want to add a new link.
+          your Instagram followers, you should consider using a plugin that
+          automatically generates it for you. This will save you time and
+          effort, as you won't have to manually update the link page with a page
+          builder every time you want to add a new link.
         </p>
         <p className="text-base leading-9 mb-5">
-          We created <a href="https://socialwp.io">SocialWP </a>– a plugin that
-          does exactly that. With SocialWP, you can save time, ensure your
-          followers have access to the most up-to-date information, and host the
-          link page on your own website to support your branding efforts and
-          share a wide range of content with your followers.
+          We created{" "}
+          <a href="https://socialwp.io" className="text-tech underline">
+            SocialWP
+          </a>{" "}
+          – a plugin that does exactly that. With SocialWP, you can save time,
+          ensure your followers have access to the most up-to-date information,
+          and host the link page on your own website to support your branding
+          efforts and share a wide range of content with your followers.
         </p>
         <p className="text-base leading-9 mb-5">
           Here are some of the features of SocialWP:
@@ -353,7 +392,7 @@ export default function Page() {
             </li>
           </ul>
           <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid grid-cols-[0.2fr_0.7fr] gap-[50px] mt-10">
-            <img src="https://images.prismic.io/social-blog/e0ed9362-4cc6-4c9c-b6c5-9e610db0cdff_image.png?auto=compress,format" />
+            <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_30-2_JuqXuNgEs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710570153" />
             <div>
               <h3 className="font-serif text-xl font-bold">
                 The complete bio link solution for WordPress
@@ -498,28 +537,19 @@ export default function Page() {
             </li>
           </ul>
         </p>
-        <h2 className="text-2xl font-bold font-serif my-5">Wrapping up</h2>
+        <h2 className="text-2xl font-bold font-serif my-5">Conclusion</h2>
         <p className="text-base leading-9 mb-2">
           As a website owner, you shouldn't have to rely on third-party sites to
           create your link page. With SocialWP, you can easily create a bio link
-          that is fully integrated into your website. No coding or page building
-          skills are required. continue the text Additionally, SocialWP allows
-          you to customize the design of your bio link to match your brand.
-          Choose from a variety of pre-made templates or use the built-in editor
-          to create your own. This way, your bio link will be consistent with
-          the rest of your website and reflect your unique style. SocialWP also
-          offers different content blocks that you can use to share a wide range
-          of content with your followers, including blog posts, newsletters, and
-          product catalogs. This will help you to build a strong brand and stand
-          out from the crowd. If you want to save time and effort when creating
-          your Instagram bio link, try SocialWP today. It's easy to use and will
-          help you to create a professional-looking bio link that is fully
-          integrated into your website.
-          <ReactCompareImage
-            className="rounded-3xl"
-            leftImage="https://ik.imagekit.io/chadwickmarketing/social/ezgif-5-9918f33871_r9wMropv1.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1670691616536"
-            rightImage="https://ik.imagekit.io/chadwickmarketing/social/ezgif-5-9918f33871_r9wMropv1.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1670691616536"
-          />
+          that is fully integrated into your website, without needing any coding
+          or page building skills. This solution offers a simple, convenient way
+          to manage your links and provide your followers with easy access to
+          all your content.{" "}
+          <a href="https://socialwp.io" className="text-tech underline">
+            Give SocialWP a try today
+          </a>{" "}
+          and see how it can help you take your online presence to the next
+          level!
         </p>
       </section>
       <section className="author max-w-screen-md my-20 grid m-auto grid-cols-[0.2fr_0.8fr] px-10">
