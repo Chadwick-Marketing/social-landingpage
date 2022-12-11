@@ -30,7 +30,7 @@ export default function Page() {
         />
         <meta
           property="og:description"
-          content="Looking for a free Linktree alternative? Boost your bio link and easily create a customizable landing page to showcase all of your important links in one place."
+          content="Looking for a free Linktree alternative? Learn how to boost your bio link and easily create a customizable landing page to showcase all of your important links in one place."
         />
 
         <link rel="icon" href="/favicon.ico" />
@@ -54,9 +54,22 @@ export default function Page() {
                 "url": "https://ik.imagekit.io/chadwickmarketing/social/icon_128_uEfTliaqvG.png"
               }
             },
-            "description": "Looking for a free Linktree alternative? Boost your bio link and easily create a customizable landing page to showcase all of your important links in one place."
+            "description": "Looking for a free Linktree alternative? Learn how to boost your bio link and easily create a customizable landing page to showcase all of your important links in one place."
           }`}
         </script>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Social: The free Linktree alternative that will supercharge your bio link"
+        />
+        <meta
+          name="twitter:description"
+          content="Looking for a free Linktree alternative? Learn how to boost your bio link and easily create a customizable landing page to showcase all of your important links in one place."
+        />
+        <meta
+          name="twitter:image"
+          content="https://ik.imagekit.io/chadwickmarketing/social/link-in-bio-creator-socialwp_Q50SehKb7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670519094377"
+        />
       </Head>
       <Navigation language={language} />
       <section className="px-10">
@@ -126,16 +139,7 @@ export default function Page() {
               </li>
               <li className="text-base leading-9 mb-2">
                 <a
-                  href="#but-is-linktree-really-the-best-solution"
-                  className="flex items-center"
-                >
-                  <ChevronRightIcon className="w-4 h-4 mr-2" /> What should you
-                  use instead of Linktree?
-                </a>
-              </li>
-              <li className="text-base leading-9 mb-2">
-                <a
-                  href="#but-is-linktree-really-the-best-solution"
+                  href="#introducing-the-socialwp-plugin"
                   className="flex items-center"
                 >
                   <ChevronRightIcon className="w-4 h-4 mr-2" /> Introducing the
@@ -144,7 +148,7 @@ export default function Page() {
               </li>
               <li className="text-base leading-9 mb-2">
                 <a
-                  href="#but-is-linktree-really-the-best-solution"
+                  href="#building-a-link-page-with-socialwp"
                   className="flex items-center"
                 >
                   <ChevronRightIcon className="w-4 h-4 mr-2" /> Building a link
@@ -152,10 +156,7 @@ export default function Page() {
                 </a>
               </li>
               <li className="text-base leading-9 mb-2">
-                <a
-                  href="#but-is-linktree-really-the-best-solution"
-                  className="flex items-center"
-                >
+                <a href="#conclusion" className="flex items-center">
                   <ChevronRightIcon className="w-4 h-4 mr-2" /> Conclusion
                 </a>
               </li>
@@ -222,7 +223,10 @@ export default function Page() {
           link in your Instagram profile.
         </p>
         <p className="text-base leading-9 mb-5"></p>
-        <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
+        <h2
+          id="but-is-linktree-really-the-best-solution"
+          className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold"
+        >
           But is Linktree really the best solution?
         </h2>
         <p className="text-base leading-9 mb-5">
@@ -304,7 +308,10 @@ export default function Page() {
           </li>
         </ul>
         <p className="text-base leading-9 mb-5"> </p>
-        <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
+        <h2
+          id="introducing-the-socialwp-plugin"
+          className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold"
+        >
           Introducing the SocialWP plugin
         </h2>
         <p className="text-base leading-9 mb-5">
@@ -394,8 +401,11 @@ export default function Page() {
               </div>
             </li>
           </ul>
-          <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid grid-cols-[0.2fr_0.7fr] gap-[50px] mt-10">
-            <img src="https://ik.imagekit.io/chadwickmarketing/social/Group_30-2_JuqXuNgEs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710570153" />
+          <div className="cta py-10 rounded-3xl px-10 bg-tech text-white grid md:grid-cols-[0.2fr_0.7fr] gap-[50px] mt-10">
+            <img
+              className="w-24 md:w-full"
+              src="https://ik.imagekit.io/chadwickmarketing/social/Group_30-2_JuqXuNgEs.png?ik-sdk-version=javascript-1.4.3&updatedAt=1666710570153"
+            />
             <div>
               <h3 className="font-serif text-xl font-bold">
                 The complete bio link solution for WordPress
@@ -416,7 +426,10 @@ export default function Page() {
             </div>
           </div>
         </p>
-        <h2 className="md:text-3xl text-2xl font-serif leading-9 my-10 font-bold">
+        <h2
+          id="building-a-link-page-with-socialwp"
+          className="md:text-3xl text-2xl font-serif leading-9 my-10 mt-12 font-bold"
+        >
           Building a link page with SocialWP
         </h2>
         <p className="text-base leading-9 mb-5">
@@ -540,7 +553,9 @@ export default function Page() {
             </li>
           </ul>
         </p>
-        <h2 className="text-2xl font-bold font-serif my-5">Conclusion</h2>
+        <h2 id="conclusion" className="text-2xl font-bold font-serif my-5">
+          Conclusion
+        </h2>
         <p className="text-base leading-9 mb-2">
           As a website owner, you shouldn't have to rely on third-party sites to
           create your link page. With SocialWP, you can easily create a bio link
@@ -567,7 +582,7 @@ export default function Page() {
           </h3>
           <div className="flex md:items-center md:flex-row flex-col">
             <p className="font-bold">Tags:</p>
-            <div className="flex items-center p-2 md:mx-2 rounded-2xl bg-tech/5 text-sm font-bold text-tech">
+            <div className="flex items-center p-2 md:mx-2 my-2 md:my-0 rounded-2xl bg-tech/5 text-sm font-bold text-tech">
               Marketing
             </div>
             <div className="flex items-center p-2 rounded-2xl bg-tech/5 text-sm font-bold text-tech">
