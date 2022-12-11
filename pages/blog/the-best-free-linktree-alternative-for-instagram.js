@@ -19,7 +19,16 @@ export default function Page() {
           Social: The free Linktree alternative that will supercharge your bio
           link
         </title>
-        <meta name="description" content="" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Looking for a free Linktree alternative? Learn how to boost your bio link and easily create a customizable landing page to showcase all of your important links in one place."
+        />
+        <meta
+          name="og:url"
+          content="https://socialwp.io/blog/the-best-free-linktree-alternative-for-instagram"
+        />
+        <meta property="og:type" content="article" />
         <meta
           property="og:image"
           content="https://ik.imagekit.io/chadwickmarketing/social/link-in-bio-creator-socialwp_Q50SehKb7.png?ik-sdk-version=javascript-1.4.3&updatedAt=1670519094377"
@@ -32,8 +41,8 @@ export default function Page() {
           property="og:description"
           content="Looking for a free Linktree alternative? Learn how to boost your bio link and easily create a customizable landing page to showcase all of your important links in one place."
         />
-
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="article:published_time" content="2021-08-08" />
+        <meta property="article:modified_time" content="2021-08-08" />
         <script type="application/ld+json">
           {`{
             "@context": "https://schema.org",
