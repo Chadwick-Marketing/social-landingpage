@@ -28,7 +28,10 @@ export default function Page() {
           property="og:title"
           content="Social: The free Linktree alternative that will supercharge your bio link"
         />
-        <meta property="og:description" content="" />
+        <meta
+          property="og:description"
+          content="Looking for a free Linktree alternative? Boost your bio link and easily create a customizable landing page to showcase all of your important links in one place."
+        />
 
         <link rel="icon" href="/favicon.ico" />
         <script type="application/ld+json">
@@ -51,7 +54,7 @@ export default function Page() {
                 "url": "https://ik.imagekit.io/chadwickmarketing/social/icon_128_uEfTliaqvG.png"
               }
             },
-            "description": "The free Linktree alternative that will supercharge your bio link."
+            "description": "Looking for a free Linktree alternative? Boost your bio link and easily create a customizable landing page to showcase all of your important links in one place."
           }`}
         </script>
       </Head>
