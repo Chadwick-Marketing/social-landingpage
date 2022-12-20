@@ -7,6 +7,7 @@ import Head from "next/head";
 import en from "../../locales/en";
 
 import { ChevronRightIcon, XIcon, CheckIcon } from "@heroicons/react/outline";
+
 import Link from "next/link";
 
 export default function Page() {
